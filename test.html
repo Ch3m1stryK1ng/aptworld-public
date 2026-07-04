@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>按鈕邊框獨立測試</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-900 flex items-center justify-center min-h-screen">
+
+    ${renderSection('Contact Information', { 'Company': safe(p.company), 'Contact Person': safe(p.name), 'Email': `<a
+        href="mailto:${safe(p.email)}" style="color:${brand.primary};">${safe(p.email)}</a>`, 'Phone / WhatsApp':
+    safe(p.phone), 'Industry': safe(p.industry), 'Country / Region': safe(p.country), 'Destination Port': safe(p.port)
+    })}
+    ${renderSection('Project Information', { 'Product Type': safe(p.productType), 'Quantity': safe(p.qty), 'Incoterm':
+    safe(p.incoterm), 'Due Date': safe(p.due), 'Application / Series': safe(p.series) })}
+    ${techSection}
+    ${renderSection('Quality & Compliance', { 'Reports Required': safe(p.reports), 'Packaging': safe(p.packaging), 'NDA
+    Agreement': safe(p.nda), 'Notes': `<div style="white-space:pre-wrap;word-break:break-word;">${safe(p.notes)}</div>`
+    })}
+    ${renderSection(`Attachments (${files.length})`, { '': `<ul>${filesContent}</ul>` })}
+
+</body>
+
+</html>

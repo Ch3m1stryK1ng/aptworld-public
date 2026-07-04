@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>APT 传动｜产品中心</title>
+  <style>
+    :root{
+      --bg:#f6f8fb; --panel:#fff; --text:#0f172a; --muted:#64748b; --line:#e5e7eb;
+      --brand:#4f46e5; --brand-2:#10b981; --chip:#eef2ff; --warn:#ef4444;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1200px;margin:0 auto;padding:16px}
+    header{position:sticky;top:0;background:rgba(255,255,255,.8);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;gap:16px;padding:12px 16px}
+    .nav .brand{font-weight:700;color:var(--brand)}
+    .nav .spacer{flex:1}
+    
+    /* Topbar layout (Filters, Sorting and Cart) */
+    .topbar{display:flex;gap:8px;align-items:center;padding:12px 16px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.1);}
+    .topbar .filters{flex:1;display:flex;gap:12px;}
+    .topbar .filters select, .topbar .filters input{border:1px solid var(--line);border-radius:8px;padding:8px 12px;}
+    .topbar .cart{display:flex;gap:8px;align-items:center;}
+    .topbar .cart button{background:var(--brand);color:white;padding:8px 12px;border-radius:8px;}
+    .topbar .cart span{color:var(--muted);}
+
+    /* Layout */
+    .layout{display:grid;grid-template-columns:280px 1fr;gap:16px;margin-top:16px}
+    @media (max-width: 960px){.layout{grid-template-columns:1fr}}
+
+    /* Sidebar - Category Filters */
+    .sidebar .section{margin-bottom:12px}
+    .section h4{margin:0 0 8px 0;font-size:13px}
+    .cat ul{list-style:none;margin:0;padding:0}
+    .cat li{margin:2px 0}
+    .cat a{display:block;padding:6px 8px;border-radius:8px}
+    .cat a:hover{background:#f3f4f6}
+    .cat .sub{padding-left:10px;border-left:2px solid #e5e7eb;margin-left:6px}
+
+    /* Product Card */
+    .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+    .panel{padding:16px}
+    .product{overflow:hidden}
+    .thumb{aspect-ratio:16/9;background:#eceff5;border-bottom:1px solid var(--line)}
+    .thumb img{width:100%;height:100%;object-fit:cover}
+    .p-body{padding:12px 16px}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    .kv{display:grid;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:8px;color:var(--muted)}
+    .kv div{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .quantity-select{width:60px;border:1px solid var(--line);border-radius:8px;padding:6px;text-align:center;}
+
+    /* Cart Drawer */
+    .drawer-btn{position:fixed;right:16px;bottom:16px;z-index:40}
+    .drawer{position:fixed;left:0;right:0;bottom:-100%;background:#fff;border-top:1px solid var(--line);box-shadow:0 -10px 30px rgba(0,0,0,.12);transition:.25s ease;z-index:60;max-height:80vh;overflow:auto}
+    .drawer.open{bottom:0}
+    table{width:100%;border-collapse:collapse}
+    th,td{padding:8px 10px;border-bottom:1px solid var(--line);text-align:left}
+
+    footer{margin-top:32px;border-top:1px solid var(--line);background:#fff}
+    footer .foot{display:grid;gap:16px;grid-template-columns:2fr 1fr 1fr 1fr;padding:16px}
+    @media (max-width:900px){footer .foot{grid-template-columns:1fr 1fr}}
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav container">
+      <div class="brand">APT 传动</div>
+      <a href="index.html">首页</a>
+      <a href="products.html" aria-current="page"><strong>产品中心</strong></a>
+      <a href="downloads.html">下载中心</a>
+      <a href="about.html">关于我们</a>
+      <div class="spacer"></div>
+      <a class="btn sm" href="contact.html">联系我们</a>
+    </nav>
+  </header>
+
+  <!-- Topbar for Filters, Sorting, and Cart -->
+  <div class="topbar">
+    <div class="filters">
+      <input type="text" placeholder="按 SKU / 名称 / 关键字搜索…">
+      <select>
+        <option value="name">按名称排序</option>
+        <option value="model_asc">按型号升序</option>
+        <option value="model_desc">按型号降序</option>
+      </select>
+    </div>
+    <div class="cart">
+      <span>询价车 (0)</span>
+      <button onclick="toggleCart()">查看询价车</button>
+    </div>
+  </div>
+
+  <div class="container layout">
+    <!-- Sidebar Filters -->
+    <aside class="sidebar card panel">
+      <div class="section cat">
+        <h4>产品分类</h4>
+        <ul>
+          <li><a href="#">V-Belts（三角带）</a></li>
+          <li><a href="#">Poly-V-Belts（多楔带）</a></li>
+          <li><a href="#">Timing Belts（同步带）</a></li>
+        </ul>
+      </div>
+      <div class="section">
+        <h4>槽数（Grooves）</h4>
+        <label><input type="checkbox" class="grv" value="1"> 1</label><br>
+        <label><input type="checkbox" class="grv" value="2"> 2</label><br>
+        <label><input type="checkbox" class="grv" value="3"> 3</label><br>
+      </div>
+      <div class="section">
+        <h4>直径范围（⌀ mm）</h4>
+        <input type="number" id="diaMin" value="50">
+        <input type="number" id="diaMax" value="700">
+      </div>
+      <div class="section">
+        <button class="btn sm">清空筛选</button>
+      </div>
+    </aside>
+
+    <!-- Product Cards -->
+    <section>
+      <div class="card panel">
+        <div id="grid" class="grid"></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="drawer" id="drawer">
+    <div class="container">
+      <h3>询价车</h3>
+      <table id="cartTable">
+        <tr><td colspan="4" class="muted">暂无商品</td></tr>
+      </table>
+      <button class="btn primary" onclick="submitCart()">提交询价</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="foot container">
+      <div>
+        <div style="font-weight:700">APT 传动</div>
+        <div class="muted">皮带轮 • 锥套 • 联轴器 • 链轮</div>
+      </div>
+      <div>
+        <div style="font-weight:600">产品</div>
+        <div class="muted">V 带轮（SPZ/SPA/SPB/SPC）</div>
+      </div>
+      <div>
+        <div style="font-weight:600">资源</div>
+        <a class="muted" href="downloads.html">手册与 CAD</a><br>
+        <a class="muted" href="quality.html">质量与动平衡</a>
+      </div>
+      <div>
+        <div style="font-weight:600">联系</div>
+        <a class="muted" href="mailto:sales@apt-world.com">sales@apt-world.com</a><br>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    let cart = [];
+
+    function toggleCart() {
+      const cartDrawer = document.getElementById('drawer');
+      cartDrawer.classList.toggle('open');
+    }
+
+    function addToCart(sku, name, qty) {
+      const existing = cart.find(item => item.sku === sku);
+      if (existing) {
+        existing.qty += qty;
+      } else {
+        cart.push({ sku, name, qty });
+      }
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartTable = document.getElementById('cartTable');
+      if (cart.length === 0) {
+        cartTable.innerHTML = '<tr><td colspan="4" class="muted">暂无商品</td></tr>';
+      } else {
+        cartTable.innerHTML = cart.map(item => `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.qty}</td>
+            <td><button onclick="removeFromCart('${item.sku}')">移除</button></td>
+          </tr>
+        `).join('');
+      }
+    }
+
+    function removeFromCart(sku) {
+      cart = cart.filter(item => item.sku !== sku);
+      updateCart();
+    }
+
+    function submitCart() {
+      alert('询价提交成功！');
+      cart = [];
+      updateCart();
+      toggleCart();
+    }
+
+    // Product Card Example
+    function renderProductCard(sku, name, qty) {
+      return `
+        <div class="product card">
+          <div class="thumb">
+            <img src="https://via.placeholder.com/200" alt="${name}">
+          </div>
+          <div class="p-body">
+            <div style="font-weight:600">${name}</div>
+            <div class="muted">${sku}</div>
+            <div>
+              <input type="number" value="${qty}" min="1" onchange="addToCart('${sku}', '${name}', this.value)">
+            </div>
+            <div class="row">
+              <button class="btn sm" onclick="addToCart('${sku}', '${name}', 1)">加入询价</button>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Example Product Data Rendering
+    document.getElementById('grid').innerHTML = `
+      ${renderProductCard('VTP-A-1-80', 'VTP 高速皮带轮 A 1-80', 1)}
+      ${renderProductCard('VTP-B-2-120', 'VTP 高速皮带轮 B 2-120', 2)}
+      ${renderProductCard('VTP-C-3-200', 'VTP 高速皮带轮 C 3-200', 3)}
+    `;
+  </script>
+</body>
+</html>

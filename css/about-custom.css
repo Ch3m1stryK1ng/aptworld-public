@@ -1,0 +1,539 @@
+:root {
+    /* ---- Theme ---- */
+    --brand: #d62329;
+    /* APT red */
+    --brand-dark: #b91d22;
+    /* Darker brand red */
+    --brand-ink: #8f1419;
+    /* Even darker brand tone */
+
+    --ink: #ffffff;
+    /* primary text */
+    --ink-sec: #94a3b8;
+    /* secondary text */
+
+    --bg-page: #0f1115;
+    /* page bg (dark graphite) */
+    --bg-card: #161a21;
+    /* card surface */
+    --bg-card-hover: #1c212b;
+
+    --line: #2d3748;
+    /* border color */
+    --line-light: rgba(255, 255, 255, 0.1);
+
+    --radius: 16px;
+    --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Base styles for the section - Matching Team Section */
+.product-footer-inner {
+    margin-top: 30px;
+    /* Added spacing above title */
+}
+
+.apps-grid {
+    position: relative;
+    padding: 5px 0 10px;
+    /* Reduced bottom padding from 80px */
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Header & Navigation - Matching .team-header */
+.section-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 20px;
+    /* Increased spacing for buttons */
+    max-width: 1440px;
+    /* Standard max width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+.section-title {
+    display: none;
+}
+
+/* Slider Container - Matching team layout width */
+.apps-slider-container {
+    max-width: 1680px;
+    margin: 0 auto;
+    padding: 0;
+    /* Removed side padding to align with text */
+    overflow: hidden;
+}
+
+/* Helper to position nav exactly like team section */
+.slider-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.nav-btn {
+    width: 44px;
+    /* Slightly larger like team often is */
+    height: 44px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: white;
+}
+
+/* Grid Scroll */
+.apps-grid .grid {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 40px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.apps-grid .grid::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* ---- App Card - Unchanged ---- */
+
+.app-card {
+    min-width: 300px;
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+@media (min-width: 768px) {
+    .app-card {
+        min-width: 340px;
+        flex: 0 0 340px;
+    }
+}
+
+.app-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(214, 35, 41, 0.5);
+    background: var(--bg-card-hover);
+}
+
+
+/* Visual Top Section */
+.app-visual {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.app-visual .img-layer {
+    position: absolute;
+    inset: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.app-card:hover .app-visual .img-layer {
+    transform: scale(1.1);
+}
+
+.app-visual .overlay-layer {
+    display: none;
+}
+
+.app-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    background: rgba(22, 26, 33, 0.6);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.app-badge svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--brand);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* Content Body Section */
+.app-content {
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header */
+.app-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.app-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.app-subtitle-en {
+    font-size: 0.75rem;
+    color: var(--brand);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+
+/* Devices */
+.devices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    color: var(--ink-sec);
+    transition: all 0.2s;
+}
+
+.app-card:hover .chip {
+    background: rgba(255, 255, 255, 0.1);
+    color: #e2e8f0;
+}
+
+
+/* Advantages */
+.advantages {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.advantages li {
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    text-align: left;
+    /* Force left alignment */
+}
+
+.advantages li i {
+    color: var(--brand);
+    margin-top: 4px;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+
+/* Action */
+.app-actions {
+    margin-top: 4px;
+}
+
+.btn-inquiry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 16px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-inquiry i {
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.app-card:hover .btn-inquiry {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: white;
+}
+
+
+/* ---- Features Bottom Section (Redesigned - Compact) ---- */
+.features-bottom {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto 20px;
+    /* Reduced bottom margin */
+    padding: 20px 20px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    /* Tighter gap */
+    background: var(--bg-card);
+    /* Optional: distinct background if needed, else transparent */
+    border-radius: var(--radius);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    /* Modern sans-serif */
+}
+
+.fb-left {
+    flex: 1.2;
+    /* Give more space to content */
+    display: grid;
+    grid-template-areas:
+        "text list"
+        "btn  list";
+    grid-template-columns: 1.2fr 1fr;
+    gap: 24px 32px;
+}
+
+.fb-left .lead {
+    grid-area: text;
+    font-size: 1.1rem;
+    /* Compact font size */
+    color: var(--ink-sec);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.fb-left .ticks {
+    grid-area: list;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    text-align: left;
+    /* Force left alignment */
+}
+
+.fb-left .btn-demo {
+    grid-area: btn;
+    align-self: flex-start;
+}
+
+.fb-right {
+    flex: 0.8;
+    /* Image takes less space */
+    position: relative;
+    height: 100%;
+    min-height: 240px;
+}
+
+.fb-right img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    /* Inner radius */
+}
+
+/* Tick List Styles */
+.ticks li {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ticks li i {
+    color: #4ade80;
+    /* Green check like reference */
+    font-size: 1rem;
+}
+
+
+/* Button - Outlined Style */
+.btn-demo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: transparent;
+    border: 1px solid var(--brand);
+    /* Brand border */
+    color: var(--brand);
+    padding: 10px 24px;
+    border-radius: 6px;
+    /* Slightly squarer or standard radius */
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-demo:hover {
+    background: var(--brand);
+    color: white;
+}
+
+.btn-demo i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--brand);
+    color: white;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.btn-demo:hover i {
+    background: white;
+    color: var(--brand);
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+
+    /* Force 100% Card Width + Snap */
+    .apps-grid .grid {
+        scroll-snap-type: x mandatory;
+        gap: 16px;
+        padding: 0 20px 30px;
+    }
+
+    .app-card {
+        min-width: 100%;
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+    }
+
+    /* Bottom Banner Redesign */
+    .features-bottom {
+        display: block;
+        position: relative;
+        padding: 40px 24px;
+        overflow: hidden;
+        isolation: isolate;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Image becomes background */
+    .fb-right {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    .fb-right img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.7;
+        /* Dim backdrop */
+    }
+
+    /* Add gradient overlay */
+    .fb-right::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to top, rgba(15, 17, 21, 0.95), rgba(15, 17, 21, 0.3));
+    }
+
+    /* Content Layout */
+    .fb-left {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .fb-left .lead {
+        font-size: 1rem;
+        margin-bottom: 8px;
+    }
+
+    /* Ticks aligned left within centered block */
+    .fb-left .ticks {
+        align-items: flex-start;
+        display: inline-flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 16px;
+        border-radius: 12px;
+    }
+
+    .fb-left .btn-demo {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+        background: var(--brand);
+        color: white;
+        border: none;
+        margin-top: 8px;
+    }
+
+    .fb-left .btn-demo i {
+        background: white;
+        color: var(--brand);
+    }
+}

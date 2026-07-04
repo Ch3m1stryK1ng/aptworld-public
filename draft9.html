@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 - 工业传动解决方案</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', 'Microsoft YaHei', sans-serif;
+        }
+
+        /* 自定义激活状态的样式 */
+        .sidebar-link.active {
+            background-color: #eef2ff;
+            color: #4f46e5;
+            font-weight: 600;
+        }
+
+        .sidebar-link.active .link-icon {
+            color: #4f46e5;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Header / 导航栏 -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-cogs text-2xl text-indigo-600"></i>
+                    <span class="text-xl font-bold text-gray-800">传动机械</span>
+                </div>
+                <nav class="hidden md:flex items-center space-x-6">
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition">首页</a>
+                    <a href="#" class="text-indigo-600 font-semibold border-b-2 border-indigo-600 pb-1">产品中心</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition">解决方案</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition">技术支持</a>
+                    <a href="#" class="text-gray-600 hover:text-indigo-600 transition">关于我们</a>
+                </nav>
+                <div class="flex items-center space-x-4">
+                    <button class="text-gray-500 hover:text-indigo-600">
+                        <i class="fas fa-search text-lg"></i>
+                    </button>
+                    <button class="text-gray-500 hover:text-indigo-600">
+                        <i class="fas fa-shopping-cart text-lg"></i>
+                    </button>
+                    <button class="md:hidden text-gray-600 hover:text-indigo-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容区 -->
+    <div class="container mx-auto px-4 mt-8 mb-12">
+        <div class="flex flex-col md:flex-row gap-8">
+
+            <!-- 左侧边栏 - 产品分类 (参考 TYMA) -->
+            <aside class="w-full md:w-1/4 lg:w-1/5">
+                <div class="bg-white p-5 rounded-lg shadow-md sticky top-24">
+                    <h3 class="text-lg font-bold text-gray-800 border-b pb-3 mb-4">产品分类</h3>
+                    <ul class="space-y-2" id="sidebar-menu">
+                        <!-- V型皮带轮 -->
+                        <li>
+                            <a href="#"
+                                class="sidebar-link flex items-center justify-between p-3 rounded-md text-gray-700 hover:bg-gray-100 transition active">
+                                <span class="flex items-center">
+                                    <i class="fas fa-compact-disc w-5 mr-3 text-gray-400 link-icon"></i>
+                                    V型皮带轮
+                                </span>
+                                <i class="fas fa-chevron-down text-xs"></i>
+                            </a>
+                            <ul class="pl-6 mt-2 space-y-2">
+                                <li><a href="#" class="block text-sm text-indigo-600 hover:underline">VTP 高速系列</a></li>
+                                <li><a href="#" class="block text-sm text-gray-600 hover:underline">Taper Lock 衬套系列</a>
+                                </li>
+                                <li><a href="#" class="block text-sm text-gray-600 hover:underline">标准孔系列</a></li>
+                            </ul>
+                        </li>
+                        <!-- 同步带轮 -->
+                        <li>
+                            <a href="#"
+                                class="sidebar-link flex items-center justify-between p-3 rounded-md text-gray-700 hover:bg-gray-100 transition">
+                                <span class="flex items-center">
+                                    <i class="fas fa-sync-alt w-5 mr-3 text-gray-400 link-icon"></i>
+                                    同步带轮
+                                </span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <!-- 链轮 -->
+                        <li>
+                            <a href="#"
+                                class="sidebar-link flex items-center justify-between p-3 rounded-md text-gray-700 hover:bg-gray-100 transition">
+                                <span class="flex items-center">
+                                    <i class="fas fa-link w-5 mr-3 text-gray-400 link-icon"></i>
+                                    链轮
+                                </span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <!-- 联轴器 -->
+                        <li>
+                            <a href="#"
+                                class="sidebar-link flex items-center justify-between p-3 rounded-md text-gray-700 hover:bg-gray-100 transition">
+                                <span class="flex items-center">
+                                    <i class="fas fa-project-diagram w-5 mr-3 text-gray-400 link-icon"></i>
+                                    联轴器
+                                </span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                        <!-- 衬套和毂 -->
+                        <li>
+                            <a href="#"
+                                class="sidebar-link flex items-center justify-between p-3 rounded-md text-gray-700 hover:bg-gray-100 transition">
+                                <span class="flex items-center">
+                                    <i class="fas fa-ring w-5 mr-3 text-gray-400 link-icon"></i>
+                                    衬套和毂
+                                </span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- 右侧产品展示区 -->
+            <main class="w-full md:w-3/4 lg:w-4/5">
+                <!-- 面包屑导航和标题 -->
+                <div class="bg-white p-5 rounded-lg shadow-md mb-6">
+                    <nav class="text-sm text-gray-500 mb-4">
+                        <a href="#" class="hover:text-indigo-600">首页</a> &gt;
+                        <a href="#" class="hover:text-indigo-600">产品中心</a> &gt;
+                        <span class="text-gray-700">V型皮带轮</span>
+                    </nav>
+                    <h1 class="text-3xl font-bold text-gray-900">VTP 高速系列</h1>
+                    <p class="mt-2 text-gray-600">
+                        专为高转速和高功率传输应用设计。采用优质铸铁材料，经过动态平衡处理，确保在高速运转下的稳定性和可靠性。
+                    </p>
+                </div>
+
+                <!-- 筛选和视图控制 -->
+                <div class="flex justify-between items-center mb-6">
+                    <span class="text-gray-700">共找到 <span class="font-semibold">24</span> 款产品</span>
+                    <div class="flex items-center space-x-4">
+                        <select
+                            class="border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                            <option>默认排序</option>
+                            <option>按型号升序</option>
+                            <option>按型号降序</option>
+                        </select>
+                        <div class="hidden sm:flex items-center border rounded-md">
+                            <button class="p-2 text-white bg-indigo-600 rounded-l-md"><i
+                                    class="fas fa-th-large"></i></button>
+                            <button class="p-2 text-gray-600 hover:bg-gray-100 rounded-r-md"><i
+                                    class="fas fa-list"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 产品网格 (结合 Martin 的信息展示) -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                    <!-- 产品卡片示例 1 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+                        <div class="bg-gray-100 p-4 flex justify-center">
+                            <img src="https://placehold.co/200x200/e2e8f0/334155?text=VTP-A-1-80" alt="V型皮带轮"
+                                class="h-36 w-36 object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-md font-bold text-gray-800 truncate">VTP-A-1-80</h4>
+                            <p class="text-sm text-gray-500 mb-3">单槽A型高速皮带轮</p>
+
+                            <!-- 关键参数 -->
+                            <div class="text-xs space-y-1 text-gray-600">
+                                <div class="flex justify-between"><span>槽型:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">A</span></div>
+                                <div class="flex justify-between"><span>槽数:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">1</span></div>
+                                <div class="flex justify-between"><span>外径 (mm):</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">80.0</span></div>
+                            </div>
+
+                            <button
+                                class="mt-4 w-full bg-indigo-600 text-white text-sm font-semibold py-2 rounded-md hover:bg-indigo-700 transition-colors">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 产品卡片示例 2 -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+                        <div class="bg-gray-100 p-4 flex justify-center">
+                            <img src="https://placehold.co/200x200/e2e8f0/334155?text=VTP-B-2-120" alt="V型皮带轮"
+                                class="h-36 w-36 object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-md font-bold text-gray-800 truncate">VTP-B-2-120</h4>
+                            <p class="text-sm text-gray-500 mb-3">双槽B型高速皮带轮</p>
+
+                            <div class="text-xs space-y-1 text-gray-600">
+                                <div class="flex justify-between"><span>槽型:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">B</span></div>
+                                <div class="flex justify-between"><span>槽数:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">2</span></div>
+                                <div class="flex justify-between"><span>外径 (mm):</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">120.0</span></div>
+                            </div>
+
+                            <button
+                                class="mt-4 w-full bg-indigo-600 text-white text-sm font-semibold py-2 rounded-md hover:bg-indigo-700 transition-colors">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 其他产品卡片... -->
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+                        <div class="bg-gray-100 p-4 flex justify-center">
+                            <img src="https://placehold.co/200x200/e2e8f0/334155?text=VTP-C-3-200" alt="V型皮带轮"
+                                class="h-36 w-36 object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-md font-bold text-gray-800 truncate">VTP-C-3-200</h4>
+                            <p class="text-sm text-gray-500 mb-3">三槽C型高速皮带轮</p>
+                            <div class="text-xs space-y-1 text-gray-600">
+                                <div class="flex justify-between"><span>槽型:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">C</span></div>
+                                <div class="flex justify-between"><span>槽数:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">3</span></div>
+                                <div class="flex justify-between"><span>外径 (mm):</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">200.0</span></div>
+                            </div>
+                            <button
+                                class="mt-4 w-full bg-indigo-600 text-white text-sm font-semibold py-2 rounded-md hover:bg-indigo-700 transition-colors">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+
+                    <div
+                        class="bg-white rounded-lg shadow-md overflow-hidden transform hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group">
+                        <div class="bg-gray-100 p-4 flex justify-center">
+                            <img src="https://placehold.co/200x200/e2e8f0/334155?text=VTP-A-2-90" alt="V型皮带轮"
+                                class="h-36 w-36 object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-4">
+                            <h4 class="text-md font-bold text-gray-800 truncate">VTP-A-2-90</h4>
+                            <p class="text-sm text-gray-500 mb-3">双槽A型高速皮带轮</p>
+                            <div class="text-xs space-y-1 text-gray-600">
+                                <div class="flex justify-between"><span>槽型:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">A</span></div>
+                                <div class="flex justify-between"><span>槽数:</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">2</span></div>
+                                <div class="flex justify-between"><span>外径 (mm):</span> <span
+                                        class="font-mono bg-gray-100 px-1 rounded">90.0</span></div>
+                            </div>
+                            <button
+                                class="mt-4 w-full bg-indigo-600 text-white text-sm font-semibold py-2 rounded-md hover:bg-indigo-700 transition-colors">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 分页 -->
+                <div class="mt-10 flex justify-center">
+                    <nav class="inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                        <a href="#"
+                            class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">上一页</span>
+                            <i class="fas fa-chevron-left h-5 w-5"></i>
+                        </a>
+                        <a href="#" aria-current="page"
+                            class="z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium">1</a>
+                        <a href="#"
+                            class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">2</a>
+                        <a href="#"
+                            class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 hidden md:inline-flex relative items-center px-4 py-2 border text-sm font-medium">3</a>
+                        <span
+                            class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-white text-sm font-medium text-gray-700">...</span>
+                        <a href="#"
+                            class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50">
+                            <span class="sr-only">下一页</span>
+                            <i class="fas fa-chevron-right h-5 w-5"></i>
+                        </a>
+                    </nav>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <script>
+        // 简单的侧边栏激活状态切换脚本
+        document.addEventListener('DOMContentLoaded', function () {
+            const sidebarLinks = document.querySelectorAll('.sidebar-link');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // 移除所有激活状态
+                    sidebarLinks.forEach(l => l.classList.remove('active'));
+
+                    // 为当前点击的链接添加激活状态
+                    this.classList.add('active');
+
+                    // 简单的子菜单切换逻辑
+                    const nextSubmenu = this.nextElementSibling;
+                    if (nextSubmenu && nextSubmenu.tagName === 'UL') {
+                        const isVisible = nextSubmenu.style.display === 'block';
+                        // 关闭所有子菜单
+                        document.querySelectorAll('#sidebar-menu ul').forEach(ul => ul.style.display = 'none');
+                        // 切换箭头方向
+                        document.querySelectorAll('.sidebar-link i.fa-chevron-down').forEach(icon => icon.classList.replace('fa-chevron-down', 'fa-chevron-right'));
+
+                        if (!isVisible) {
+                            nextSubmenu.style.display = 'block';
+                            this.querySelector('i.fa-chevron-right').classList.replace('fa-chevron-right', 'fa-chevron-down');
+                        }
+                    }
+                });
+            });
+
+            // 默认展开第一个活动的子菜单
+            const activeLink = document.querySelector('.sidebar-link.active');
+            if (activeLink) {
+                const activeSubmenu = activeLink.nextElementSibling;
+                if (activeSubmenu && activeSubmenu.tagName === 'UL') {
+                    activeSubmenu.style.display = 'block';
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

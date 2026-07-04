@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-t" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>3D Tent Customizer · Three.js</title>
+
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --ink: #0f172a;
+            --muted: #64748b;
+            --line: #e2e8f0;
+            --brand: #111827;
+            --accent: #0ea5e9;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font: 14px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial;
+            color: var(--ink);
+            background: var(--bg)
+        }
+
+        .wrap {
+            max-width: 1200px;
+            margin: 24px auto;
+            padding: 0 16px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 16px
+        }
+
+        @media(min-width:1024px) {
+            .wrap {
+                grid-template-columns: 2fr 1fr
+            }
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            box-shadow: 0 1px 2px rgba(2, 6, 23, .05)
+        }
+
+        .card>.hd {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .card>.bd {
+            padding: 14px 16px
+        }
+
+        .btn {
+            appearance: none;
+            cursor: pointer;
+            border: 1px solid var(--line);
+            background: #fff;
+            border-radius: 12px;
+            padding: 8px 12px;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #f8fafc
+        }
+
+        .btn.primary {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand)
+        }
+
+        .btn.danger {
+            border-color: #fecaca;
+            color: #b91c1c;
+            background: #fff
+        }
+
+        .btn.danger:hover {
+            background: #fff1f2
+        }
+
+        .controls label {
+            display: block;
+            color: var(--muted);
+            font-size: 12px;
+            margin: 6px 0 4px
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 8px
+        }
+
+        .swatch {
+            width: 28px;
+            height: 28px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            display: inline-block;
+            margin-right: 6px;
+            cursor: pointer;
+        }
+
+        .grid4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+            gap: 8px;
+        }
+
+        .hint {
+            color: var(--muted);
+            font-size: 12px
+        }
+
+        .panelBtn {
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 8px 8px;
+            cursor: pointer;
+            background: #fff;
+        }
+
+        .panelBtn.active {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand)
+        }
+
+        /* 3D Canvas 样式 */
+        #stage-container {
+            width: 100%;
+            height: 520px;
+            display: block;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            overflow: hidden;
+            /* 隐藏边角溢出 */
+        }
+
+        #stage {
+            display: block;
+            width: 100%;
+            height: 100%;
+            cursor: grab;
+        }
+
+        #stage:active {
+            cursor: grabbing;
+        }
+    </style>
+
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://esm.sh/three@0.160.0",
+        "three/addons/": "https://esm.sh/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+
+<body>
+    <div class="wrap">
+        <section class="card">
+            <div class="hd">
+                <h2 style="margin:0;font-size:18px">3D 帐篷定制预览</h2>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <select id="viewSel" class="btn">
+                        <option value="iso">等距视角</option>
+                        <option value="front">正视图</option>
+                        <option value="right">右视图</option>
+                    </select>
+                    <button id="btnExport" class="btn primary" disabled title="功能待实现">导出 PNG</button>
+                </div>
+            </div>
+            <div class="bd">
+                <p class="hint">交互：<b>拖动</b>旋转视角，<b>滚轮</b>缩放。<b>点击</b>帐篷的一个面来激活它。</p>
+                <div id="stage-container">
+                    <canvas id="stage"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <aside class="card controls">
+            <div class="hd"><b>设置</b></div>
+            <div class="bd">
+                <div>
+                    <label><b>步骤 1 · 款式选择</b></label>
+                    <div id="styleGrid" class="grid4"></div>
+                </div>
+
+                <div style="margin-top:10px">
+                    <label><b>步骤 2 · 尺寸选择</b> (功能演示)</label>
+                    <div id="sizeGrid" class="grid4"></div>
+                </div>
+
+                <label style="margin-top:10px">面料颜色</label>
+                <div id="colorRow"></div>
+                <input id="colorPick" type="color" class="btn" style="width:100px;margin-left:6px" />
+                <div class="hint" style="margin-top:6px">当前激活面：<b id="activePanelName">roof-front</b></div>
+
+                <hr style="margin:14px 0;border:none;border-top:1px solid var(--line)">
+
+                <b>面位选择 (点击下方按钮或3D模型切换)</b>
+                <div id="panelGrid" class="grid4" style="margin-top:6px"></div>
+            </div>
+        </aside>
+    </div>
+
+    <script type="module">
+        // 导入 Three.js 和相机控制器
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        // -------------------- Data --------------------
+        const SIZES = [{ id: '3x3', label: '3×3M' }, { id: '3x4_5', label: '3×4.5M' }, { id: '3x6', label: '3×6M' }, { id: '2x2', label: '2×2M' }, { id: '2_5x2_5', label: '2.5×2.5M' }, { id: '2x3', label: '2×3M' }, { id: '4x4', label: '4×4M' }, { id: '4x6', label: '4×6M' }, { id: '4x8', label: '4×8M' },];
+        const STYLES = [{ id: 'backWall', name: '背布' }, { id: 'backTwoSides', name: '背布+两侧' }, { id: 'backTwoHalfSides', name: '背布+两半侧' }, { id: 'threeWallsPVC', name: '三围+PVC窗' }, { id: 'threeWallsTwoWindows', name: '三围+两窗' }, { id: 'fourWallsRollDoor', name: '四围+卷帘门' },];
+        const COLOR_SWATCHES = ['#ffffff', '#f3f4f6', '#d1d5db', '#0ea5e9', '#22c55e', '#f59e0b', '#ef4444', '#9333ea', '#0f172a'];
+        const ROOF_IDS = ['roof-front', 'roof-right', 'roof-back', 'roof-left'];
+        const WALL_IDS = ['wall-front', 'wall-right', 'wall-back', 'wall-left'];
+
+        // -------------------- State --------------------
+        let state = { size: SIZES[0].id, style: STYLES[0].id, fabric: '#F0B44C', activePanel: 'roof-front' };
+
+        // -------------------- DOM 元素获取 --------------------
+        const $ = (s, el = document) => el.querySelector(s);
+        const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+        const stageContainer = $('#stage-container');
+        const canvas = $('#stage');
+
+        // -------------------- Three.js 初始化 --------------------
+        let scene, camera, renderer, controls, raycaster, mouse;
+        let tentModel, activePanelOutline;
+
+        function initThree() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0xf8fafc);
+
+            const containerRect = stageContainer.getBoundingClientRect();
+            camera = new THREE.PerspectiveCamera(50, containerRect.width / containerRect.height, 0.1, 1000);
+            camera.position.set(5, 4, 8);
+            camera.lookAt(0, 0, 0);
+
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, preserveDrawingBuffer: true });
+            renderer.setSize(containerRect.width, containerRect.height);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.shadowMap.enabled = true;
+
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+            scene.add(ambientLight);
+            const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+            directionalLight.position.set(5, 10, 7);
+            directionalLight.castShadow = true;
+            scene.add(directionalLight);
+
+            const groundGeo = new THREE.PlaneGeometry(20, 20);
+            const groundMat = new THREE.ShadowMaterial({ opacity: 0.2 });
+            const ground = new THREE.Mesh(groundGeo, groundMat);
+            ground.rotation.x = -Math.PI / 2;
+            ground.position.y = -1.5;
+            ground.receiveShadow = true;
+            scene.add(ground);
+
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.target.set(0, 0, 0);
+
+            raycaster = new THREE.Raycaster();
+            mouse = new THREE.Vector2();
+
+            createPlaceholderTent();
+
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            window.addEventListener('resize', onWindowResize);
+            canvas.addEventListener('click', onCanvasClick);
+        }
+
+        function onWindowResize() {
+            const containerRect = stageContainer.getBoundingClientRect();
+            camera.aspect = containerRect.width / containerRect.height;
+            camera.updateProjectionMatrix();
+            renderer.setSize(containerRect.width, containerRect.height);
+        }
+
+        // -------------------- 核心：创建占位符帐篷模型 --------------------
+        function createPlaceholderTent() {
+            tentModel = new THREE.Group();
+            tentModel.position.y = -0.1;
+            const defaultMaterial = () => new THREE.MeshStandardMaterial({
+                color: state.fabric,
+                side: THREE.DoubleSide,
+                metalness: 0.1,
+                roughness: 0.6
+            });
+
+            const roofY = 1.5, roofSize = 2.5;
+            const createRoofPanel = (name, rotationY) => {
+                const geo = new THREE.BufferGeometry();
+                const vertices = new Float32Array([0.0, roofY, 0.0, -roofSize, 0.0, -roofSize, roofSize, 0.0, -roofSize]);
+                geo.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+                geo.computeVertexNormals();
+                const mesh = new THREE.Mesh(geo, defaultMaterial());
+                mesh.name = name;
+                mesh.rotation.y = rotationY;
+                mesh.castShadow = true;
+                return mesh;
+            };
+            tentModel.add(createRoofPanel('roof-front', 0));
+            tentModel.add(createRoofPanel('roof-right', Math.PI / 2));
+            tentModel.add(createRoofPanel('roof-back', Math.PI));
+            tentModel.add(createRoofPanel('roof-left', -Math.PI / 2));
+
+            const wallHeight = 1.5;
+            const createWallPanel = (name, position, rotationY) => {
+                const geo = new THREE.PlaneGeometry(roofSize * 2, wallHeight);
+                const mesh = new THREE.Mesh(geo, defaultMaterial());
+                mesh.name = name;
+                mesh.position.copy(position);
+                mesh.rotation.y = rotationY;
+                mesh.visible = false;
+                mesh.castShadow = true;
+                return mesh;
+            }
+            tentModel.add(createWallPanel('wall-front', new THREE.Vector3(0, -wallHeight / 2, -roofSize), 0));
+            tentModel.add(createWallPanel('wall-right', new THREE.Vector3(roofSize, -wallHeight / 2, 0), Math.PI / 2));
+            tentModel.add(createWallPanel('wall-back', new THREE.Vector3(0, -wallHeight / 2, roofSize), Math.PI));
+            tentModel.add(createWallPanel('wall-left', new THREE.Vector3(-roofSize, -wallHeight / 2, 0), -Math.PI / 2));
+
+            scene.add(tentModel);
+            updateModelVisibility();
+            updateActivePanelOutline();
+        }
+
+        // -------------------- 连接 UI 和 3D 场景 --------------------
+        function updateFabricColor(targetPanel, newColorValue) {
+            const color = new THREE.Color(newColorValue);
+            const targetMesh = tentModel.children.find(m => m.name === targetPanel);
+            if (targetMesh) {
+                targetMesh.material.color.set(color);
+            }
+        }
+
+        function updateModelVisibility() {
+            if (!tentModel) return;
+            const s = state.style;
+            const wallVisibility = {
+                'wall-front': ['threeWallsPVC', 'threeWallsTwoWindows', 'fourWallsRollDoor'].includes(s),
+                'wall-right': ['backTwoSides', 'backTwoHalfSides', 'threeWallsPVC', 'threeWallsTwoWindows', 'fourWallsRollDoor'].includes(s),
+                'wall-back': ['backWall', 'backTwoSides', 'backTwoHalfSides', 'fourWallsRollDoor'].includes(s),
+                'wall-left': ['backTwoSides', 'backTwoHalfSides', 'threeWallsPVC', 'threeWallsTwoWindows', 'fourWallsRollDoor'].includes(s),
+            };
+            tentModel.children.forEach(mesh => {
+                if (WALL_IDS.includes(mesh.name)) {
+                    mesh.visible = wallVisibility[mesh.name] || false;
+                }
+            });
+            // 如果当前激活的面被隐藏了，则默认激活 roof-front
+            const activeMesh = tentModel.children.find(m => m.name === state.activePanel);
+            if (activeMesh && !activeMesh.visible) {
+                setActivePanel('roof-front');
+            }
+        }
+
+        function updateActivePanelOutline() {
+            if (activePanelOutline) scene.remove(activePanelOutline);
+
+            const targetMesh = tentModel.children.find(m => m.name === state.activePanel);
+            if (targetMesh && targetMesh.visible) {
+                const edges = new THREE.EdgesGeometry(targetMesh.geometry);
+                activePanelOutline = new THREE.LineSegments(edges, new THREE.LineBasicMaterial({ color: 0x0ea5e9, linewidth: 4 }));
+                activePanelOutline.position.copy(targetMesh.position);
+                activePanelOutline.rotation.copy(targetMesh.rotation);
+                activePanelOutline.scale.copy(targetMesh.scale);
+                scene.add(activePanelOutline);
+            }
+        }
+
+        function onCanvasClick(event) {
+            const rect = renderer.domElement.getBoundingClientRect();
+            mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+            mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+            raycaster.setFromCamera(mouse, camera);
+
+            const intersects = raycaster.intersectObjects(tentModel.children);
+
+            if (intersects.length > 0) {
+                const clickedObject = intersects[0].object;
+                if (clickedObject.visible) {
+                    setActivePanel(clickedObject.name);
+                }
+            }
+        }
+
+        function setActivePanel(panelName) {
+            state.activePanel = panelName;
+            updateActiveName();
+            refreshPanelGrid();
+            updateActivePanelOutline();
+        }
+
+        // -------------------- 初始化右侧控制面板 --------------------
+        function initControls() {
+            const sg = $('#styleGrid');
+            sg.innerHTML = STYLES.map(s => `<button class="panelBtn" data-id="${s.id}"><div style='font-size:12px'>${s.name}</div></button>`).join('');
+            sg.addEventListener('click', e => {
+                const b = e.target.closest('button');
+                if (!b) return;
+                state.style = b.dataset.id;
+                refreshStyleActive();
+                updateModelVisibility();
+                updateActivePanelOutline();
+            });
+            refreshStyleActive();
+
+            const zg = $('#sizeGrid');
+            zg.innerHTML = SIZES.map(z => `<button class="panelBtn" data-id="${z.id}">${z.label}</button>`).join('');
+            zg.addEventListener('click', e => {
+                const b = e.target.closest('button');
+                if (!b) return;
+                state.size = b.dataset.id;
+                refreshSizeActive();
+                const scale = state.size === '2x2' ? 0.8 : (state.size === '4x4' ? 1.2 : 1.0);
+                tentModel.scale.set(scale, scale, scale);
+            });
+            refreshSizeActive();
+
+            const cr = $('#colorRow');
+            cr.innerHTML = COLOR_SWATCHES.map(c => `<span class='swatch' title='${c}' data-c='${c}' style='background:${c}'></span>`).join('');
+            cr.addEventListener('click', e => {
+                const s = e.target.closest('.swatch');
+                if (!s) return;
+                state.fabric = s.dataset.c;
+                $('#colorPick').value = state.fabric;
+                updateFabricColor(state.activePanel, state.fabric);
+            });
+            const cp = $('#colorPick');
+            cp.value = state.fabric;
+            cp.addEventListener('input', () => {
+                state.fabric = cp.value;
+                updateFabricColor(state.activePanel, state.fabric);
+            });
+
+            $('#viewSel').addEventListener('change', e => {
+                const view = e.target.value;
+                switch (view) {
+                    case 'iso': camera.position.set(5, 4, 8); break;
+                    case 'front': camera.position.set(0, 1, 10); break;
+                    case 'right': camera.position.set(10, 1, 0); break;
+                }
+                controls.target.set(0, 0, 0);
+            });
+
+            updateActiveName();
+            refreshPanelGrid();
+        }
+
+        // -------------------- Helper 函数 --------------------
+        function refreshStyleActive() { $$('#styleGrid .panelBtn').forEach(b => b.classList.toggle('active', b.dataset.id === state.style)); }
+        function refreshSizeActive() { $$('#sizeGrid .panelBtn').forEach(b => b.classList.toggle('active', b.dataset.id === state.size)); }
+        function updateActiveName() { $('#activePanelName').textContent = state.activePanel; }
+        function refreshPanelGrid() {
+            const panels = [...ROOF_IDS, ...WALL_IDS];
+            const grid = $('#panelGrid');
+            grid.innerHTML = panels.map(p => `<button class='panelBtn ${state.activePanel === p ? 'active' : ''}' data-p='${p}'>${p}</button>`).join('');
+            grid.onclick = (e) => {
+                const b = e.target.closest('button');
+                if (!b) return;
+                setActivePanel(b.dataset.p);
+            };
+        }
+
+        // -------------------- 程序入口 --------------------
+        initThree();
+        initControls();
+    </script>
+</body>
+
+</html>

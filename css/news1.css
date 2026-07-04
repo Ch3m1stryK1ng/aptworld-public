@@ -1,0 +1,416 @@
+/* ============= News Section Wrapper ============= */
+
+.news-flow-section {
+    background-color: #ffffff;
+    padding: 30px 1rem;
+    position: relative;
+    overflow: hidden;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.news-flow-section .container {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/* ============= Header ============= */
+
+.section-header-flow {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 25px;
+}
+
+.section-header-flow h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #0a3d62;
+    margin: 0 0 5px 0;
+}
+
+.section-header-flow .subtitle {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+    color: #718096;
+    margin: 0;
+}
+
+/* 左右箭头按钮 */
+
+.news-nav {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-arrow {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    color: #555;
+}
+
+.nav-arrow svg {
+    width: 22px;
+    height: 22px;
+}
+
+.nav-arrow:hover {
+    background-color: #096dd9;
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+/* ============= Scroll Container ============= */
+
+.news-scroll-container {
+    display: flex;
+    gap: 24px;
+    padding: 10px 2px 16px;
+    margin: 0 -2px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* 避免竖向滚动条挡边框 */
+    scroll-snap-type: x mandatory;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.news-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* ============= News Card ============= */
+
+.news-card-flow {
+    position: relative;
+    flex: 0 0 350px;
+    scroll-snap-align: start;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    --border-w: 2px;
+    /* 动画边框宽度 */
+}
+
+/* card 内所有实际内容：放在中间层 */
+.news-card-flow>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* ====== 边框动画（重点） ======
+ * 使用 4 条 linear-gradient 作为上/右/下/左边线。
+ * 利用 background-size 按顺时针依次从 0 -> 满，圆角由 border-radius 裁切，看起来是连贯弧线。
+ * 中间区域始终透明，不会盖住内容。
+ */
+.news-card-flow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 3;
+    opacity: 0;
+
+    background-repeat: no-repeat;
+    background-image:
+        linear-gradient(to right, #0050b3, #00c3ff),
+        /* top */
+        linear-gradient(to bottom, #00c3ff, #40c057),
+        /* right */
+        linear-gradient(to left, #40c057, #ff4d4f),
+        /* bottom */
+        linear-gradient(to top, #ff4d4f, #0050b3);
+    /* left */
+
+    background-position:
+        left top,
+        /* top: 从左上到右上 */
+        right top,
+        /* right: 从右上到右下 */
+        right bottom,
+        /* bottom: 从右下到左下 */
+        left bottom;
+    /* left: 从左下到左上 */
+
+    /* 初始长度全为 0，看不到线 */
+    background-size:
+        0 var(--border-w),
+        /* top */
+        var(--border-w) 0,
+        /* right */
+        0 var(--border-w),
+        /* bottom */
+        var(--border-w) 0;
+    /* left */
+
+    transition: opacity 0.12s ease-out;
+}
+
+/* hover：启动“画线一圈”的动画 */
+.news-card-flow:hover::before {
+    opacity: 1;
+    animation: news-border-draw 0.5s linear forwards;
+}
+
+/* hover：同时轻微抬起和加深阴影 */
+.news-card-flow:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+
+/* 顺时针动画：上 -> 右 -> 下 -> 左
+ * 圆角由 border-radius 裁切，这时候线会顺着弧走。
+ */
+@keyframes news-border-draw {
+    0% {
+        background-size:
+            0 var(--border-w),
+            var(--border-w) 0,
+            0 var(--border-w),
+            var(--border-w) 0;
+    }
+
+    25% {
+        /* 只画完整 top 边 */
+        background-size:
+            100% var(--border-w),
+            var(--border-w) 0,
+            0 var(--border-w),
+            var(--border-w) 0;
+    }
+
+    50% {
+        /* top + 右边画到最底 */
+        background-size:
+            100% var(--border-w),
+            var(--border-w) 100%,
+            0 var(--border-w),
+            var(--border-w) 0;
+    }
+
+    75% {
+        /* 再加完整 bottom */
+        background-size:
+            100% var(--border-w),
+            var(--border-w) 100%,
+            100% var(--border-w),
+            var(--border-w) 0;
+    }
+
+    100% {
+        /* 最后把左边补满，形成闭合一圈 */
+        background-size:
+            100% var(--border-w),
+            var(--border-w) 100%,
+            100% var(--border-w),
+            var(--border-w) 100%;
+    }
+}
+
+/* ============= Card 内容 ============= */
+
+.flow-card-image {
+    width: 100%;
+    height: 260px;
+    position: relative;
+    overflow: hidden;
+}
+
+.flow-card-image iframe,
+.flow-card-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+}
+
+/* Twitter blockquote 的默认 margin 去掉 */
+.flow-card-image .twitter-tweet {
+    margin: 0 !important;
+    border: none !important;
+    width: 100% !important;
+}
+
+/* 文本内容 */
+
+.flow-card-content {
+    padding: 18px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.content-main {
+    flex-grow: 1;
+}
+
+.flow-card-title {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin: 8px 0 6px;
+    line-height: 1.4;
+    color: #1a202c;
+}
+
+.card-excerpt {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.flow-card-date {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+/* footer 区域 */
+
+.flow-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: 18px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.learn-more-link {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #0050b3;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.learn-more-link:hover {
+    color: #ff2600;
+}
+
+.social-share {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-share a {
+    color: #a0aec0;
+    transition: color 0.2s ease;
+    display: inline-flex;
+}
+
+.social-share a:hover {
+    color: #1a202c;
+}
+
+/* ============= News Category Tags ============= */
+
+.news-category {
+    display: inline-block;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    width: fit-content;
+}
+
+.tag-company {
+    background-color: #e6f4ff;
+    color: #096dd9;
+}
+
+.tag-industry {
+    background-color: #e6f6e6;
+    color: #389e0d;
+}
+
+.tag-event {
+    background-color: #fff0e6;
+    color: #d46b08;
+}
+
+.tag-product {
+    background-color: #e6fffb;
+    color: #08979c;
+}
+
+/* ============= Footer Button ============= */
+
+.section-footer-flow {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.btn-main {
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    color: #eaf1ff;
+    text-decoration: none;
+    background: linear-gradient(135deg, #003556, #007acc);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .24);
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.btn-main:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 26px rgba(0, 0, 0, .32);
+    background: linear-gradient(135deg, #007acc, #00c3ff);
+}
+
+/* ============= Responsive ============= */
+
+@media (max-width: 768px) {
+    .section-header-flow {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .news-card-flow {
+        flex: 0 0 88%;
+    }
+
+    .news-nav {
+        display: none;
+        /* 移动端直接手势滑动 */
+    }
+}
+
+@media (max-width: 420px) {
+    .news-card-flow {
+        flex: 0 0 92%;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .news-card-flow:hover {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+    }
+}

@@ -1,0 +1,3520 @@
+[
+  {
+    "id": "tb-001",
+    "sku": "TB-1008",
+    "name": "Taper Bushing 1008",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "1008",
+    "dimension_A": 35.2,
+    "dimension_B": 22.3,
+    "dimension_D": 33.73,
+    "dbmax": 25.0,
+    "screw_size": "1/4\" x 1/2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 1.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.11,
+    "torque_with_key": 4.8,
+    "torque_without_key": 5.6,
+    "transmittable_torque": 136.0,
+    "coverImage": "../../../images/products/taper_bushing/tb1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb1-1.webp",
+      "../../../images/products/taper_bushing/tb1-2.webp",
+      "../../../images/products/taper_bushing/tb1-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-002",
+    "sku": "TB-1108",
+    "name": "Taper Bushing 1108",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "1108",
+    "dimension_A": 38.38,
+    "dimension_B": 22.3,
+    "dimension_D": 36.92,
+    "dbmax": 28.0,
+    "screw_size": "1/4\" x 1/2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.11,
+    "torque_with_key": 4.8,
+    "torque_without_key": 5.6,
+    "transmittable_torque": 147.0,
+    "coverImage": "../../../images/products/taper_bushing/tb2-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb2-1.webp",
+      "../../../images/products/taper_bushing/tb2-2.webp",
+      "../../../images/products/taper_bushing/tb2-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-003",
+    "sku": "TB-1210",
+    "name": "Taper Bushing 1210",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "1210",
+    "dimension_A": 47.62,
+    "dimension_B": 25.4,
+    "dimension_D": 44.44,
+    "dbmax": 32.0,
+    "screw_size": "3/8\" x 5/8\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.22,
+    "torque_with_key": 17.0,
+    "torque_without_key": 20.0,
+    "transmittable_torque": 407.0,
+    "coverImage": "../../../images/products/taper_bushing/tb3-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb3-1.webp",
+      "../../../images/products/taper_bushing/tb3-2.webp",
+      "../../../images/products/taper_bushing/tb3-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-004",
+    "sku": "TB-1215",
+    "name": "Taper Bushing 1215",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "1215",
+    "dimension_A": 47.62,
+    "dimension_B": 38.1,
+    "dimension_D": 44.44,
+    "dbmax": 32.0,
+    "screw_size": "3/8\" x 5/8\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.33,
+    "torque_with_key": 17.0,
+    "torque_without_key": 20.0,
+    "transmittable_torque": 407.0,
+    "coverImage": "../../../images/products/taper_bushing/tb4-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb4-1.webp",
+      "../../../images/products/taper_bushing/tb4-2.webp",
+      "../../../images/products/taper_bushing/tb4-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-005",
+    "sku": "TB-1310",
+    "name": "Taper Bushing 1310",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "1310",
+    "dimension_A": 50.8,
+    "dimension_B": 25.4,
+    "dimension_D": 47.63,
+    "dbmax": 35.0,
+    "screw_size": "3/8\" x 5/8\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.28,
+    "torque_with_key": 17.0,
+    "torque_without_key": 20.0,
+    "transmittable_torque": 435.0,
+    "coverImage": "../../../images/products/taper_bushing/tb5-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb5-1.webp",
+      "../../../images/products/taper_bushing/tb5-2.webp",
+      "../../../images/products/taper_bushing/tb5-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-006",
+    "sku": "TB-1610",
+    "name": "Taper Bushing 1610",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "1610",
+    "dimension_A": 57.15,
+    "dimension_B": 25.4,
+    "dimension_D": 53.97,
+    "dbmax": 42.0,
+    "screw_size": "3/8\" x 5/8\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.36,
+    "torque_with_key": 17.0,
+    "torque_without_key": 20.0,
+    "transmittable_torque": 486.0,
+    "coverImage": "../../../images/products/taper_bushing/tb6-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb6-1.webp",
+      "../../../images/products/taper_bushing/tb6-2.webp",
+      "../../../images/products/taper_bushing/tb6-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-007",
+    "sku": "TB-1615",
+    "name": "Taper Bushing 1615",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "1615",
+    "dimension_A": 57.15,
+    "dimension_B": 38.1,
+    "dimension_D": 53.97,
+    "dbmax": 42.0,
+    "screw_size": "3/8\" x 5/8\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.53,
+    "torque_with_key": 17.0,
+    "torque_without_key": 20.0,
+    "transmittable_torque": 486.0,
+    "coverImage": "../../../images/products/taper_bushing/tb7-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb7-1.webp",
+      "../../../images/products/taper_bushing/tb7-2.webp",
+      "../../../images/products/taper_bushing/tb7-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-008",
+    "sku": "TB-2012",
+    "name": "Taper Bushing 2012",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "2012",
+    "dimension_A": 69.85,
+    "dimension_B": 31.8,
+    "dimension_D": 66.68,
+    "dbmax": 50.0,
+    "screw_size": "7/16\" x 7/8\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 0.72,
+    "torque_with_key": 26.0,
+    "torque_without_key": 31.0,
+    "transmittable_torque": 808.0,
+    "coverImage": "../../../images/products/taper_bushing/tb8-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb8-1.webp",
+      "../../../images/products/taper_bushing/tb8-2.webp",
+      "../../../images/products/taper_bushing/tb8-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-009",
+    "sku": "TB-2517",
+    "name": "Taper Bushing 2517",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "2517",
+    "dimension_A": 85.73,
+    "dimension_B": 44.5,
+    "dimension_D": 82.55,
+    "dbmax": 65.0,
+    "screw_size": "1/2\" x 1\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 2.8,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 1.54,
+    "torque_with_key": 41.0,
+    "torque_without_key": 48.0,
+    "transmittable_torque": 1310.0,
+    "coverImage": "../../../images/products/taper_bushing/tb9-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb9-1.webp",
+      "../../../images/products/taper_bushing/tb9-2.webp",
+      "../../../images/products/taper_bushing/tb9-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-010",
+    "sku": "TB-3020",
+    "name": "Taper Bushing 3020",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "3020",
+    "dimension_A": 107.96,
+    "dimension_B": 50.8,
+    "dimension_D": 101.6,
+    "dbmax": 80.0,
+    "screw_size": "5/8\" x 1 1/4\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 3.3,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 2.53,
+    "torque_with_key": 77.0,
+    "torque_without_key": 90.0,
+    "transmittable_torque": 2710.0,
+    "coverImage": "../../../images/products/taper_bushing/tb10-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb10-1.webp",
+      "../../../images/products/taper_bushing/tb10-2.webp",
+      "../../../images/products/taper_bushing/tb10-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-011",
+    "sku": "TB-3030",
+    "name": "Taper Bushing 3030",
+    "series": "TB",
+    "type": "1",
+    "bush_size": "3030",
+    "dimension_A": 107.96,
+    "dimension_B": 76.2,
+    "dimension_D": 101.6,
+    "dbmax": 80.0,
+    "screw_size": "5/8\" x 1 1/4\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 3.3,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 3.67,
+    "torque_with_key": 77.0,
+    "torque_without_key": 90.0,
+    "transmittable_torque": 2710.0,
+    "coverImage": "../../../images/products/taper_bushing/tb11-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb11-1.webp",
+      "../../../images/products/taper_bushing/tb11-2.webp",
+      "../../../images/products/taper_bushing/tb11-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-012",
+    "sku": "TB-3525",
+    "name": "Taper Bushing 3525",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "3525",
+    "dimension_A": 127.0,
+    "dimension_B": 63.5,
+    "dimension_D": 122.68,
+    "dbmax": 100.0,
+    "screw_size": "1/2\" x 1 1/2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 3.3,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 4.54,
+    "torque_with_key": 95.0,
+    "torque_without_key": 112.0,
+    "transmittable_torque": 5060.0,
+    "coverImage": "../../../images/products/taper_bushing/tb12-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb12-1.webp",
+      "../../../images/products/taper_bushing/tb12-2.webp",
+      "../../../images/products/taper_bushing/tb12-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-013",
+    "sku": "TB-3535",
+    "name": "Taper Bushing 3535",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "3535",
+    "dimension_A": 127.0,
+    "dimension_B": 89.0,
+    "dimension_D": 122.68,
+    "dbmax": 95.0,
+    "screw_size": "1/2\" x 1 1/2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 3.3,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 6.24,
+    "torque_with_key": 95.0,
+    "torque_without_key": 112.0,
+    "transmittable_torque": 5060.0,
+    "coverImage": "../../../images/products/taper_bushing/tb13-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb13-1.webp",
+      "../../../images/products/taper_bushing/tb13-2.webp",
+      "../../../images/products/taper_bushing/tb13-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-014",
+    "sku": "TB-4030",
+    "name": "Taper Bushing 4030",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "4030",
+    "dimension_A": 146.05,
+    "dimension_B": 76.2,
+    "dimension_D": 140.7,
+    "dbmax": 115.0,
+    "screw_size": "5/8\" x 1 3/4\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 4.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 6.29,
+    "torque_with_key": 145.0,
+    "torque_without_key": 170.0,
+    "transmittable_torque": 8740.0,
+    "coverImage": "../../../images/products/taper_bushing/tb14-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb14-1.webp",
+      "../../../images/products/taper_bushing/tb14-2.webp",
+      "../../../images/products/taper_bushing/tb14-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-015",
+    "sku": "TB-4040",
+    "name": "Taper Bushing 4040",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "4040",
+    "dimension_A": 146.05,
+    "dimension_B": 101.6,
+    "dimension_D": 140.72,
+    "dbmax": 110.0,
+    "screw_size": "5/8\" x 1 3/4\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 4.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 8.19,
+    "torque_with_key": 145.0,
+    "torque_without_key": 170.0,
+    "transmittable_torque": 8740.0,
+    "coverImage": "../../../images/products/taper_bushing/tb15-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb15-1.webp",
+      "../../../images/products/taper_bushing/tb15-2.webp",
+      "../../../images/products/taper_bushing/tb15-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-016",
+    "sku": "TB-4535",
+    "name": "Taper Bushing 4535",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "4535",
+    "dimension_A": 161.93,
+    "dimension_B": 88.9,
+    "dimension_D": 155.7,
+    "dbmax": 125.0,
+    "screw_size": "3/4\" x 2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 4.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 9.38,
+    "torque_with_key": 163.0,
+    "torque_without_key": 192.0,
+    "transmittable_torque": 12400.0,
+    "coverImage": "../../../images/products/taper_bushing/tb16-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb16-1.webp",
+      "../../../images/products/taper_bushing/tb16-2.webp",
+      "../../../images/products/taper_bushing/tb16-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-017",
+    "sku": "TB-4545",
+    "name": "Taper Bushing 4545",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "4545",
+    "dimension_A": 161.93,
+    "dimension_B": 114.3,
+    "dimension_D": 155.7,
+    "dbmax": 120.0,
+    "screw_size": "3/4\" x 2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 5.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 10.45,
+    "torque_with_key": 163.0,
+    "torque_without_key": 192.0,
+    "transmittable_torque": 12400.0,
+    "coverImage": "../../../images/products/taper_bushing/tb17-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb17-1.webp",
+      "../../../images/products/taper_bushing/tb17-2.webp",
+      "../../../images/products/taper_bushing/tb17-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-018",
+    "sku": "TB-5040",
+    "name": "Taper Bushing 5040",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "5040",
+    "dimension_A": 177.8,
+    "dimension_B": 101.6,
+    "dimension_D": 170.69,
+    "dbmax": 130.0,
+    "screw_size": "7/8\" x 2 1/4\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 5.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 11.06,
+    "torque_with_key": 230.0,
+    "torque_without_key": 271.0,
+    "transmittable_torque": 14200.0,
+    "coverImage": "../../../images/products/taper_bushing/tb1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb1-1.webp",
+      "../../../images/products/taper_bushing/tb1-2.webp",
+      "../../../images/products/taper_bushing/tb1-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-019",
+    "sku": "TB-5050",
+    "name": "Taper Bushing 5050",
+    "series": "TB",
+    "type": "2",
+    "bush_size": "5050",
+    "dimension_A": 177.8,
+    "dimension_B": 127.0,
+    "dimension_D": 170.69,
+    "dbmax": 130.0,
+    "screw_size": "7/8\" x 2 1/4\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 5.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 13.54,
+    "torque_with_key": 230.0,
+    "torque_without_key": 271.0,
+    "transmittable_torque": 14200.0,
+    "coverImage": "../../../images/products/taper_bushing/tb18-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb18-1.webp",
+      "../../../images/products/taper_bushing/tb18-2.webp",
+      "../../../images/products/taper_bushing/tb18-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-020",
+    "sku": "TB-6050",
+    "name": "Taper Bushing 6050",
+    "series": "TB",
+    "type": "3",
+    "bush_size": "6050",
+    "dimension_A": 234.95,
+    "dimension_B": 127.0,
+    "dimension_D": 228.6,
+    "dbmax": 150.0,
+    "screw_size": "1 1/4\" x 3 1/2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 6.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 28.67,
+    "torque_with_key": 792.0,
+    "torque_without_key": 880.0,
+    "transmittable_torque": 31870.0,
+    "coverImage": "../../../images/products/taper_bushing/tb1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb1-1.webp",
+      "../../../images/products/taper_bushing/tb1-2.webp",
+      "../../../images/products/taper_bushing/tb1-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-021",
+    "sku": "TB-7060",
+    "name": "Taper Bushing 7060",
+    "series": "TB",
+    "type": "4",
+    "bush_size": "7060",
+    "dimension_A": 260.35,
+    "dimension_B": 152.4,
+    "dimension_D": 254.0,
+    "dbmax": 180.0,
+    "screw_size": "1 1/4\" x 3 1/2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 7.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 38.8,
+    "torque_with_key": 792.0,
+    "torque_without_key": 880.0,
+    "transmittable_torque": 47015.0,
+    "coverImage": "../../../images/products/taper_bushing/tb1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb1-1.webp",
+      "../../../images/products/taper_bushing/tb1-2.webp",
+      "../../../images/products/taper_bushing/tb1-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "tb-022",
+    "sku": "TB-8065",
+    "name": "Taper Bushing 8065",
+    "series": "TB",
+    "type": "4",
+    "bush_size": "8065",
+    "dimension_A": 285.75,
+    "dimension_B": 165.1,
+    "dimension_D": 279.4,
+    "dbmax": 200.0,
+    "screw_size": "1 1/4\" x 3 1/2\"",
+    "num_screws": null,
+    "wrench_size": null,
+    "keyway_tolerance": "JS9",
+    "keyway_norm": "acc. to DIN 6885 Part 1",
+    "T1": 8.4,
+    "T2": null,
+    "material": "EN-GJL 200 - DIN EN 1561",
+    "surface_treatment": "磷化",
+    "treatment_spec": "ISO 254",
+    "weight": 49.82,
+    "torque_with_key": 792.0,
+    "torque_without_key": 880.0,
+    "transmittable_torque": 51535.0,
+    "coverImage": "../../../images/products/taper_bushing/tb1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/tb1-1.webp",
+      "../../../images/products/taper_bushing/tb1-2.webp",
+      "../../../images/products/taper_bushing/tb1-3.webp"
+    ],
+    "features": [
+      "高精度制造",
+      "安装拆卸方便",
+      "可靠的动力传输"
+    ],
+    "applications": [
+      "通用机械",
+      "输送系统",
+      "工业设备"
+    ],
+    "categories": [
+      "taper-bushing",
+      "tb-all"
+    ],
+    "createdAt": "2026-01-22"
+  },
+  {
+    "id": "qd-001",
+    "sku": "QD-JA",
+    "name": "QD Bushing JA",
+    "series": "QD",
+    "type": "JA",
+    "bush_size": "JA",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-ja"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-002",
+    "sku": "QD-SH",
+    "name": "QD Bushing SH",
+    "series": "QD",
+    "type": "SH",
+    "bush_size": "SH",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sh"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-003",
+    "sku": "QD-SDS",
+    "name": "QD Bushing SDS",
+    "series": "QD",
+    "type": "SDS",
+    "bush_size": "SDS",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sds"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-004",
+    "sku": "QD-SD",
+    "name": "QD Bushing SD",
+    "series": "QD",
+    "type": "SD",
+    "bush_size": "SD",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sd"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-005",
+    "sku": "QD-SK",
+    "name": "QD Bushing SK",
+    "series": "QD",
+    "type": "SK",
+    "bush_size": "SK",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sk"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-006",
+    "sku": "QD-SF",
+    "name": "QD Bushing SF",
+    "series": "QD",
+    "type": "SF",
+    "bush_size": "SF",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sf"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-007",
+    "sku": "QD-E",
+    "name": "QD Bushing E",
+    "series": "QD",
+    "type": "E",
+    "bush_size": "E",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-e"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-008",
+    "sku": "QD-F",
+    "name": "QD Bushing F",
+    "series": "QD",
+    "type": "F",
+    "bush_size": "F",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-f"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-009",
+    "sku": "QD-J",
+    "name": "QD Bushing J",
+    "series": "QD",
+    "type": "J",
+    "bush_size": "J",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-j"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-010",
+    "sku": "QD-M",
+    "name": "QD Bushing M",
+    "series": "QD",
+    "type": "M",
+    "bush_size": "M",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-m"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-011",
+    "sku": "QD-N",
+    "name": "QD Bushing N",
+    "series": "QD",
+    "type": "N",
+    "bush_size": "N",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-n"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-012",
+    "sku": "QD-P",
+    "name": "QD Bushing P",
+    "series": "QD",
+    "type": "P",
+    "bush_size": "P",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-p"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-013",
+    "sku": "QD-W",
+    "name": "QD Bushing W",
+    "series": "QD",
+    "type": "W",
+    "bush_size": "W",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-w"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-014",
+    "sku": "QD-S",
+    "name": "QD Bushing S",
+    "series": "QD",
+    "type": "S",
+    "bush_size": "S",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-s"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-007",
+    "sku": "QD-JA",
+    "name": "QD Bushing JA",
+    "series": "QD",
+    "type": "JA",
+    "bush_size": "JA",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-ja"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-010",
+    "sku": "QD-SH",
+    "name": "QD Bushing SH",
+    "series": "QD",
+    "type": "SH",
+    "bush_size": "SH",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sh"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-012",
+    "sku": "QD-SDS",
+    "name": "QD Bushing SDS",
+    "series": "QD",
+    "type": "SDS",
+    "bush_size": "SDS",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sds"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-013",
+    "sku": "QD-SD",
+    "name": "QD Bushing SD",
+    "series": "QD",
+    "type": "SD",
+    "bush_size": "SD",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sd"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-015",
+    "sku": "QD-SK",
+    "name": "QD Bushing SK",
+    "series": "QD",
+    "type": "SK",
+    "bush_size": "SK",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sk"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-017",
+    "sku": "QD-SF",
+    "name": "QD Bushing SF",
+    "series": "QD",
+    "type": "SF",
+    "bush_size": "SF",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sf"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-020",
+    "sku": "QD-E",
+    "name": "QD Bushing E",
+    "series": "QD",
+    "type": "E",
+    "bush_size": "E",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-e"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-021",
+    "sku": "QD-F",
+    "name": "QD Bushing F",
+    "series": "QD",
+    "type": "F",
+    "bush_size": "F",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-f"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-022",
+    "sku": "QD-J",
+    "name": "QD Bushing J",
+    "series": "QD",
+    "type": "J",
+    "bush_size": "J",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-j"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-023",
+    "sku": "QD-M",
+    "name": "QD Bushing M",
+    "series": "QD",
+    "type": "M",
+    "bush_size": "M",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-m"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-024",
+    "sku": "QD-N",
+    "name": "QD Bushing N",
+    "series": "QD",
+    "type": "N",
+    "bush_size": "N",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-n"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-025",
+    "sku": "QD-P",
+    "name": "QD Bushing P",
+    "series": "QD",
+    "type": "P",
+    "bush_size": "P",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-p"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-026",
+    "sku": "QD-W",
+    "name": "QD Bushing W",
+    "series": "QD",
+    "type": "W",
+    "bush_size": "W",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dbmax": null,
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-w"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-001",
+    "sku": "QD-JA",
+    "name": "QD Bushing JA",
+    "series": "QD",
+    "type": "JA",
+    "bush_size": "JA",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".375\n .5\n .5\n .5\n .5",
+    "bore_range_max": "1\n1 .375\n1 .688\n1 .688\n2 .125",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-ja"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-002",
+    "sku": "QD-SH",
+    "name": "QD Bushing SH",
+    "series": "QD",
+    "type": "SH",
+    "bush_size": "SH",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".375\n .5\n .5\n .5\n .5",
+    "bore_range_max": "1\n1 .375\n1 .688\n1 .688\n2 .125",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sh"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-003",
+    "sku": "QD-SDS",
+    "name": "QD Bushing SDS",
+    "series": "QD",
+    "type": "SDS",
+    "bush_size": "SDS",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".375\n .5\n .5\n .5\n .5",
+    "bore_range_max": "1\n1 .375\n1 .688\n1 .688\n2 .125",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sds"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-004",
+    "sku": "QD-SD",
+    "name": "QD Bushing SD",
+    "series": "QD",
+    "type": "SD",
+    "bush_size": "SD",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".375\n .5\n .5\n .5\n .5",
+    "bore_range_max": "1\n1 .375\n1 .688\n1 .688\n2 .125",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sd"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-005",
+    "sku": "QD-SK",
+    "name": "QD Bushing SK",
+    "series": "QD",
+    "type": "SK",
+    "bush_size": "SK",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".375\n .5\n .5\n .5\n .5",
+    "bore_range_max": "1\n1 .375\n1 .688\n1 .688\n2 .125",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sk"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-006",
+    "sku": "QD-SF",
+    "name": "QD Bushing SF",
+    "series": "QD",
+    "type": "SF",
+    "bush_size": "SF",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".5\n .875\n1\n1 .438\n1 .938",
+    "bore_range_max": "2 .313\n2 .875\n3 .313\n3 .75\n4 .75",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sf"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-007",
+    "sku": "QD-E",
+    "name": "QD Bushing E",
+    "series": "QD",
+    "type": "E",
+    "bush_size": "E",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".5\n .875\n1\n1 .438\n1 .938",
+    "bore_range_max": "2 .313\n2 .875\n3 .313\n3 .75\n4 .75",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-e"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-008",
+    "sku": "QD-F",
+    "name": "QD Bushing F",
+    "series": "QD",
+    "type": "F",
+    "bush_size": "F",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".5\n .875\n1\n1 .438\n1 .938",
+    "bore_range_max": "2 .313\n2 .875\n3 .313\n3 .75\n4 .75",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-f"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-009",
+    "sku": "QD-J",
+    "name": "QD Bushing J",
+    "series": "QD",
+    "type": "J",
+    "bush_size": "J",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".5\n .875\n1\n1 .438\n1 .938",
+    "bore_range_max": "2 .313\n2 .875\n3 .313\n3 .75\n4 .75",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-j"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-010",
+    "sku": "QD-M",
+    "name": "QD Bushing M",
+    "series": "QD",
+    "type": "M",
+    "bush_size": "M",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": ".5\n .875\n1\n1 .438\n1 .938",
+    "bore_range_max": "2 .313\n2 .875\n3 .313\n3 .75\n4 .75",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-m"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-011",
+    "sku": "QD-N",
+    "name": "QD Bushing N",
+    "series": "QD",
+    "type": "N",
+    "bush_size": "N",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "2 .438\n2 .938\n4\n6",
+    "bore_range_max": "5 .125\n5 .938\n7 .5\n8 .25",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-n"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-012",
+    "sku": "QD-P",
+    "name": "QD Bushing P",
+    "series": "QD",
+    "type": "P",
+    "bush_size": "P",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "2 .438\n2 .938\n4\n6",
+    "bore_range_max": "5 .125\n5 .938\n7 .5\n8 .25",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-p"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-013",
+    "sku": "QD-W",
+    "name": "QD Bushing W",
+    "series": "QD",
+    "type": "W",
+    "bush_size": "W",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "2 .438\n2 .938\n4\n6",
+    "bore_range_max": "5 .125\n5 .938\n7 .5\n8 .25",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-w"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-014",
+    "sku": "QD-S",
+    "name": "QD Bushing S",
+    "series": "QD",
+    "type": "S",
+    "bush_size": "S",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "2 .438\n2 .938\n4\n6",
+    "bore_range_max": "5 .125\n5 .938\n7 .5\n8 .25",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-s"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-017",
+    "sku": "QD-JA",
+    "name": "QD Bushing JA",
+    "series": "QD",
+    "type": "JA",
+    "bush_size": "JA",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-ja"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-018",
+    "sku": "QD-SH",
+    "name": "QD Bushing SH",
+    "series": "QD",
+    "type": "SH",
+    "bush_size": "SH",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sh"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-019",
+    "sku": "QD-SDS",
+    "name": "QD Bushing SDS",
+    "series": "QD",
+    "type": "SDS",
+    "bush_size": "SDS",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sds"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-020",
+    "sku": "QD-SD",
+    "name": "QD Bushing SD",
+    "series": "QD",
+    "type": "SD",
+    "bush_size": "SD",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sd"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-021",
+    "sku": "QD-SK",
+    "name": "QD Bushing SK",
+    "series": "QD",
+    "type": "SK",
+    "bush_size": "SK",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sk"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-022",
+    "sku": "QD-SF",
+    "name": "QD Bushing SF",
+    "series": "QD",
+    "type": "SF",
+    "bush_size": "SF",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-sf"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-023",
+    "sku": "QD-E",
+    "name": "QD Bushing E",
+    "series": "QD",
+    "type": "E",
+    "bush_size": "E",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-e"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-024",
+    "sku": "QD-F",
+    "name": "QD Bushing F",
+    "series": "QD",
+    "type": "F",
+    "bush_size": "F",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-f"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-025",
+    "sku": "QD-J",
+    "name": "QD Bushing J",
+    "series": "QD",
+    "type": "J",
+    "bush_size": "J",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-j"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-026",
+    "sku": "QD-M",
+    "name": "QD Bushing M",
+    "series": "QD",
+    "type": "M",
+    "bush_size": "M",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-m"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-027",
+    "sku": "QD-N",
+    "name": "QD Bushing N",
+    "series": "QD",
+    "type": "N",
+    "bush_size": "N",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-n"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-028",
+    "sku": "QD-P",
+    "name": "QD Bushing P",
+    "series": "QD",
+    "type": "P",
+    "bush_size": "P",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-p"
+    ],
+    "createdAt": "2026-01-23"
+  },
+  {
+    "id": "qd-029",
+    "sku": "QD-W",
+    "name": "QD Bushing W",
+    "series": "QD",
+    "type": "W",
+    "bush_size": "W",
+    "bush_type": "QD",
+    "dimension_A": null,
+    "dimension_B": null,
+    "dimension_D": null,
+    "dimension_E": null,
+    "dimension_F": null,
+    "dimension_G": null,
+    "dimension_L": null,
+    "dbmax": null,
+    "bore_range_min": "nan",
+    "bore_range_max": "nan",
+    "material": "Steel",
+    "surface_treatment": "磷化",
+    "treatment_spec": null,
+    "weight": 0,
+    "torque_with_key": null,
+    "torque_without_key": null,
+    "transmittable_torque": null,
+    "coverImage": "../../../images/products/taper_bushing/qd1-1.webp",
+    "images": [
+      "../../../images/products/taper_bushing/qd1-1.webp",
+      "../../../images/products/taper_bushing/qd1-2.webp",
+      "../../../images/products/taper_bushing/qd1-3.webp"
+    ],
+    "features": [
+      "Quick Detachable design",
+      "安装拆卸方便",
+      "US standard compatibility",
+      "Flange mounting"
+    ],
+    "applications": [
+      "US standard sheaves",
+      "HVAC systems",
+      "Agricultural machinery",
+      "Industrial drives"
+    ],
+    "categories": [
+      "taper-bushing",
+      "qd-all",
+      "qd-w"
+    ],
+    "createdAt": "2026-01-23"
+  }
+]

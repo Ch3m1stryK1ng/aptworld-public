@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>按图定制传动件｜RFQ - Hebei Apollo Power Transmission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+
+        .input {
+            @apply w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-slate-900/10 focus:border-slate-400;
+        }
+
+        .pill {
+            @apply inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200;
+        }
+
+        .card {
+            @apply rounded-2xl border border-slate-200 bg-white p-4 shadow-sm;
+        }
+
+        .container {
+            @apply w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-900">
+
+    <!-- 顶部导航 -->
+    <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="container h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-slate-900 text-white grid place-content-center font-black">AP</div>
+                <div class="leading-tight">
+                    <p class="font-bold">Hebei Apollo Power Transmission</p>
+                    <p class="text-xs text-slate-500">Pulleys • Taper Bushes • Couplings • Sprockets</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+                <a class="hover:text-slate-900" href="#rfq">提交需求</a>
+                <a class="hover:text-slate-900" href="#steps">流程</a>
+                <a class="hover:text-slate-900" href="#cases">案例</a>
+                <a class="hover:text-slate-900" href="#downloads">资料下载</a>
+                <a class="hover:text-slate-900" href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700"></div>
+        <div class="relative container py-14 md:py-20 text-white">
+            <div class="max-w-3xl">
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">按图定制传动件｜7天打样 21天量产</h1>
+                <p class="mt-4 text-slate-300 md:text-lg">支持来图来样与逆向建模，验收按 <strong>ISO 4183</strong> / <strong>DIN
+                        6885</strong>，小批量起订。提供动平衡与材质报告，交付可追溯。</p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="pill">IT7 / H7 & DIN 6885</span>
+                    <span class="pill">24h 报价</span>
+                    <span class="pill">支持 NDA</span>
+                    <span class="pill">防锈包装 / 托盘</span>
+                </div>
+                <div class="mt-8 flex gap-3">
+                    <a href="#rfq"
+                        class="inline-flex items-center gap-2 bg-white text-slate-900 px-5 py-3 rounded-xl font-semibold shadow hover:shadow-md">提交
+                        RFQ</a>
+                    <a href="#downloads"
+                        class="inline-flex items-center gap-2 bg-transparent border border-white/30 px-5 py-3 rounded-xl font-semibold text-white hover:bg-white/10">下载资料</a>
+                </div>
+            </div>
+        </div>
+        <svg class="block w-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,80 L1440,0 L1440,80 Z" fill="#f8fafc" />
+        </svg>
+    </div>
+
+    <!-- 指标 -->
+    <section class="container py-10" id="stats">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">我们的交付承诺</h2>
+            <p class="text-slate-600 mt-2">用清晰的 SLA 和可量化指标让工程与采购安心</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">打样</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">≤ 7 天</p>
+                <p class="text-slate-500 text-xs mt-1">含常用材料与表处</p>
+            </div>
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">量产批次</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">≤ 21 天</p>
+                <p class="text-slate-500 text-xs mt-1">按里程碑跟踪</p>
+            </div>
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">尺寸合格率</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">&gt; 99.3%</p>
+                <p class="text-slate-500 text-xs mt-1">按关键尺寸 C=1.33</p>
+            </div>
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">准时交付率</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">&gt; 98%</p>
+                <p class="text-slate-500 text-xs mt-1">延误提供折扣</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RFQ 表单 -->
+    <section class="container py-10" id="rfq">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">提交定制需求（RFQ）</h2>
+            <p class="text-slate-600 mt-2">上传图纸或填写参数，工程师将进行 DFM 评审并在 24 小时内回复报价</p>
+        </div>
+
+        <form id="rfqForm" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- 联系方式 -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">联系方式</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <input class="input" name="company" placeholder="公司名称 *" required />
+                    <input class="input" name="name" placeholder="联系人 *" required />
+                    <input class="input" type="email" name="email" placeholder="邮箱 *" required />
+                    <input class="input" name="phone" placeholder="电话/WhatsApp" />
+                    <input class="input sm:col-span-2 lg:col-span-1" name="country" placeholder="国家/地区" />
+                    <input class="input sm:col-span-2 lg:col-span-2" name="port" placeholder="收货港口（如 Ningbo / Shanghai）"
+                        value="Ningbo" />
+                </div>
+            </div>
+
+            <!-- 项目信息 -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">项目信息</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+                    <select class="input lg:col-span-2" name="productType">
+                        <option>Pulley</option>
+                        <option>Taper-Lock Bush</option>
+                        <option>Coupling</option>
+                        <option>Sprocket</option>
+                        <option>Other</option>
+                    </select>
+                    <input class="input" type="number" min="1" name="qty" placeholder="数量 *" required />
+                    <select class="input" name="incoterm">
+                        <option>EXW</option>
+                        <option selected>FOB</option>
+                        <option>CIF</option>
+                    </select>
+                    <input class="input" type="date" name="due" />
+                    <input class="input" name="series" placeholder="应用/行业（可选）" />
+                </div>
+            </div>
+
+            <!-- 技术参数 -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">技术参数（以皮带轮为例）</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+                    <select class="input" name="section">
+                        <option>SPZ</option>
+                        <option>SPA</option>
+                        <option>SPB</option>
+                        <option>SPC</option>
+                        <option>3V</option>
+                        <option>5V</option>
+                        <option>8V</option>
+                        <option>T5</option>
+                        <option>8M</option>
+                        <option>14M</option>
+                    </select>
+                    <input class="input" name="grooves" placeholder="槽数/Z" />
+                    <input class="input" name="od" placeholder="外径 OD (mm)" />
+                    <input class="input" name="bore" placeholder="孔径 Bore (mm/”)" />
+                    <select class="input" name="keywayStandard">
+                        <option>DIN 6885</option>
+                        <option>DIN 6885-A</option>
+                        <option>GB/T 1096</option>
+                        <option>BS 4235</option>
+                    </select>
+                    <select class="input" name="boreTolerance">
+                        <option>H7</option>
+                        <option>H8</option>
+                        <option>JS7</option>
+                    </select>
+                    <select class="input lg:col-span-2" name="material">
+                        <option>HT250</option>
+                        <option>45# Steel</option>
+                        <option>GGG40</option>
+                        <option>Aluminum 6061</option>
+                    </select>
+                    <select class="input" name="heat">
+                        <option>None</option>
+                        <option>Tempering</option>
+                        <option>Induction Hardening</option>
+                    </select>
+                    <select class="input" name="finish">
+                        <option>Phosphating</option>
+                        <option>Black Oxide</option>
+                        <option>Powder Coating</option>
+                        <option>Sandblasting</option>
+                    </select>
+                    <select class="input" name="balance">
+                        <option>G6.3</option>
+                        <option>G2.5</option>
+                        <option>Not Required</option>
+                    </select>
+
+                    <!-- 上传 -->
+                    <div class="lg:col-span-3 card border-dashed">
+                        <div class="flex items-center justify-between">
+                            <div class="text-slate-700 font-medium">上传图纸/模型（STEP、SLDPRT、PDF、JPG）</div>
+                            <label
+                                class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 text-white text-sm cursor-pointer hover:bg-slate-800">
+                                选择文件
+                                <input id="fileInput" type="file" multiple class="hidden" />
+                            </label>
+                        </div>
+                        <ul id="fileList" class="mt-3 text-sm text-slate-600 grid gap-1 max-h-32 overflow-auto"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 质量/包装/NDA/备注 -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">质量需求与合规</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="card">
+                        <p class="text-sm font-medium mb-2">需要的报告</p>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="Material Spectrometer" checked> <span class="text-sm">Material
+                                Spectrometer</span></label>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="Dynamic Balance" checked> <span class="text-sm">Dynamic Balance</span></label>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="Hardness"> <span class="text-sm">Hardness</span></label>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="CMM Inspection"> <span class="text-sm">CMM Inspection</span></label>
+                    </div>
+                    <div class="card">
+                        <p class="text-sm font-medium mb-2">包装与防锈</p>
+                        <select class="input" name="packaging">
+                            <option>Rust-proof + Pallet</option>
+                            <option>VCI + Carton</option>
+                            <option>Export Wooden Case</option>
+                        </select>
+                        <label class="flex items-center gap-2 mt-3"><input type="checkbox" name="nda" checked> <span
+                                class="text-sm">同意保密协议（NDA）</span></label>
+                    </div>
+                    <div class="card">
+                        <p class="text-sm font-medium mb-2">备注</p>
+                        <textarea class="input min-h-[120px]" name="notes" placeholder="工况、寿命、峰值转速/温度等补充信息"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 flex items-center justify-between gap-4">
+                <p class="text-xs text-slate-500">提交后会生成一个 RFQ 号并由工程师在 24 小时内联系您（邮箱优先）。</p>
+                <button
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800">提交
+                    RFQ</button>
+            </div>
+        </form>
+
+        <!-- 提交反馈 -->
+        <div id="result" class="hidden mt-6 rounded-2xl border bg-emerald-50 border-emerald-200 p-4">
+            <p class="text-emerald-900 font-semibold">RFQ 已提交！</p>
+            <p class="text-emerald-800 mt-1 text-sm">我们已接收您的需求。工程师会在 24 小时内与您确认图纸与参数。也可发送补充资料到
+                <a class="underline" href="mailto:sales@apollopt.com.cn">sales@apollopt.com.cn</a>。
+            </p>
+            <details class="mt-3">
+                <summary class="text-sm text-emerald-900 underline cursor-pointer">展开查看提交的 JSON 预览（便于对接 API）</summary>
+                <pre id="jsonPreview"
+                    class="text-xs mt-2 bg-white p-3 rounded-lg overflow-auto max-h-64 border border-emerald-200"></pre>
+            </details>
+        </div>
+    </section>
+
+    <!-- 流程 -->
+    <section class="container py-10" id="steps">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">交付流程</h2>
+            <p class="text-slate-600 mt-2">标准化流程 + 关键节点可视化，让项目可控</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="card">
+                <h4 class="font-semibold">1. 提交 RFQ</h4>
+                <p class="text-sm text-slate-600 mt-1">上传图纸/参数，签署 NDA（可选）</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">2. DFM 评审</h4>
+                <p class="text-sm text-slate-600 mt-1">工程评审与成本核算，提出可制造性建议</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">3. 打样与验证</h4>
+                <p class="text-sm text-slate-600 mt-1">7 天内交样，送检报告齐全</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">4. 量产与交付</h4>
+                <p class="text-sm text-slate-600 mt-1">21 天量产，EXW/FOB/CIF 按约发运</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例 -->
+    <section class="container py-10" id="cases">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">真实案例</h2>
+            <p class="text-slate-600 mt-2">用结果说话，证明而非自夸</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-semibold">矿山输送机改造</h4><span
+                        class="text-emerald-700 text-xs font-bold bg-emerald-50 border border-emerald-200 rounded-full px-2 py-1">振动
+                        ↓32%</span>
+                </div>
+                <p class="text-sm text-slate-600 mt-1">SPB 双联皮带轮 + G6.3 动平衡</p>
+            </div>
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-semibold">农业机械 OEM</h4><span
+                        class="text-emerald-700 text-xs font-bold bg-emerald-50 border border-emerald-200 rounded-full px-2 py-1">交期
+                        16 天</span>
+                </div>
+                <p class="text-sm text-slate-600 mt-1">3V 皮带轮 • H7/DIN6885 • 黑氧化</p>
+            </div>
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-semibold">HVAC 风机备件</h4><span
+                        class="text-emerald-700 text-xs font-bold bg-emerald-50 border border-emerald-200 rounded-full px-2 py-1">寿命
+                        ↑28%</span>
+                </div>
+                <p class="text-sm text-slate-600 mt-1">铸铁 HT250 • 动平衡报告</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 下载 -->
+    <section class="container py-10" id="downloads">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">资料下载</h2>
+            <p class="text-slate-600 mt-2">带水印示例，工程师可快速选型对接</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a href="#" class="card hover:border-slate-300 flex items-center justify-between"><span
+                    class="font-medium">键槽对照表（DIN 6885 / GB/T 1096）.pdf</span><span
+                    class="text-xs text-slate-400">示例</span></a>
+            <a href="#" class="card hover:border-slate-300 flex items-center justify-between"><span
+                    class="font-medium">皮带轮选型速查（ISO 4183）.pdf</span><span class="text-xs text-slate-400">示例</span></a>
+            <a href="#" class="card hover:border-slate-300 flex items-center justify-between"><span
+                    class="font-medium">RFQ 表单模板（Excel）.xlsx</span><span class="text-xs text-slate-400">示例</span></a>
+        </div>
+    </section>
+
+    <!-- FAQ / Footer -->
+    <section class="container py-10" id="faq">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">常见问题</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card">
+                <h4 class="font-semibold">没有 3D/2D 图纸也能做吗？</h4>
+                <p class="text-sm text-slate-600 mt-1">可以。支持来样逆向，工程师会根据样件测绘并输出可制造图纸供您确认。</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">最小起订量（MOQ）是多少？</h4>
+                <p class="text-sm text-slate-600 mt-1">支持小批量试制，1 件起。批量价格按阶梯折扣计算。</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">交期怎么保证？</h4>
+                <p class="text-sm text-slate-600 mt-1">设置里程碑：备料/铸造/机加/表处/检验/发运，每一步可追踪，延误提供订单折扣。</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">是否支持第三方检验？</h4>
+                <p class="text-sm text-slate-600 mt-1">支持 BV/SGS 等第三方到厂验货，亦可按客户检验计划执行。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t bg-white">
+        <div class="container py-10 grid md:grid-cols-2 gap-6 items-center">
+            <div>
+                <h3 class="text-xl font-bold">现在就开始定制</h3>
+                <p class="text-slate-600 mt-2">把图纸/样件与目标交期发给我们，工程师 24 小时内给出 DFM 建议与报价。</p>
+            </div>
+            <div class="flex gap-3 md:justify-end">
+                <a href="#rfq"
+                    class="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl font-semibold hover:bg-slate-800">提交
+                    RFQ</a>
+                <a href="mailto:sales@apollopt.com.cn"
+                    class="inline-flex items-center gap-2 border border-slate-300 px-5 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50">邮件联系</a>
+                <a href="https://wa.me/19720335158"
+                    class="inline-flex items-center gap-2 border border-slate-300 px-5 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50">WhatsApp</a>
+            </div>
+        </div>
+        <div class="text-center text-xs text-slate-500 pb-6">© <span id="year"></span> Hebei Apollo Power Transmission.
+            All rights reserved.</div>
+    </footer>
+
+    <script>
+        // 年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // 文件选择展示
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        let files = [];
+        fileInput.addEventListener('change', (e) => {
+            files = Array.from(e.target.files || []);
+            fileList.innerHTML = files.map(f =>
+                `<li class="flex items-center gap-2">📄 ${f.name} <span class="text-xs text-slate-400">(${Math.round(f.size / 1024)} KB)</span></li>`
+            ).join('');
+        });
+
+        // 表单提交 → 生成 JSON 预览
+        const form = document.getElementById('rfqForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const fd = new FormData(form);
+            const reports = fd.getAll('reports'); // 多选
+            const payload = {
+                company: fd.get('company') || '',
+                name: fd.get('name') || '',
+                email: fd.get('email') || '',
+                phone: fd.get('phone') || '',
+                country: fd.get('country') || '',
+                productType: fd.get('productType') || 'Pulley',
+                qty: fd.get('qty') || '',
+                incoterm: fd.get('incoterm') || 'FOB',
+                port: fd.get('port') || 'Ningbo',
+                due: fd.get('due') || '',
+                series: fd.get('series') || '',
+                section: fd.get('section') || 'SPZ',
+                grooves: fd.get('grooves') || '',
+                od: fd.get('od') || '',
+                bore: fd.get('bore') || '',
+                keywayStandard: fd.get('keywayStandard') || 'DIN 6885',
+                boreTolerance: fd.get('boreTolerance') || 'H7',
+                material: fd.get('material') || 'HT250',
+                heat: fd.get('heat') || 'None',
+                finish: fd.get('finish') || 'Phosphating',
+                balance: fd.get('balance') || 'G6.3',
+                reports,
+                packaging: fd.get('packaging') || 'Rust-proof + Pallet',
+                nda: fd.get('nda') ? true : false,
+                notes: fd.get('notes') || '',
+                files: files.map(f => ({ name: f.name, size: f.size }))
+            };
+            // 展示
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('jsonPreview').textContent = JSON.stringify(payload, null, 2);
+
+            // TODO: 实际接入：把 payload 发到你的后端
+            // fetch('/api/rfq', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        });
+    </script>
+</body>
+
+</html>

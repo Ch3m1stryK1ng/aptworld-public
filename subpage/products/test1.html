@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Products – Pulley | Apollo Power Transmission</title>
+
+    <!-- User's existing styles -->
+    <link rel="stylesheet" type="text/css" href="../../css/nav-bar.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/main.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/forms.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../css/footer.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/subpage.css" />
+
+    <!-- Minimal, scoped styles for product UI -->
+    <style>
+        :root {
+            --apt-bg: #f7f8fb;
+            --apt-panel: #fff;
+            --apt-text: #0f172a;
+            --apt-muted: #64748b;
+            --apt-line: #e5e7eb;
+            --apt-brand: #4f46e5;
+            --apt-chip: #eef2ff;
+            --apt-warn: #ef4444;
+            --apt-purple: #5b5bd6;
+        }
+
+        /* Scope all custom UI under #apt-products to avoid collisions */
+        #apt-products * {
+            box-sizing: border-box;
+        }
+
+        #apt-products .card {
+            background: var(--apt-panel);
+            border: 1px solid var(--apt-line);
+            border-radius: 14px
+        }
+
+        #apt-products .panel {
+            padding: 14px
+        }
+
+        #apt-products .muted {
+            color: var(--apt-muted)
+        }
+
+        #apt-products .apt-toolbar {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+            flex-wrap: wrap
+        }
+
+        #apt-products .apt-toolbar .spacer {
+            flex: 1
+        }
+
+        #apt-products .apt-search {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex: 1
+        }
+
+        #apt-products .apt-search input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--apt-line);
+            border-radius: 10px
+        }
+
+        #apt-products .apt-cartbtn {
+            position: relative
+        }
+
+        #apt-products .apt-iconbtn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            border: 1px solid var(--apt-line);
+            background: #fff;
+            cursor: pointer
+        }
+
+        #apt-products .apt-count {
+            position: absolute;
+            top: -6px;
+            right: -6px;
+            background: #ef4444;
+            color: #fff;
+            border-radius: 999px;
+            font-size: 11px;
+            line-height: 1;
+            padding: 3px 6px;
+            border: 2px solid #fff
+        }
+
+        #apt-products .apt-resultsbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            gap: 10px
+        }
+
+        #apt-products .apt-views {
+            display: flex;
+            gap: 8px
+        }
+
+        #apt-products .apt-iconbtn.active {
+            background: var(--apt-purple);
+            border-color: var(--apt-purple);
+            color: #fff
+        }
+
+        #apt-products .apt-filterbar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 12px
+        }
+
+        #apt-products .apt-filter-group {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #fff;
+            border: 1px solid var(--apt-line);
+            border-radius: 12px;
+            padding: 8px 10px
+        }
+
+        #apt-products .apt-filter-group label {
+            font-size: 12px;
+            color: var(--apt-muted)
+        }
+
+        #apt-products .chip {
+            background: var(--apt-chip);
+            padding: 4px 10px;
+            border-radius: 999px;
+            font-size: 12px;
+            color: #3730a3;
+            border: 1px solid #e0e7ff;
+            cursor: pointer;
+            user-select: none
+        }
+
+        #apt-products .chip.active {
+            background: #4338ca;
+            color: #fff;
+            border-color: #4338ca
+        }
+
+        #apt-products select {
+            padding: 8px 10px;
+            border: 1px solid var(--apt-line);
+            border-radius: 10px;
+            background: #fff
+        }
+
+        #apt-products .apt-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px
+        }
+
+        @media (max-width:1200px) {
+            #apt-products .apt-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+        }
+
+        @media (max-width:700px) {
+            #apt-products .apt-grid {
+                grid-template-columns: 1fr
+            }
+        }
+
+        #apt-products .product {
+            overflow: hidden
+        }
+
+        #apt-products .thumb {
+            aspect-ratio: 16/9;
+            background: #eceff5;
+            border-bottom: 1px solid var(--apt-line)
+        }
+
+        #apt-products .thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        #apt-products .p-body {
+            padding: 12px 16px
+        }
+
+        #apt-products .row {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap
+        }
+
+        #apt-products .badge {
+            display: inline-block;
+            background: #f1f5f9;
+            border: 1px solid #e2e8f0;
+            border-radius: 999px;
+            padding: 2px 8px;
+            margin-right: 6px;
+            font-size: 12px
+        }
+
+        #apt-products .kv {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px 12px;
+            margin-top: 8px;
+            color: var(--apt-muted)
+        }
+
+        #apt-products .kv div {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        #apt-products .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border: 1px solid var(--apt-line);
+            border-radius: 10px;
+            background: #fff;
+            cursor: pointer
+        }
+
+        #apt-products .btn.sm {
+            padding: 6px 10px;
+            font-size: 13px;
+            border-radius: 8px
+        }
+
+        #apt-products .btn.primary {
+            background: var(--apt-brand);
+            border-color: var(--apt-brand);
+            color: #fff
+        }
+
+        #apt-products .qty {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid var(--apt-line);
+            border-radius: 10px;
+            overflow: hidden
+        }
+
+        #apt-products .qty input {
+            width: 48px;
+            text-align: center;
+            border: none;
+            padding: 8px 0
+        }
+
+        #apt-products .qty button {
+            width: 36px;
+            height: 36px;
+            border: none;
+            background: #fff;
+            cursor: pointer
+        }
+
+        #apt-products .qty button:hover {
+            background: #f3f4f6
+        }
+
+        /* list mode */
+        body.mode-list #apt-products .apt-grid {
+            grid-template-columns: 1fr
+        }
+
+        body.mode-list #apt-products .product .thumb {
+            width: 320px;
+            min-width: 240px;
+            max-width: 40vw;
+            aspect-ratio: 16/10;
+            border-right: 1px solid var(--apt-line);
+            border-bottom: none
+        }
+
+        body.mode-list #apt-products .product {
+            display: flex
+        }
+
+        /* modal & drawer */
+        #apt-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(15, 23, 42, .55);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 16px;
+            z-index: 1000
+        }
+
+        #apt-overlay.open {
+            display: flex
+        }
+
+        #apt-modal {
+            max-width: 880px;
+            width: 100%;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--apt-line)
+        }
+
+        #apt-modal .head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--apt-line)
+        }
+
+        #apt-modal .content {
+            padding: 16px
+        }
+
+        #apt-cart {
+            position: fixed;
+            top: 0;
+            right: -420px;
+            width: 400px;
+            height: 100vh;
+            background: #fff;
+            border-left: 1px solid var(--apt-line);
+            box-shadow: -12px 0 30px rgba(0, 0, 0, .12);
+            transition: right .25s ease;
+            z-index: 1001;
+            display: flex;
+            flex-direction: column
+        }
+
+        #apt-cart.open {
+            right: 0
+        }
+
+        #apt-cart .cart-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--apt-line)
+        }
+
+        #apt-cart .cart-list {
+            flex: 1;
+            overflow: auto;
+            padding: 8px 16px
+        }
+
+        #apt-cart .cart-item {
+            display: grid;
+            grid-template-columns: 48px 1fr auto;
+            gap: 10px;
+            align-items: center;
+            border-bottom: 1px solid var(--apt-line);
+            padding: 8px 0
+        }
+
+        #apt-cart .cart-item img {
+            width: 48px;
+            height: 48px;
+            object-fit: cover;
+            border-radius: 8px
+        }
+
+        #apt-cart .cart-footer {
+            padding: 12px 16px;
+            border-top: 1px solid var(--apt-line);
+            display: grid;
+            gap: 8px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="footer-page-wrapper" id="footerpageWrapper">
+        <div class="subpage-wrapper">
+            <header class="site-header site-header--sub" id="header">
+                <!-- ===== Top Bar ===== -->
+                <div class="top-bar">
+                    <div class="container flex-between">
+                        <div class="top-bar-left">Professional Power Transmission Solutions</div>
+                        <div class="top-bar-right">
+                            <div class="topbar-email">
+                                <a href="mailto:sales@apt-world.com" class="top-bar-link" aria-label="Email us">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>sales@apt-world.com</span>
+                                </a>
+                            </div>
+                            <div class="topbar-phone">
+                                <a href="tel:+8613315124900" class="top-bar-link" aria-label="Call us">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>(+86) 133‑1512‑4900</span>
+                                </a>
+                                <a href="tel:+8619720335158" class="top-bar-link" aria-label="Call us" style="margin-left: 0.5rem;">
+                                    <span> / (+86) 197-2033-5158</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Navbar (kept as-is) ===== -->
+                <div class="navbar">
+                    <div class="nav-container">
+                        <div class="nav-left">
+                            <a href="../../index.html" class="logo">
+                                <img src="../../images/home/logo.svg" alt="Apollo Power Transmission"
+                                    class="logo-main" />
+                                <img src="../../images/home/logo1.svg" alt="" class="logo-sub" aria-hidden="true" />
+                            </a>
+                        </div>
+
+                        <nav class="nav-center" id="nav-menu">
+                            <ul class="nav-list">
+                                <li class="nav-item"><a href="../../index.html">Home</a></li>
+                                <li class="nav-item has-submenu">
+                                    <a href="../../about_us.html" class="list" onclick="return false;">
+                                        About Us <i class="fas fa-caret-left arrow-icon"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="../about_us/company_profile.html">Company Profile</a></li>
+                                        <li><a href="../about_us/factory.html">Factory</a></li>
+                                        <li><a href="../about_us/people_dictionary.html">People Dictionary</a></li>
+                                        <li><a href="../about_us/certificates.html">Certificates</a></li>
+                                        <li><a href="../about_us/video_center.html">Video Center</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-submenu">
+                                    <a href="products.html" class="list" onclick="return false;">
+                                        Products <i class="fas fa-caret-left arrow-icon"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="../products/pulley.html"><span>Pulley</span></a></li>
+                                        <li><a href="../products/taper_bushing.html"><span>Taper Bushing</span></a></li>
+                                        <li><a href="../products/coupling.html"><span>Coupling</span></a></li>
+                                        <li><a href="../products/sprocket.html"><span>Sprocket</span></a></li>
+<li><a href="flange.html"><span>Flange</span></a></li>
+<li><a href="motor_rail.html"><span>Motor Rail</span></a></li>
+                                        <li><a href="../products/other_products.html">Other Products</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item has-submenu">
+                                    <a href="../../service.html" class="list" onclick="return false;">
+                                        Service <i class="fas fa-caret-left arrow-icon"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="../service/design.html">Design</a></li>
+                                        <li><a href="../service/casting.html">Casting</a></li>
+                                        <li><a href="../service/machining.html">Machining</a></li>
+                                        <li><a href="../service/surface_treatment.html">Surface Treatment</a></li>
+                                        <li><a href="../service/custom_service.html">Custom Service</a></li>
+                                        <li><a href="../service/after_sales.html">After-sales</a></li>
+                                        <li><a href="../service/troubleshooting.html">Troubleshooting</a></li>
+                                        <li><a href="../service/download.html">Download</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-submenu">
+                                    <a href="../../news.html" class="list" onclick="return false;">
+                                        News <i class="fas fa-caret-left arrow-icon"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="../news/corporate_news.html">Corporate News</a></li>
+                                        <li><a href="../news/product_story.html">Product Story</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a href="../contact_us/contact_us.html">Contact</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="nav-right">
+                            <div class="search-container" role="search">
+                                <button type="button" class="search-toggle" aria-label="Open search"><i
+                                        class="fas fa-search icon-search"></i></button>
+                                <form action="search.html" class="search-form hidden" role="search" autocomplete="off">
+                                    <input id="search-input" class="search-input" name="q" type="text"
+                                        placeholder="Search Keywords..." />
+                                    <button type="submit" class="btn-submit"><span>SUBMIT</span> <i
+                                            class="fas fa-arrow-right"></i></button>
+                                    <ul class="suggestions-list" id="suggestions-list"></ul>
+                                </form>
+                            </div>
+                            <div class="lang-selector" id="lang-selector">
+                                <div class="lang-toggle-wrapper">
+                                    <button class="lang-toggle" id="lang-toggle" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <img src="../../images/home/flag-en.svg" alt="English" class="lang-flag" /> EN
+                                    </button>
+                                    <span class="lang-arrow"></span>
+                                </div>
+                                <ul class="lang-dropdown" id="lang-dropdown" role="menu">
+                                    <li data-lang="en" class="lang-option selected" role="menuitem"><img
+                                            src="../../images/home/flag-en.svg" alt="English" class="lang-flag" /> EN
+                                    </li>
+                                    <hr class="lang-divider">
+                                    <li data-lang="zh" class="lang-option" role="menuitem"><img
+                                            src="../../images/home/flag-cn.svg" alt="中文" class="lang-flag" /> 中文</li>
+                                </ul>
+                            </div>
+
+                            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+                                aria-expanded="false">
+                                <span class="bar" aria-hidden="true"></span>
+                                <span class="bar" aria-hidden="true"></span>
+                                <span class="bar" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="subpage-hero subpage-hero-bg" role="banner" aria-label="Products banner"
+                    style="background-image: url(../../images/home/pages/products.webp)">
+                    <div class="hero-mask"></div>
+                    <div class="hero-inner">
+                        <h1>PRODUCTS</h1>
+                    </div>
+                </section>
+            </header>
+
+            <div id="menu-overlay"></div>
+
+            <main class="page-main">
+                <div class="page-container">
+                    <div class="breadcrumb">
+                        <span class="crumb"><i class="fa fa-house"></i></span>
+                        <a href="../../index.html">Home</a>
+                        <span class="sep">/</span>
+                        <a href="../products/pulley.html">Products</a>
+                        <span class="sep">/</span>
+                        <span class="current">Pulley</span>
+                    </div>
+                    <hr class="divider" />
+
+                    <!-- ====== PAGE GRID (left sidebar kept; right content replaced with product UI) ====== -->
+                    <div class="page-grid">
+                        <aside class="sidebar">
+                            <section class="panel">
+                                <div class="panel-header">
+                                    <h3 class="panel-title">Categories</h3>
+                                    <i class="fa fa-chevron-left dropdown-icon"></i>
+                                </div>
+                                <hr class="panel-divider" />
+                                <ul class="category-list">
+                                    <li>
+                                        <a class="active" href="../products/pulley.html">Pulley</a>
+                                        <ul class="category-list">
+                                            <li><a href="#" data-cat="v-belt">V-Belt Pulleys</a></li>
+                                            <li><a href="#" data-cat="vtp">VTP High Speed</a></li>
+                                            <li><a href="#" data-cat="poly-v">Poly-V Pulleys</a></li>
+                                            <li><a href="#" data-cat="timing">Timing Pulleys</a></li>
+                                            <li><a href="#" data-cat="flat">Flat Pulleys</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="../products/taper_bushing.html">Taper Bushing</a></li>
+                                    <li><a href="../products/coupling.html">Coupling</a></li>
+                                    <li><a href="../products/sprocket.html">Sprocket</a></li>
+<li><a href="flange.html">Flange</a></li>
+<li><a href="motor_rail.html">Motor Rail</a></li>
+                                    <li><a href="../products/other_products.html">Other Products</a></li>
+                                </ul>
+                            </section>
+
+                            <section class="panel contact-panel">
+                                <h3 class="panel-title">Contact Us</h3>
+                                <hr class="panel-divider" />
+                                <ul class="contact-list">
+                                    <li><strong>After Sales:</strong> <a href="tel:+8613315124900">(+86)
+                                            133-1512-4900</a> / <a href="tel:+8619720335158">(+86) 197-2033-5158</a></li>
+                                    <li><strong>Sales:</strong> <a href="tel:+8613315124900">(+86) 133-1512-4900</a>
+                                     / <a href="tel:+8619720335158">(+86) 197-2033-5158</a></li>
+                                    <li><strong>Office:</strong> <a>Ruihe Center 1104, Changan, Shijiazhuang, Hebei</a>
+                                    </li>
+                                    <li><strong>Email:</strong> <a
+                                            href="mailto:sales@apt-world.com">sales@apt-world.com</a></li>
+                                    <li><strong>Industry Address:</strong> <a>Dacaozhuang Dev. Zone, Ningjin, Hebei</a>
+                                    </li>
+                                </ul>
+                                <hr class="panel-divider" />
+                                <div class="social-row">
+                                    <a href="https://www.instagram.com/apt.jasper?igsh=a3lpYXd6MXpvNzcz&utm_source=qr"
+                                        target="_blank" aria-label="Instagram"><img
+                                            src="../../images/home/instagram.svg" alt=""></a>
+                                    <a href="https://www.linkedin.com/in/xiangjiang-yang-b233a6172/?trk=public-profile-join-page"
+                                        target="_blank" aria-label="LinkedIn"><img src="../../images/home/linkedin.svg"
+                                            alt=""></a>
+                                    <a href="https://www.facebook.com/profile.php?id=100075473473693" target="_blank"
+                                        aria-label="Facebook"><img src="../../images/home/facebook.svg" alt=""></a>
+                                    <a href="https://x.com/Xiangjiang523" target="_blank" aria-label="Twitter"><img
+                                            src="../../images/home/twitter-x.svg" alt=""></a>
+                                    <a href="https://www.youtube.com/@APT.Jasper" target="_blank"
+                                        aria-label="YouTube"><img src="../../images/home/youtube.svg" alt=""></a>
+                                    <a href="https://www.tiktok.com/@aptxiangjiang?_t=ZT-8zKrJ1nxNHy&_r=1"
+                                        target="_blank" aria-label="Tiktok"><img src="../../images/home/tiktok.svg"
+                                            alt=""></a>
+                                    <a href="https://www.wechat.com" target="_blank" aria-label="WeChat"><img
+                                            src="../../images/home/wechat.svg" alt=""></a>
+                                </div>
+                            </section>
+                        </aside>
+
+                        <!-- ===== Right Content: injected product UI ===== -->
+                        <section class="content">
+                            <div class="main-content-header">
+                                <h2 class="content-title">Pulley</h2>
+                            </div>
+                            <hr class="content-divider" />
+
+                            <div id="apt-products">
+                                <!-- Search + Cart (top of right column) -->
+                                <div class="apt-toolbar">
+                                    <div class="apt-search" style="min-width:260px">
+                                        <i class="fa fa-magnifying-glass"></i>
+                                        <input id="apt-q" type="text" placeholder="按 SKU / 名称 / 关键字搜索…">
+                                    </div>
+                                    <div class="spacer"></div>
+                                    <div class="apt-cartbtn">
+                                        <button class="apt-iconbtn" id="apt-openCart" title="询价车">
+                                            <i class="fa fa-cart-shopping"></i>
+                                        </button>
+                                        <span class="apt-count" id="apt-cartCount" style="display:none">0</span>
+                                    </div>
+                                </div>
+
+                                <!-- Results Bar -->
+                                <div class="apt-resultsbar">
+                                    <h3 style="margin:0;font-size:18px">共找到 <span id="apt-count">0</span> 款产品</h3>
+                                    <div style="display:flex;align-items:center;gap:8px">
+                                        <select id="apt-sort" title="排序" style="min-width:150px">
+                                            <option value="sku_desc">按型号降序</option>
+                                            <option value="sku_asc">按型号升序</option>
+                                            <option value="name_asc">按名称 A→Z</option>
+                                            <option value="name_desc">按名称 Z→A</option>
+                                            <option value="dia_asc">按直径升序</option>
+                                            <option value="dia_desc">按直径降序</option>
+                                            <option value="new">最新</option>
+                                            <option value="relevance">相关度</option>
+                                        </select>
+                                        <div class="apt-views">
+                                            <button class="apt-iconbtn" id="apt-viewGrid" title="网格"><i
+                                                    class="fa fa-grid-2"></i></button>
+                                            <button class="apt-iconbtn" id="apt-viewList" title="列表"><i
+                                                    class="fa fa-bars"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Filters (aligned top of right column) -->
+                                <div class="apt-filterbar">
+                                    <div class="apt-filter-group" id="apt-fg-profile">
+                                        <label>带型</label>
+                                        <span class="chip" data-pf="SPZ">SPZ</span>
+                                        <span class="chip" data-pf="SPA">SPA</span>
+                                        <span class="chip" data-pf="SPB">SPB</span>
+                                        <span class="chip" data-pf="SPC">SPC</span>
+                                    </div>
+                                    <div class="apt-filter-group" id="apt-fg-grooves">
+                                        <label>槽数</label>
+                                        <span class="chip" data-grv="1">1</span><span class="chip"
+                                            data-grv="2">2</span><span class="chip" data-grv="3">3</span>
+                                        <span class="chip" data-grv="4">4</span><span class="chip"
+                                            data-grv="5">5</span><span class="chip" data-grv="6">6</span>
+                                        <span class="chip" data-grv="8">8</span><span class="chip"
+                                            data-grv="10">10</span>
+                                    </div>
+                                    <div class="apt-filter-group" id="apt-fg-dia">
+                                        <label>直径 ⌀</label>
+                                        <input type="number" id="apt-dMin" value="50" min="0" style="width:80px"> -
+                                        <input type="number" id="apt-dMax" value="700" min="0" style="width:80px"> mm
+                                    </div>
+                                    <div class="apt-filter-group" id="apt-fg-mat">
+                                        <label>材质</label>
+                                        <span class="chip" data-mat="Cast Iron HT250">HT250</span>
+                                        <span class="chip" data-mat="Ductile Iron GGG40">GGG40</span>
+                                        <span class="chip" data-mat="Steel C45">C45</span>
+                                        <span class="chip" data-mat="Aluminum 6061">AL6061</span>
+                                    </div>
+                                    <div class="apt-filter-group" id="apt-fg-coat">
+                                        <label>涂层</label>
+                                        <span class="chip" data-coat="None">无</span>
+                                        <span class="chip" data-coat="Phosphate/Black Oxide">发黑/磷化</span>
+                                        <span class="chip" data-coat="KTL/CDP">KTL/CDP</span>
+                                        <span class="chip" data-coat="Painted">喷漆</span>
+                                    </div>
+                                    <div class="apt-filter-group" id="apt-fg-bal">
+                                        <label>动平衡</label>
+                                        <span class="chip" data-bal="G6.3">G6.3</span>
+                                        <span class="chip" data-bal="G2.5">G2.5</span>
+                                    </div>
+                                    <div class="apt-filter-group" id="apt-fg-bush">
+                                        <label>装配</label>
+                                        <span class="chip" data-bush="TB 1008">TB1008</span>
+                                        <span class="chip" data-bush="TB 1610">TB1610</span>
+                                        <span class="chip" data-bush="TB 2517">TB2517</span>
+                                        <span class="chip" data-bush="TB 3525">TB3525</span>
+                                        <span class="chip" data-bush="QD SF">QD SF</span>
+                                    </div>
+                                    <button class="btn sm" id="apt-clear">清空筛选</button>
+                                </div>
+
+                                <!-- Grid -->
+                                <div id="apt-grid" class="apt-grid"></div>
+
+                                <!-- Detail (same page, via ?sku=) -->
+                                <div id="apt-detail" class="card panel" style="margin-top:12px; display:none">
+                                    <a href="pulley.html" class="btn sm">← 返回列表</a>
+                                    <div class="muted" id="apt-crumb" style="margin-top:6px;font-size:12px"></div>
+                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
+                                        <div>
+                                            <div class="thumb" style="border-radius:12px;overflow:hidden"><img
+                                                    id="apt-dImg" alt="" /></div>
+                                        </div>
+                                        <div>
+                                            <h2 id="apt-dName" style="margin:0"></h2>
+                                            <div class="muted" id="apt-dSku" style="margin-top:4px"></div>
+                                            <div style="margin-top:8px">
+                                                <span class="badge" id="apt-dProfile"></span>
+                                                <span class="badge" id="apt-dGrooves"></span>
+                                                <span class="badge" id="apt-dDia"></span>
+                                                <span class="badge" id="apt-dBal"></span>
+                                                <span class="badge" id="apt-dSeries"></span>
+                                            </div>
+                                            <div class="kv" style="margin-top:12px">
+                                                <div>材质</div>
+                                                <div id="apt-dMat"></div>
+                                                <div>涂层</div>
+                                                <div id="apt-dCoat"></div>
+                                                <div>装配</div>
+                                                <div id="apt-dBush"></div>
+                                                <div>孔径范围</div>
+                                                <div id="apt-dBore"></div>
+                                                <div>重量</div>
+                                                <div id="apt-dWt"></div>
+                                            </div>
+                                            <div style="margin-top:12px">
+                                                <strong>应用 / 优势</strong>
+                                                <ul id="apt-dFeat" style="margin:6px 0 0 18px"></ul>
+                                            </div>
+                                            <div class="row" style="margin-top:12px;align-items:center">
+                                                <div class="qty">
+                                                    <button onclick="APT.stepQty('#apt-dQty',-1)">−</button>
+                                                    <input id="apt-dQty" type="number" min="1" value="1" />
+                                                    <button onclick="APT.stepQty('#apt-dQty',1)">＋</button>
+                                                </div>
+                                                <a class="btn primary" id="apt-dAdd">加入询价车</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+
+            <!-- ===== Floating Forms & Footer (kept) ===== -->
+            <div class="fab-container">
+                <button class="fab-trigger" id="fab-product" data-widget="widget-product" aria-label="Product Inquiry">
+                    <svg class="icon-original" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v2" />
+                        <path d="M21 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                        <line x1="12" y1="22.08" x2="12" y2="12" />
+                    </svg>
+                    <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <button class="fab-trigger" id="fab-general" data-widget="widget-general" aria-label="General Inquiry">
+                    <svg class="icon-original" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <footer class="footer">
+                <div class="footer-container">
+                    <div class="footer-header">
+                        <div class="footer-menu-toggle" id="footerMenuToggle">
+                            <div class="footer-burger-icon">
+                                <span class="bar" aria-hidden="true"></span>
+                                <span class="bar" aria-hidden="true"></span>
+                                <span class="bar" aria-hidden="true"></span>
+                            </div>
+                            <span class="footer-menu-label">MENU</span>
+                        </div>
+                        <nav id="footer-nav" class="footer-nav">
+                            <a href="../../index.html">HOME</a>
+                            <a href="../about_us/company_profile.html">ABOUT US</a>
+                            <a href="../products/pulley.html">PRODUCTS</a>
+                            <a href="../service/download.html">SERVICE</a>
+                            <a href="../news/corporate_news.html">NEWS</a>
+                            <a href="../contact_us/contact_us.html">CONTACT US</a>
+                        </nav>
+                    </div>
+
+                    <div class="footer_info">
+                        <div class="footer-info-columns">
+                            <div class="footer-contact">
+                                <p>
+                                    <strong><i class="fa fa-comment"></i>After sales:</strong><a
+                                        href="tel:+8613315124900">
+                                        (+86)-133-1512-4900
+                                    </a>
+                                </p>
+                                <p>
+                                    <strong><i class="fa fa-phone"></i>Sales:</strong><a href="tel:+8613315124900">
+                                        (+86)-133-1512-4900
+                                    </a> / <a href="tel:+8619720335158">
+                                    (+86)-197-2033-5158
+                                </a>
+                                </p>
+                                <p>
+                                    <strong><i class="fa fa-envelope"></i>Email:</strong><a
+                                        href="mailto:sales@apt-world.com">sales@apt-world.com</a>
+                                </p>
+                                <p>
+                                    <strong><i class="fa fa-briefcase"></i>Sales Department Address:</strong>Ruihe
+                                    Center
+                                    1104,Changan District, Shijiazhuang City, Hebei Province
+                                </p>
+                                <p>
+                                    <strong><i class="fa fa-map-marker"></i>Industry Address:</strong>Dacaozhuang
+                                    Development
+                                    Zone,
+                                    Ningjin Coutry, Hebei Province
+                                </p>
+                            </div>
+
+                            <div class="qr-code">
+                                <div><img src="../../images/home/mytiktok.webp" alt="Tiktok">
+                                    <p>Tiktok</p>
+                                </div>
+                                <div><img src="../../images/home/mytwitter.webp" alt="Twitter">
+                                    <p>Twitter</p>
+                                </div>
+                                <div><img src="../../images/home/myfacebook.webp" alt="Facebook">
+                                    <p>Facebook</p>
+                                </div>
+                                <div><img src="../../images/home/mywechat.webp" alt="Wechat">
+                                    <p>Wechat</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="footer-social-icons">
+                            <a href="https://www.instagram.com/apt.jasper?igsh=a3lpYXd6MXpvNzcz&utm_source=qr"
+                                target="_blank" class="footer-icon-tooltip">
+                                <img src="../../images/home/instagram.svg" alt="Instagram" />
+                                <span class="footer-tooltip-text">Instagram</span>
+                            </a>
+                            <a href="https://www.linkedin.com/in/xiangjiang-yang-b233a6172/?trk=public-profile-join-page"
+                                target="_blank" class="footer-icon-tooltip">
+                                <img src="../../images/home/linkedin.svg" alt="Linkedin" />
+                                <span class="footer-tooltip-text">Linkedin</span>
+                            </a>
+                            <a href="https://www.facebook.com/profile.php?id=100075473473693" target="_blank"
+                                class="footer-icon-tooltip">
+                                <img src="../../images/home/facebook.svg" alt="Facebook" />
+                                <span class="footer-tooltip-text">Facebook</span>
+                            </a>
+                            <a href="https://x.com/xiangjiang523?s=21" target="_blank" class="footer-icon-tooltip">
+                                <img src="../../images/home/twitter-x.svg" alt="Twitter" />
+                                <span class="footer-tooltip-text">Twitter</span>
+                            </a>
+                            <a href="https://www.youtube.com/@APT.Jasper" target="_blank" class="footer-icon-tooltip">
+                                <img src="../../images/home/youtube.svg" alt="Youtube" />
+                                <span class="footer-tooltip-text">YouTube</span>
+                            </a>
+                            <a href="https://www.tiktok.com/@aptxiangjiang?_t=ZT-8zKrJ1nxNHy&_r=1" target="_blank"
+                                class="footer-icon-tooltip">
+                                <img src="../../images/home/tiktok.svg" alt="Tiktok" />
+                                <span class="footer-tooltip-text">Tiktok</span>
+                            </a>
+                            <a href="https://www.wechat.com" target="_blank" class="footer-icon-tooltip">
+                                <img src="../../images/home/wechat.svg" alt="Wechat" />
+                                <span class="footer-tooltip-text">WeChat</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <hr class="footer-divider">
+                    <div class="footer-copyright">
+                        <div class="left">COPYRIGHT © 2025 Hebei Apollo Power Transmission Co., Ltd.</div>
+                        <div class="right">冀ICP备2024098043号-2 河北阿波罗动力传动 & 河北正和机械 进出口贸易办公室</div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Quote cart drawer -->
+    <aside id="apt-cart" aria-hidden="true">
+        <div class="cart-header">
+            <strong>询价车</strong>
+            <div>
+                <button class="btn sm" id="apt-copy">复制SKU清单</button>
+                <button class="btn sm" id="apt-clearCart">清空</button>
+                <button class="btn sm" id="apt-closeCart">收起</button>
+            </div>
+        </div>
+        <div class="cart-list" id="apt-cartList"></div>
+        <div class="cart-footer">
+            <div class="muted" id="apt-cartSummary">共 0 个条目</div>
+            <a class="btn primary" id="apt-submitQuote">提交询价</a>
+        </div>
+    </aside>
+
+    <!-- Quick view modal -->
+    <div id="apt-overlay">
+        <div id="apt-modal">
+            <div class="head">
+                <div id="apt-mvTitle" style="font-weight:600"></div>
+                <button class="btn sm" onclick="APT.closeModal()">关闭</button>
+            </div>
+            <div class="content">
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                    <div>
+                        <div class="thumb" style="border-radius:12px;overflow:hidden"><img id="apt-mvImg" alt="" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="muted" id="apt-mvSku"></div>
+                        <div style="margin-top:8px">
+                            <span class="badge" id="apt-mvProfile"></span>
+                            <span class="badge" id="apt-mvGrooves"></span>
+                            <span class="badge" id="apt-mvDia"></span>
+                            <span class="badge" id="apt-mvBal"></span>
+                        </div>
+                        <div class="kv" style="margin-top:10px">
+                            <div>材质</div>
+                            <div id="apt-mvMat"></div>
+                            <div>涂层</div>
+                            <div id="apt-mvCoat"></div>
+                            <div>装配</div>
+                            <div id="apt-mvBush"></div>
+                            <div>孔径范围</div>
+                            <div id="apt-mvBore"></div>
+                            <div>重量</div>
+                            <div id="apt-mvWt"></div>
+                        </div>
+                        <div style="margin-top:12px">
+                            <strong>应用 / 优势</strong>
+                            <ul id="apt-mvFeat" style="margin:6px 0 0 18px"></ul>
+                        </div>
+                        <div class="row" style="margin-top:12px;align-items:center">
+                            <div class="qty">
+                                <button onclick="APT.stepQty('#apt-mvQty',-1)">−</button>
+                                <input id="apt-mvQty" type="number" min="1" value="1" />
+                                <button onclick="APT.stepQty('#apt-mvQty',1)">＋</button>
+                            </div>
+                            <a class="btn primary" id="apt-mvAdd">加入询价车</a>
+                            <a class="btn" id="apt-detailBtn">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- User's existing JS -->
+    <script src="../../js/navbar.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/advert.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/subpage.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/forms.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../js/footer.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Product UI JS (scoped under APT namespace) -->
+    <script>
+        const APT = (() => {
+            const DATA_URL = '/assets/products.json';
+            const FALLBACK = [
+                { id: 'p1', sku: 'VTP-SPB-315x4-TB2517', series: 'VTP', name: 'VTP 高速皮带轮 SPB 315/4', profile: 'SPB', grooves: 4, pitchDiameter: 315, material: 'Ductile Iron GGG40', coating: 'KTL/CDP', balancing: 'G2.5', bush: 'TB 2517', boreRange: '25–65 mm', weight: 12.4, features: ['高转速优化，降低带温', '球墨铸铁，强度与减重兼顾', '精密槽型，延长寿命'], applications: ['压缩机', '鼓风机', '机床'], coverImage: 'https://images.unsplash.com/photo-1556438064-2a6b9e2a5e0a?q=80&w=1200&auto=format&fit=crop', createdAt: '2025-08-10' },
+                { id: 'p2', sku: 'STD-SPA-200x3-TB1610', series: 'STD', name: '标准 V 带轮 SPA 200/3', profile: 'SPA', grooves: 3, pitchDiameter: 200, material: 'Cast Iron HT250', coating: 'Phosphate/Black Oxide', balancing: 'G6.3', bush: 'TB 1610', boreRange: '14–42 mm', weight: 8.1, features: ['ISO 槽型', '通用互换，经济型'], applications: ['输送机', '风机', '通用机械'], coverImage: 'https://images.unsplash.com/photo-1581092585026-8c14bbce01df?q=80&w=1200&auto=format&fit=crop', createdAt: '2025-07-18' },
+                { id: 'p3', sku: 'AL-SPZ-90x2-TB1008', series: 'STD', name: '轻量化皮带轮 SPZ 90/2', profile: 'SPZ', grooves: 2, pitchDiameter: 90, material: 'Aluminum 6061', coating: 'Painted', balancing: 'G6.3', bush: 'TB 1008', boreRange: '9–25 mm', weight: 1.2, features: ['低转动惯量，加速敏捷', '耐腐涂装'], applications: ['自动化', '包装设备'], coverImage: 'https://images.unsplash.com/photo-1596495578065-8fe885b9d208?q=80&w=1200&auto=format&fit=crop', createdAt: '2025-06-02' },
+                { id: 'p4', sku: 'HI-SPC-630x8-TB3525', series: 'STD', name: '重载皮带轮 SPC 630/8', profile: 'SPC', grooves: 8, pitchDiameter: 630, material: 'Steel C45', coating: 'None', balancing: 'G2.5', bush: 'TB 3525', boreRange: '40–95 mm', weight: 45.3, features: ['高功率传递', '精细动平衡，运行更稳'], applications: ['矿山', '造纸化工'], coverImage: 'https://images.unsplash.com/photo-1567784177951-6fa58317e16b?q=80&w=1200&auto=format&fit=crop', createdAt: '2025-08-30' },
+                { id: 'p5', sku: 'STD-SPB-250x5-QD-SF', series: 'STD', name: 'QD 锥套皮带轮 SPB 250/5 (SF)', profile: 'SPB', grooves: 5, pitchDiameter: 250, material: 'Cast Iron HT250', coating: 'Phosphate/Black Oxide', balancing: 'G6.3', bush: 'QD SF', boreRange: '1\" – 2-3/4\"', weight: 18.7, features: ['QD 通用互换', '性价比优'], applications: ['农机', 'HVAC'], coverImage: 'https://images.unsplash.com/photo-1605902711834-8b11c3e3ef37?q=80&w=1200&auto=format&fit=crop', createdAt: '2025-05-20' },
+            ];
+            const $ = (s, r = document) => r.querySelector(s);
+            const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+            const fmtKg = (n) => `${n.toFixed(1)} kg`;
+            const qs = new URLSearchParams(location.search);
+            const skuParam = qs.get('sku') || '';
+
+            const state = {
+                data: [],
+                q: '', profiles: new Set(), grooves: new Set(), dMin: 50, dMax: 700,
+                mats: new Set(), coats: new Set(), bals: new Set(), bushes: new Set(), sort: 'sku_desc',
+                mode: localStorage.getItem('apt-viewMode') || 'grid', cart: loadCart()
+            };
+
+            // init
+            (async function init() {
+                try { const res = await fetch(DATA_URL, { cache: 'no-store' }); state.data = await res.json(); }
+                catch (e) { console.warn('读取 products.json 失败，使用演示数据', e); state.data = FALLBACK; }
+                hydrateFromURL();
+                bind();
+                if (skuParam) renderDetail(skuParam); else renderList();
+                applyMode();
+                updateCartBadge();
+            })();
+
+            function hydrateFromURL() {
+                const p = new URLSearchParams(location.search);
+                if (p.get('q')) state.q = p.get('q');
+                if (p.get('profiles')) state.profiles = new Set(p.get('profiles').split(','));
+                if (p.get('grooves')) state.grooves = new Set(p.get('grooves').split(',').map(Number));
+                state.dMin = Number(p.get('dmin') || 50);
+                state.dMax = Number(p.get('dmax') || 700);
+                if (p.get('mats')) state.mats = new Set(p.get('mats').split(','));
+                if (p.get('coats')) state.coats = new Set(p.get('coats').split(','));
+                if (p.get('bals')) state.bals = new Set(p.get('bals').split(','));
+                if (p.get('bushes')) state.bushes = new Set(p.get('bushes').split(','));
+                if (p.get('sort')) state.sort = p.get('sort');
+
+                $('#apt-q').value = state.q; $('#apt-sort').value = state.sort; $('#apt-dMin').value = state.dMin; $('#apt-dMax').value = state.dMax;
+            }
+
+            function writeURL() {
+                const p = new URLSearchParams();
+                if (state.q) p.set('q', state.q);
+                if (state.profiles.size) p.set('profiles', [...state.profiles].join(','));
+                if (state.grooves.size) p.set('grooves', [...state.grooves].join(','));
+                if (state.dMin !== 50) p.set('dmin', state.dMin);
+                if (state.dMax !== 700) p.set('dmax', state.dMax);
+                if (state.mats.size) p.set('mats', [...state.mats].join(','));
+                if (state.coats.size) p.set('coats', [...state.coats].join(','));
+                if (state.bals.size) p.set('bals', [...state.bals].join(','));
+                if (state.bushes.size) p.set('bushes', [...state.bushes].join(','));
+                if (state.sort !== 'relevance') p.set('sort', state.sort);
+                history.replaceState(null, '', '?' + p.toString());
+            }
+
+            function applyFilters(rows) {
+                rows = rows.slice();
+                const needle = state.q.trim().toLowerCase();
+                if (needle) { rows = rows.filter(p => (p.name + ' ' + p.sku + ' ' + p.profile + ' ' + p.material + ' ' + p.bush).toLowerCase().includes(needle)); }
+                if (state.profiles.size) rows = rows.filter(p => state.profiles.has(p.profile));
+                if (state.grooves.size) rows = rows.filter(p => state.grooves.has(p.grooves));
+                rows = rows.filter(p => p.pitchDiameter >= state.dMin && p.pitchDiameter <= state.dMax);
+                if (state.mats.size) rows = rows.filter(p => state.mats.has(p.material));
+                if (state.coats.size) rows = rows.filter(p => state.coats.has(p.coating));
+                if (state.bals.size) rows = rows.filter(p => state.bals.has(p.balancing));
+                if (state.bushes.size) rows = rows.filter(p => state.bushes.has(p.bush));
+
+                switch (state.sort) {
+                    case 'dia_asc': rows.sort((a, b) => a.pitchDiameter - b.pitchDiameter); break;
+                    case 'dia_desc': rows.sort((a, b) => b.pitchDiameter - a.pitchDiameter); break;
+                    case 'new': rows.sort((a, b) => new Date(b.createdAt || 0) - new Date(a.createdAt || 0)); break;
+                    case 'name_asc': rows.sort((a, b) => (a.name || '').localeCompare(b.name || '')); break;
+                    case 'name_desc': rows.sort((a, b) => (b.name || '').localeCompare(a.name || '')); break;
+                    case 'sku_asc': rows.sort((a, b) => (a.sku || '').localeCompare(b.sku || '')); break;
+                    case 'sku_desc': rows.sort((a, b) => (b.sku || '').localeCompare(a.sku || '')); break;
+                    default: rows.sort((a, b) => (b.features?.length || 0) - (a.features?.length || 0));
+                }
+                return rows;
+            }
+
+            function renderList() {
+                $('#apt-detail').style.display = 'none';
+                const rows = applyFilters(state.data);
+                $('#apt-count').textContent = rows.length;
+                const grid = $('#apt-grid');
+                grid.innerHTML = rows.map(p => cardHTML(p)).join('');
+                // activate chips styling
+                $('#apt-fg-profile').querySelectorAll('.chip').forEach(c => c.classList.toggle('active', state.profiles.has(c.dataset.pf)));
+                $('#apt-fg-grooves').querySelectorAll('.chip').forEach(c => c.classList.toggle('active', state.grooves.has(Number(c.dataset.grv))));
+                $('#apt-fg-mat').querySelectorAll('.chip').forEach(c => c.classList.toggle('active', state.mats.has(c.dataset.mat)));
+                $('#apt-fg-coat').querySelectorAll('.chip').forEach(c => c.classList.toggle('active', state.coats.has(c.dataset.coat)));
+                $('#apt-fg-bal').querySelectorAll('.chip').forEach(c => c.classList.toggle('active', state.bals.has(c.dataset.bal)));
+                $('#apt-fg-bush').querySelectorAll('.chip').forEach(c => c.classList.toggle('active', state.bushes.has(c.dataset.bush)));
+                writeURL();
+            }
+
+            function cardHTML(p) {
+                const key = 'apt-qty-' + p.id;
+                return `
+        <div class="product card">
+          <div class="thumb"><img src="${p.coverImage}" alt="${p.name}"></div>
+          <div class="p-body">
+            <div style="display:flex;justify-content:space-between;gap:8px;align-items:flex-start">
+              <div>
+                <div style="font-weight:600">${p.name}</div>
+                <div class="muted" style="font-size:12px">${p.sku}</div>
+              </div>
+              ${p.series ? `<span class="badge" title="系列">${p.series}</span>` : ''}
+            </div>
+            <div class="row" style="margin-top:6px">
+              <span class="badge">${p.profile}</span>
+              <span class="badge">${p.grooves} 槽</span>
+              <span class="badge">⌀ ${p.pitchDiameter} mm</span>
+              <span class="badge">${p.balancing}</span>
+            </div>
+            <div class="kv">
+              <div>材质</div><div>${p.material}</div>
+              <div>涂层</div><div>${p.coating}</div>
+              <div>孔径范围</div><div>${p.boreRange}</div>
+              <div>重量</div><div>${fmtKg(p.weight)}</div>
+            </div>
+            <div class="row" style="margin-top:10px;align-items:center">
+              <div class="qty">
+                <button onclick="APT.stepQty('#${key}',-1)">−</button>
+                <input id="${key}" type="number" min="1" value="1" />
+                <button onclick="APT.stepQty('#${key}',1)">＋</button>
+              </div>
+              <button class="btn sm" onclick="APT.openModal('${p.id}')">快速查看</button>
+              <button class="btn sm" onclick="APT.addToCart('${p.id}', document.querySelector('#${key}').value)">加入询价车</button>
+              <a class="btn sm" href="pulley.html?sku=${encodeURIComponent(p.sku)}">详情</a>
+            </div>
+          </div>
+        </div>`;
+            }
+
+            function renderDetail(sku) {
+                const p = state.data.find(x => x.sku === sku);
+                if (!p) { renderList(); return; }
+                $('#apt-grid').innerHTML = '';
+                $('#apt-detail').style.display = 'block';
+                $('#apt-crumb').textContent = `Products / Pulleys / ${p.series || 'STD'} / ${p.profile}`;
+                $('#apt-dImg').src = p.images?.[0] || p.coverImage;
+                $('#apt-dName').textContent = p.name; document.title = p.name + ' | Products';
+                $('#apt-dSku').textContent = p.sku; $('#apt-dProfile').textContent = p.profile; $('#apt-dGrooves').textContent = p.grooves + ' 槽';
+                $('#apt-dDia').textContent = '⌀ ' + p.pitchDiameter + ' mm'; $('#apt-dBal').textContent = p.balancing; $('#apt-dSeries').textContent = p.series ? ('系列：' + p.series) : '';
+                $('#apt-dMat').textContent = p.material; $('#apt-dCoat').textContent = p.coating; $('#apt-dBush').textContent = p.bush; $('#apt-dBore').textContent = p.boreRange; $('#apt-dWt').textContent = fmtKg(p.weight);
+                const ul = $('#apt-dFeat'); ul.innerHTML = '';
+                [...(p.features || []), ...(p.applications || [])].forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+                $('#apt-dAdd').onclick = () => { const q = Math.max(1, parseInt($('#apt-dQty').value || '1')); addToCart(p.id, q); };
+            }
+
+            // modal
+            function openModal(id) {
+                const p = state.data.find(x => x.id === id); if (!p) return;
+                $('#apt-mvTitle').textContent = p.name; $('#apt-mvImg').src = p.images?.[0] || p.coverImage; $('#apt-mvSku').textContent = p.sku;
+                $('#apt-mvProfile').textContent = p.profile; $('#apt-mvGrooves').textContent = p.grooves + ' 槽'; $('#apt-mvDia').textContent = '⌀ ' + p.pitchDiameter + ' mm'; $('#apt-mvBal').textContent = p.balancing;
+                $('#apt-mvMat').textContent = p.material; $('#apt-mvCoat').textContent = p.coating; $('#apt-mvBush').textContent = p.bush; $('#apt-mvBore').textContent = p.boreRange; $('#apt-mvWt').textContent = fmtKg(p.weight);
+                const ul = $('#apt-mvFeat'); ul.innerHTML = '';[...(p.features || []), ...(p.applications || [])].forEach(t => { const li = document.createElement('li'); li.textContent = t; ul.appendChild(li); });
+                $('#apt-detailBtn').href = 'pulley.html?sku=' + encodeURIComponent(p.sku);
+                $('#apt-mvAdd').onclick = () => { const q = Math.max(1, parseInt($('#apt-mvQty').value || '1')); addToCart(p.id, q); };
+                $('#apt-overlay').classList.add('open');
+            }
+            function closeModal() { $('#apt-overlay').classList.remove('open'); }
+
+            // cart
+            function loadCart() { try { return JSON.parse(localStorage.getItem('apt-quoteCart') || '{}'); } catch { return {}; } }
+            function saveCart() { localStorage.setItem('apt-quoteCart', JSON.stringify(state.cart)); }
+            function updateCartBadge() {
+                const total = Object.values(state.cart).reduce((n, it) => n + (it.qty || 0), 0);
+                const badge = $('#apt-cartCount');
+                if (total > 0) { badge.style.display = 'inline-block'; badge.textContent = total; } else { badge.style.display = 'none'; }
+            }
+            function addToCart(id, qty) {
+                const p = state.data.find(x => x.id === id); if (!p) return;
+                qty = Math.max(1, parseInt(qty || '1'));
+                const key = p.sku; const exists = state.cart[key];
+                state.cart[key] = { sku: p.sku, name: p.name, qty: (exists ? exists.qty : 0) + qty, cover: p.coverImage };
+                saveCart(); updateCartBadge(); openCart(); renderCart();
+            }
+            function removeFromCart(sku) { delete state.cart[sku]; saveCart(); renderCart(); updateCartBadge(); }
+            function changeQty(sku, delta) { const it = state.cart[sku]; if (!it) return; it.qty = Math.max(1, (it.qty || 1) + delta); saveCart(); renderCart(); updateCartBadge(); }
+
+            function renderCart() {
+                const list = $('#apt-cartList');
+                const items = Object.values(state.cart);
+                if (items.length === 0) { list.innerHTML = '<div class="muted" style="padding:12px">询价车为空</div>'; $('#apt-cartSummary').textContent = '共 0 个条目'; return; }
+                list.innerHTML = items.map(it => `
+          <div class="cart-item">
+            <img src="${it.cover || ''}" alt="${it.sku}">
+            <div>
+              <div style="font-weight:600">${it.name}</div>
+              <div class="muted" style="font-size:12px">${it.sku}</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:6px">
+              <button class="btn sm" onclick="APT.changeQty('${it.sku}',-1)">−</button>
+              <span>${it.qty}</span>
+              <button class="btn sm" onclick="APT.changeQty('${it.sku}',1)">＋</button>
+              <button class="btn sm" onclick="APT.removeFromCart('${it.sku}')">移除</button>
+            </div>
+          </div>
+        `).join('');
+                const total = items.reduce((n, it) => n + (it.qty || 0), 0);
+                $('#apt-cartSummary').textContent = `共 ${items.length} 个产品，合计数量 ${total}`;
+            }
+            function openCart() { $('#apt-cart').classList.add('open'); }
+            function closeCart() { $('#apt-cart').classList.remove('open'); }
+
+            function stepQty(sel, delta) { const el = document.querySelector(sel); const v = Math.max(1, parseInt(el.value || '1') + delta); el.value = v; }
+
+            function bind() {
+                $('#apt-q').addEventListener('input', e => { state.q = e.target.value; skuParam ? renderDetail(skuParam) : renderList(); });
+                $('#apt-sort').addEventListener('change', e => { state.sort = e.target.value; renderList(); });
+                $('#apt-dMin').addEventListener('change', e => { state.dMin = Number(e.target.value || 50); renderList(); });
+                $('#apt-dMax').addEventListener('change', e => { state.dMax = Number(e.target.value || 700); renderList(); });
+
+                $('#apt-fg-profile').addEventListener('click', (e) => { const c = e.target.closest('.chip'); if (!c) return; const v = c.dataset.pf; state.profiles.has(v) ? state.profiles.delete(v) : state.profiles.add(v); renderList(); });
+                $('#apt-fg-grooves').addEventListener('click', (e) => { const c = e.target.closest('.chip'); if (!c) return; const v = Number(c.dataset.grv); state.grooves.has(v) ? state.grooves.delete(v) : state.grooves.add(v); renderList(); });
+                $('#apt-fg-mat').addEventListener('click', (e) => { const c = e.target.closest('.chip'); if (!c) return; const v = c.dataset.mat; state.mats.has(v) ? state.mats.delete(v) : state.mats.add(v); renderList(); });
+                $('#apt-fg-coat').addEventListener('click', (e) => { const c = e.target.closest('.chip'); if (!c) return; const v = c.dataset.coat; state.coats.has(v) ? state.coats.delete(v) : state.coats.add(v); renderList(); });
+                $('#apt-fg-bal').addEventListener('click', (e) => { const c = e.target.closest('.chip'); if (!c) return; const v = c.dataset.bal; state.bals.has(v) ? state.bals.delete(v) : state.bals.add(v); renderList(); });
+                $('#apt-fg-bush').addEventListener('click', (e) => { const c = e.target.closest('.chip'); if (!c) return; const v = c.dataset.bush; state.bushes.has(v) ? state.bushes.delete(v) : state.bushes.add(v); renderList(); });
+
+                $('#apt-clear').addEventListener('click', () => { Object.assign(state, { ...state, q: '', profiles: new Set(), grooves: new Set(), dMin: 50, dMax: 700, mats: new Set(), coats: new Set(), bals: new Set(), bushes: new Set(), sort: 'sku_desc' }); $('#apt-q').value = ''; $('#apt-dMin').value = 50; $('#apt-dMax').value = 700; $('#apt-sort').value = 'sku_desc'; renderList(); });
+
+                function setView(mode) { state.mode = mode; localStorage.setItem('apt-viewMode', mode); applyMode(); }
+                $('#apt-viewGrid').addEventListener('click', () => setView('grid'));
+                $('#apt-viewList').addEventListener('click', () => setView('list'));
+
+                $('#apt-openCart').addEventListener('click', () => { renderCart(); openCart(); });
+                $('#apt-closeCart').addEventListener('click', closeCart);
+                $('#apt-clearCart').addEventListener('click', () => { state.cart = {}; saveCart(); renderCart(); updateCartBadge(); });
+                $('#apt-copy').addEventListener('click', () => {
+                    const items = Object.values(state.cart);
+                    const text = items.map(it => `${it.sku} x ${it.qty}`).join('\\n');
+                    navigator.clipboard.writeText(text).then(() => alert('已复制到剪贴板'));
+                });
+                $('#apt-submitQuote').addEventListener('click', () => {
+                    const items = Object.values(state.cart);
+                    if (items.length === 0) { alert('询价车为空'); return; }
+                    const payload = encodeURIComponent(JSON.stringify(items));
+                    location.href = `../contact_us/contact_us.html?cart=${payload}`;
+                });
+
+                $('#apt-overlay').addEventListener('click', (e) => { if (e.target.id === 'apt-overlay') closeModal(); });
+            }
+
+            function applyMode() {
+                document.body.classList.toggle('mode-list', state.mode === 'list');
+                $('#apt-viewGrid').classList.toggle('active', state.mode === 'grid');
+                $('#apt-viewList').classList.toggle('active', state.mode === 'list');
+            }
+
+            // public for inline handlers
+            return { openModal, closeModal, addToCart, changeQty, removeFromCart, stepQty };
+        })();
+    </script>
+</body>
+
+</html>

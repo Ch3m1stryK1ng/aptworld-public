@@ -1,0 +1,88 @@
+body {
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+/* Plain CSS (no Tailwind @apply) so it works standalone */
+.container {
+    width: 100%;
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+.card {
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    padding: .8rem 1rem;
+    box-shadow: 0 1px 2px rgba(2, 6, 23, 0.1);
+}
+
+.process-card {
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    padding: .7rem .6rem;
+    box-shadow: 0 1px 2px rgba(2, 6, 23, 0.1);
+}
+
+.case-card {
+    border-radius: 1rem;
+    border: 1px solid #e2e8f0;
+    background: #fff;
+    padding: .8rem .8rem;
+    box-shadow: 0 1px 2px rgba(2, 6, 23, 0.1);
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    border-radius: 9999px;
+    padding: .25rem .75rem;
+    font-size: .75rem;
+    font-weight: 600;
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+}
+
+.input {
+    width: 100%;
+    border-radius: .75rem;
+    border: 1px solid #cbd5e1;
+    background: #fff;
+    padding: .5rem .75rem;
+    font-size: .875rem;
+    color: #0f172a;
+}
+
+.input::placeholder {
+    color: #94a3b8;
+}
+
+.input:focus {
+    outline: none;
+    border-color: #94a3b8;
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, .1);
+}
+
+details summary {
+    cursor: pointer;
+}
+
+@media (min-width: 640px) {
+    .container {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .container {
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}

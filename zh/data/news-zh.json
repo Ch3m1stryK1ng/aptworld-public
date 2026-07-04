@@ -1,0 +1,87 @@
+[
+    {
+        "id": "complete-product-catalog-release",
+        "title": "阿波罗传动: 2025年产品手册发布",
+        "date": "2025-11-7",
+        "category": "技术资源",
+        "categoryTagClass": "tag-product",
+        "excerpt": "全新综合手册涵盖皮带轮、锥套、联轴器、链轮、法兰和马达导轨，适用于粮食、矿山和农业机械等多个行业。",
+        "detailUrl": "subpage/news/corporate_news.html?id=complete-product-catalog-release",
+        "mediaType": "iframe",
+        "mediaUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7392203945710096384?collapsed=1",
+        "socialLinks": [
+            {
+                "platform": "linkedin",
+                "url": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7392203945710096384"
+            }
+        ]
+    },
+    {
+        "id": "apt-craftsmanship-showcase",
+        "title": "制造的骄傲: 我们的工匠精神",
+        "date": "2025-11-6",
+        "category": "质量控制",
+        "categoryTagClass": "tag-company",
+        "excerpt": "走进阿波罗传动幕后：展示每一个皮带轮和锥套背后的精湛工艺与团队协作。专注双手打造品质。",
+        "detailUrl": "subpage/news/corporate_news.html?id=apt-craftsmanship-showcase",
+        "mediaType": "iframe",
+        "mediaUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7391851309680709632?collapsed=1",
+        "socialLinks": [
+            {
+                "platform": "linkedin",
+                "url": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7391851309680709632"
+            }
+        ]
+    },
+    {
+        "id": "ptc-expo-customization-showcase",
+        "title": "PTC展会亮点: 定制化解决方案",
+        "date": "2025-10-31",
+        "category": "产品发布",
+        "categoryTagClass": "tag-product",
+        "excerpt": "上海PTC展会现场：OEM认可的定制化服务、创新的分钟级选型系统，以及展示我们全球扩张承诺的全新国际品牌形象。",
+        "detailUrl": "subpage/news/corporate_news.html?id=ptc-expo-customization-showcase",
+        "mediaType": "tweet",
+        "tweetEmbedUrl": "https://twitter.com/Xiangjiang523/status/1988164482850566519",
+        "socialLinks": [
+            {
+                "platform": "linkedin",
+                "url": "https://www.linkedin.com/posts/xiangjiang-yang-b233a6172_ptcasia-powertransmission-mechanicalparts-activity-7390360870704549889-uNR2"
+            }
+        ]
+    },
+    {
+        "id": "jinpeng-indonesia-project-analysis",
+        "title": "矿业展深度探究: 印尼金矿项目",
+        "date": "2025-10-23",
+        "category": "行业洞察",
+        "categoryTagClass": "tag-industry",
+        "excerpt": "源自天津矿业展：通过金鹏EPC项目分析矿山环境下的极端可靠性需求。高粉尘、重载、连续作业——深度理解皮带轮与锥套面临的挑战。",
+        "detailUrl": "subpage/news/corporate_news.html?id=jinpeng-indonesia-project-analysis",
+        "mediaType": "iframe",
+        "mediaUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7387165675561197568?collapsed=1",
+        "socialLinks": [
+            {
+                "platform": "linkedin",
+                "url": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7387165675561197568"
+            }
+        ]
+    },
+    {
+        "id": "apollo-company-profile-launch",
+        "title": "阿波罗机械: 公司简介发布",
+        "date": "2025-10-9",
+        "category": "企业动态",
+        "categoryTagClass": "tag-company",
+        "excerpt": "全面概述我们的使命、愿景以及核心产品：皮带轮、锥套、联轴器、链轮。致力于同质最优价，同价最优至。",
+        "detailUrl": "subpage/news/corporate_news.html?id=apollo-company-profile-launch",
+        "mediaType": "iframe",
+        "mediaUrl": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7383038094100410368?collapsed=1",
+        "socialLinks": [
+            {
+                "platform": "linkedin",
+                "url": "https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7383038094100410368"
+            }
+        ]
+    }
+]

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tent Customizer · 重新设计 · HTML+CSS+JS</title>
+  <style>
+    :root{ --bg:#f8fafc;--card:#ffffff;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--brand:#111827;--accent:#0ea5e9; }
+    *{box-sizing:border-box}
+    body{margin:0;font:14px/1.45 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;color:var(--ink);background:var(--bg)}
+    .wrap{max-width:1200px;margin:24px auto;padding:0 16px;display:grid;grid-template-columns:1fr;gap:16px}
+    @media(min-width:1024px){.wrap{grid-template-columns:1fr 420px}}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(2,6,23,.05)}
+    .card>.hd{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line)}
+    .card>.bd{padding:14px 16px}
+    .btn{appearance:none;cursor:pointer;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 12px}
+    .btn:hover{background:#f8fafc}
+    .btn.primary{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .btn.danger{border-color:#fecaca;color:#b91c1c;background:#fff}
+    .btn.danger:hover{background:#fff1f2}
+    .controls label{display:block;color:var(--muted);font-size:12px;margin:6px 0 4px}
+    .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    .pill{border:1px solid var(--line);border-radius:12px;padding:8px 10px;text-align:center}
+    .pill.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+    .swatch{width:28px;height:28px;border-radius:999px;border:1px solid var(--line);display:inline-block;margin-right:6px}
+    .grid4{display:grid;grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));gap:8px}
+    .hint{color:var(--muted);font-size:12px}
+    #stage{width:100%;height:460px;display:block}
+    .panelBtn{border:1px solid var(--line);border-radius:10px;padding:8px 8px}
+    .panelBtn.active{background:var(--brand);color:#fff;border-color:var(--brand)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- LEFT: Canvas / Preview -->
+    <section class="card">
+      <div class="hd"><h2 style="margin:0;font-size:18px">帐篷定制预览（重新设计）</h2>
+        <div style="display:flex;gap:8px;align-items:center">
+          <select id="viewSel" class="btn"><option value="iso">等距视角</option><option value="front">正视图</option><option value="right">右视图</option></select>
+          <button id="btnExport" class="btn primary">导出当前视角 PNG</button>
+          <button id="btnExportAll" class="btn">批量导出三视角</button>
+        </div>
+      </div>
+      <div class="bd">
+        <p class="hint">步骤：① 选择 <b>款式</b> → ② 选择 <b>尺寸</b> → ③ 选择颜色/上传 LOGO/添加文字。点击任一面后可拖动元素；滚轮缩放，<b>Shift+滚轮</b> 旋转。</p>
+        <!-- SVG Stage -->
+        <svg id="stage" viewBox="0 0 820 520" xmlns="http://www.w3.org/2000/svg"></svg>
+      </div>
+    </section>
+
+    <!-- RIGHT: Controls -->
+    <aside class="card controls">
+      <div class="hd"><b>设置</b></div>
+      <div class="bd">
+        <div>
+          <label><b>步骤 1 · 款式选择</b></label>
+          <div id="styleGrid" class="grid4"></div>
+        </div>
+
+        <div style="margin-top:10px">
+          <label><b>步骤 2 · 尺寸选择</b></label>
+          <div id="sizeGrid" class="grid4"></div>
+        </div>
+
+        <label style="margin-top:10px">面料颜色</label>
+        <div id="colorRow"></div>
+        <input id="colorPick" type="color" class="btn" style="width:100px;margin-left:6px" />
+        <div class="hint" style="margin-top:6px">当前激活面：<b id="activePanelName">roof-front</b></div>
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid var(--line)">
+        <b>添加内容</b>
+        <div style="display:flex;gap:6px;margin-top:6px;flex-wrap:wrap">
+          <label class="btn">上传 LOGO
+            <input id="fileOne" type="file" accept="image/*" hidden>
+          </label>
+          <label class="btn">同步四个顶面上传
+            <input id="fileRoof" type="file" accept="image/*" hidden>
+          </label>
+          <label class="btn">同步所有面上传
+            <input id="fileAll" type="file" accept="image/*" hidden>
+          </label>
+          <button id="btnText" class="btn">添加文字</button>
+        </div>
+
+        <div id="selectedBlock" style="display:none;margin-top:10px">
+          <b style="display:block;margin-bottom:6px">已选元素</b>
+          <div id="textOnly" style="display:none">
+            <label>内容</label>
+            <input id="textContent" class="btn" style="width:100%" />
+            <label>颜色</label>
+            <input id="textColor" class="btn" style="width:100px" type="color" />
+          </div>
+          <div class="row" style="align-items:center;margin-top:6px">
+            <button id="dupRoof" class="btn">复制到四个顶面</button>
+            <button id="dupAll" class="btn">复制到所有面</button>
+            <button id="btnDel" class="btn danger">删除</button>
+          </div>
+          <div class="row" style="align-items:center;margin-top:6px">
+            <label>缩放</label>
+            <input id="rangeScale" type="range" min="0.3" max="2.0" step="0.01" />
+            <output id="outScale">1.00×</output>
+            <label>旋转</label>
+            <input id="rangeRot" type="range" min="-180" max="180" step="1" />
+            <output id="outRot">0°</output>
+          </div>
+        </div>
+
+        <hr style="margin:14px 0;border:none;border-top:1px solid var(--line)">
+        <b>面位选择 (Design Preview)</b>
+        <div id="panelGrid" class="grid4" style="margin-top:6px"></div>
+      </div>
+    </aside>
+  </div>
+
+  <script>
+    // -------------------- Data --------------------
+    // 尺寸（第一行 + 第三行）
+    const SIZES = [
+      { id: '3x3', label: '3×3M' },
+      { id: '3x4_5', label: '3×4.5M' },
+      { id: '3x6', label: '3×6M' },
+      { id: '2x2', label: '2×2M' },
+      { id: '2_5x2_5', label: '2.5×2.5M' },
+      { id: '2x3', label: '2×3M' },
+      { id: '4x4', label: '4×4M' },
+      { id: '4x6', label: '4×6M' },
+      { id: '4x8', label: '4×8M' },
+    ];
+
+    // 样式（与你给的第二行 6 款一致）
+    const STYLES = [
+      { id:'backWall', name:'背布（后背）' },
+      { id:'backTwoSides', name:'背布 + 两个侧围' },
+      { id:'backTwoHalfSides', name:'背布 + 两个半侧布' },
+      { id:'threeWallsPVC', name:'三个围布 + PVC 窗户' },
+      { id:'threeWallsTwoWindows', name:'三个围布 + 两个窗户' },
+      { id:'fourWallsRollDoor', name:'四个围布 + 一个卷帘门' },
+    ];
+
+    const COLOR_SWATCHES = ['#ffffff','#f3f4f6','#d1d5db','#0ea5e9','#22c55e','#f59e0b','#ef4444','#9333ea','#0f172a'];
+    const ROOF=['roof-front','roof-right','roof-back','roof-left'];
+    const WALL=['wall-front','wall-right','wall-back','wall-left'];
+
+    // -------------------- State --------------------
+    let state={
+      size:SIZES[0].id,
+      style:STYLES[0].id,
+      fabric:'#F0B44C', 
+      fabric2:'#2D66A4', 
+      activePanel:'roof-front',
+      view:'iso',
+      items:[],
+      selectedId:null,
+    };
+
+    const $=(s,el=document)=>el.querySelector(s);
+    const $$=(s,el=document)=>Array.from(el.querySelectorAll(s));
+    const stage=$('#stage');
+
+    // -------------------- Controls UI --------------------
+    (function init(){
+      // 样式宫格（带小缩略图）
+      const sg=$('#styleGrid');
+      sg.innerHTML=STYLES.map(s=>`<button class="panelBtn" data-id="${s.id}">${thumbSVG(s.id)}<div style='margin-top:2px;font-size:10px'>${s.name}</div></button>`).join('');
+      sg.addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return; state.style=b.dataset.id; refreshStyleActive(); render();});
+      refreshStyleActive();
+
+      // 尺寸宫格
+      const zg=$('#sizeGrid'); zg.innerHTML=SIZES.map(z=>`<button class="panelBtn" data-id="${z.id}">${z.label}</button>`).join('');
+      zg.addEventListener('click',e=>{const b=e.target.closest('button'); if(!b) return; state.size=b.dataset.id; refreshSizeActive(); render();});
+      refreshSizeActive();
+
+      // 颜色
+      const cr=$('#colorRow'); cr.innerHTML=COLOR_SWATCHES.map(c=>`<span class='swatch' title='${c}' data-c='${c}' style='background:${c}'></span>`).join('');
+      cr.addEventListener('click',e=>{const s=e.target.closest('.swatch'); if(!s) return; state.fabric=s.dataset.c; render();});
+      const cp=$('#colorPick'); cp.value=state.fabric; cp.addEventListener('input',()=>{state.fabric=cp.value; render();});
+
+      // 文件 / 文本
+      $('#fileOne').addEventListener('change',e=>handleLogo(e.target.files[0],'one'));
+      $('#fileRoof').addEventListener('change',e=>handleLogo(e.target.files[0],'roof'));
+      $('#fileAll').addEventListener('change',e=>handleLogo(e.target.files[0],'all'));
+      $('#btnText').addEventListener('click',()=>{const t=prompt('输入文字','YOUR BRAND'); if(!t) return; const id=uid(); state.items.push({id,type:'text',panel:state.activePanel,x:40,y:40,rot:0,scale:1,color:'#111827',font:'600 24px/1 Inter, system-ui, sans-serif',text:t}); state.selectedId=id; renderItemsOnly();});
+
+      // 选中块
+      $('#dupRoof').addEventListener('click',()=>dupTo('roof'));
+      $('#dupAll').addEventListener('click',()=>dupTo('all'));
+      $('#btnDel').addEventListener('click',()=>{if(!selected())return; state.items=state.items.filter(i=>i.id!==state.selectedId); state.selectedId=null; renderItemsOnly();});
+      $('#rangeScale').addEventListener('input',e=>{const s=selected(); if(!s) return; s.scale=+e.target.value; $('#outScale').textContent=s.scale.toFixed(2)+'×'; renderItemsOnly();});
+      $('#rangeRot').addEventListener('input',e=>{const s=selected(); if(!s) return; s.rot=+e.target.value; $('#outRot').textContent=s.rot.toFixed(0)+'°'; renderItemsOnly();});
+
+      // 视角/导出
+      $('#viewSel').addEventListener('change',e=>{state.view=e.target.value; render();});
+      $('#btnExport').addEventListener('click',()=>exportPNG(state.view));
+      $('#btnExportAll').addEventListener('click',async()=>{for(const v of ['iso','front','right']){state.view=v; render(); await sleep(120); await exportPNG(v);} state.view='iso'; render();});
+
+      // 面位面板
+      refreshPanelGrid();
+      window.addEventListener('wheel',onWheel,{passive:false});
+
+      render();
+    })();
+
+    function refreshStyleActive(){ $$('#styleGrid .panelBtn').forEach(b=>b.classList.toggle('active',b.dataset.id===state.style)); }
+    function refreshSizeActive(){ $$('#sizeGrid .panelBtn').forEach(b=>b.classList.toggle('active',b.dataset.id===state.size)); }
+
+    // -------------------- Drawing --------------------
+    function render(){ stage.innerHTML=''; const NS='http://www.w3.org/2000/svg'; const add=(t,a)=>{const el=document.createElementNS(NS,t);for(const k in a){el.setAttribute(k,a[k]);} stage.appendChild(el);return el;}; const W=820,H=520;
+      const shade=(hex,f)=>{try{const c=hex.replace('#','');const r=parseInt(c.slice(0,2),16),g=parseInt(c.slice(2,4),16),b=parseInt(c.slice(4,6),16);const mix=x=>Math.round(x*f+(255-255*f));return `#${mix(r).toString(16).padStart(2,'0')}${mix(g).toString(16).padStart(2,'0')}${mix(b).toString(16).padStart(2,'0')}`;}catch{return hex;}};
+
+      // 背景
+      add('ellipse',{cx:W/2,cy:H-28,rx:W/3,ry:22,fill:'#00000022'});
+
+      // 根据视角绘制
+      if(state.view==='iso') drawIso(add,shade); else if(state.view==='front') drawFront(add,shade); else drawRight(add,shade);
+
+      drawActiveOutline();
+      renderItemsOnly();
+    }
+
+    function drawIso(add,shade){ const f=state.fabric; // legs
+      [[190,190],[600,190],[240,330],[650,330]].forEach(([x,y])=>add('rect',{x,y,width:8,height:520-y-28,fill:'#6b7280'}));
+      // roof facets （双色外观：左/右用同色）
+      const R=[
+        {id:'roof-front',p:'220,210 560,210 390,110',fill:shade(f,0.92)},
+        {id:'roof-right',p:'560,210 680,300 500,200 390,110',fill:shade(f,0.85)},
+        {id:'roof-back',p:'680,300 340,300 500,200',fill:shade(f,0.78)},
+        {id:'roof-left',p:'220,210 340,300 500,200 390,110',fill:shade(f,0.88)},
+      ];
+      R.forEach(s=>{const el=add('polygon',{points:s.p,fill:s.fill,stroke:'#0f172a','stroke-width':2}); el.addEventListener('click',()=>{state.activePanel=s.id; updateActiveName(); renderItemsOnly();});});
+      drawWallsIso(add,shade);
+    }
+
+    function drawWallsIso(add,shade){ const f=state.fabric, half = state.style==='backTwoHalfSides';
+      const vis = (panel)=>{
+        const s=state.style;
+        if(s==='backWall') return panel==='wall-back';
+        if(s==='backTwoSides' || s==='backTwoHalfSides') return panel==='wall-back'||panel==='wall-left'||panel==='wall-right';
+        if(s==='threeWallsPVC' || s==='threeWallsTwoWindows') return panel==='wall-front'||panel==='wall-left'||panel==='wall-right';
+        if(s==='fourWallsRollDoor') return true; return false; };
+      // front
+      if(vis('wall-front')){ const h=half?100:190; const el=add('rect',{x:230,y:230,width:340,height:h,fill:shade(f,half?0.96:0.9),stroke:'#0f172a','stroke-width':2}); el.addEventListener('click',()=>{state.activePanel='wall-front'; updateActiveName(); renderItemsOnly();}); }
+      // right
+      if(vis('wall-right')){ const pts=half? '540,230 660,300 660,320 540,320' : '540,230 660,300 660,420 540,420'; const el=add('polygon',{points:pts,fill:shade(f,half?0.94:0.86),stroke:'#0f172a','stroke-width':2}); el.addEventListener('click',()=>{state.activePanel='wall-right'; updateActiveName(); renderItemsOnly();}); }
+      // back
+      if(vis('wall-back')){ const el=add('rect',{x:330,y:300,width:330,height:140,fill:shade(f,0.88),stroke:'#0f172a','stroke-width':2}); el.addEventListener('click',()=>{state.activePanel='wall-back'; updateActiveName(); renderItemsOnly();}); }
+      // left
+      if(vis('wall-left')){ const pts=half?'220,210 340,300 340,315 220,225':'220,210 340,300 340,420 220,320'; const el=add('polygon',{points:pts,fill:shade(f,half?0.95:0.87),stroke:'#0f172a','stroke-width':2}); el.addEventListener('click',()=>{state.activePanel='wall-left'; updateActiveName(); renderItemsOnly();}); }
+
+      // Overlays
+      if(state.style==='threeWallsPVC'){ let x=550, y=half?245:270; for(let i=0;i<3;i++){ add('rect',{x,y,width:26,height:32,rx:6,fill:'#e5f4ff',stroke:'#0f172a','stroke-width':1}); x+=30; } }
+      if(state.style==='threeWallsTwoWindows'){ const y=250; add('rect',{x:260,y,width:70,height:40,rx:4,fill:'#e5f4ff',stroke:'#0f172a','stroke-width':1}); add('rect',{x:420,y,width:70,height:40,rx:4,fill:'#e5f4ff',stroke:'#0f172a','stroke-width':1}); }
+      if(state.style==='fourWallsRollDoor'){ const y=240, h=170; add('rect',{x:350,y,width:100,height:h,fill:'#ffffffaa',stroke:'#0f172a','stroke-width':1}); add('line',{x1:400,y1:y,x2:400,y2:y+h,stroke:'#0f172a','stroke-width':1}); }
+    }
+
+    function drawFront(add,shade){ const f=state.fabric; // ground
+      // roof
+      add('polygon',{points:'210,220 610,220 410,120',fill:shade(f,0.9),stroke:'#0f172a','stroke-width':2});
+      // walls
+      const half = state.style==='backTwoHalfSides';
+      const frontVisible = ['backWall','backTwoSides','backTwoHalfSides','threeWallsPVC','threeWallsTwoWindows','fourWallsRollDoor'].includes(state.style);
+      if(frontVisible){ const h=half?100:220; const r=add('rect',{x:240,y:220,width:340,height:h,fill:shade(f,half?0.96:0.9),stroke:'#0f172a','stroke-width':2}); r.addEventListener('click',()=>{state.activePanel='wall-front'; updateActiveName(); renderItemsOnly();}); }
+      if(state.style==='threeWallsTwoWindows'){ const y=250; add('rect',{x:270,y,width:70,height:45,rx:4,fill:'#e5f4ff',stroke:'#0f172a','stroke-width':1}); add('rect',{x:430,y,width:70,height:45,rx:4,fill:'#e5f4ff',stroke:'#0f172a','stroke-width':1}); }
+      if(state.style==='fourWallsRollDoor'){ const y=250,h=180; add('rect',{x:360,y,width:100,height:h,fill:'#ffffffaa',stroke:'#0f172a','stroke-width':1}); add('line',{x1:410,y1:y,x2:410,y2:y+h,stroke:'#0f172a','stroke-width':1}); }
+    }
+
+    function drawRight(add,shade){ const f=state.fabric; // roof side
+      add('polygon',{points:'420,140 620,240 620,240 420,240',fill:shade(f,0.86),stroke:'#0f172a','stroke-width':2});
+      const half = state.style==='backTwoHalfSides'; const rightVisible=['backTwoSides','backTwoHalfSides','threeWallsPVC','threeWallsTwoWindows','fourWallsRollDoor'].includes(state.style);
+      if(rightVisible){ const pts=half?'520,240 620,300 620,320 520,320':'520,240 620,300 620,420 520,420'; const el=add('polygon',{points:pts,fill:shade(f,half?0.94:0.86),stroke:'#0f172a','stroke-width':2}); el.addEventListener('click',()=>{state.activePanel='wall-right'; updateActiveName(); renderItemsOnly();}); }
+      if(state.style==='threeWallsPVC'){ let x=530,y=half?255:280; for(let i=0;i<3;i++){ add('rect',{x,y,width:26,height:32,rx:6,fill:'#e5f4ff',stroke:'#0f172a','stroke-width':1}); x+=30; } }
+    }
+
+    // -------------------- Items layer --------------------
+    function renderItemsOnly(){ $$('#itemsLayer',stage).forEach(n=>n.remove()); const NS='http://www.w3.org/2000/svg'; const layer=document.createElementNS(NS,'g'); layer.setAttribute('id','itemsLayer'); stage.appendChild(layer); const vis=state.items.filter(i=>i.panel===state.activePanel); vis.forEach(i=>{ const g=document.createElementNS(NS,'g'); g.setAttribute('transform',`translate(${i.x},${i.y}) rotate(${i.rot}) scale(${i.scale})`); g.style.cursor='move'; g.addEventListener('mousedown',ev=>startDrag(ev,i.id)); g.addEventListener('touchstart',ev=>startDrag(ev,i.id)); g.addEventListener('click',()=>{state.selectedId=i.id; syncSelectedPanel();}); if(i.type==='image'){ const im=document.createElementNS(NS,'image'); im.setAttributeNS('http://www.w3.org/1999/xlink','href',i.src); im.setAttribute('width','180'); im.setAttribute('height','110'); im.setAttribute('preserveAspectRatio','xMidYMid meet'); g.appendChild(im);} else { const fo=document.createElementNS(NS,'foreignObject'); fo.setAttribute('width','280'); fo.setAttribute('height','140'); const d=document.createElement('div'); d.style.font=i.font; d.style.color=i.color; d.style.whiteSpace='pre'; d.style.pointerEvents='none'; d.textContent=i.text; fo.appendChild(d); g.appendChild(fo);} if(state.selectedId===i.id){ const r=document.createElementNS(NS,'rect'); r.setAttribute('x','-4'); r.setAttribute('y','-4'); r.setAttribute('width','200'); r.setAttribute('height','120'); r.setAttribute('fill','none'); r.setAttribute('stroke','#38bdf8'); r.setAttribute('stroke-dasharray','4 4'); g.appendChild(r);} layer.appendChild(g); }); updateSelectedBlock(); }
+
+    // -------------------- Active outline --------------------
+    function drawActiveOutline(){ const map={ 'roof-front':[220,210,560,210,390,110], 'roof-right':[560,210,680,300,500,200,390,110], 'roof-back':[680,300,340,300,500,200], 'roof-left':[220,210,340,300,500,200,390,110], 'wall-front':[230,230,570,230,570,420,230,420], 'wall-right':[540,230,660,300,660,420,540,420], 'wall-back':[330,300,660,300,660,440,330,440], 'wall-left':[220,210,340,300,340,420,220,320],}; const pts=map[state.activePanel]; if(!pts) return; const NS='http://www.w3.org/2000/svg'; const poly=document.createElementNS(NS,'polyline'); poly.setAttribute('points',pts.join(',')); poly.setAttribute('fill','none'); poly.setAttribute('stroke','#38bdf8'); poly.setAttribute('stroke-width','4'); poly.setAttribute('stroke-dasharray','8 8'); stage.appendChild(poly); }
+
+    // -------------------- Interactions --------------------
+    function selected(){ return state.items.find(i=>i.id===state.selectedId)||null; }
+    function syncSelectedPanel(){ const s=selected(); if(!s) return; if(s.panel!==state.activePanel){ state.activePanel=s.panel; updateActiveName(); refreshPanelGrid(); render(); } else { renderItemsOnly(); } }
+    function startDrag(ev,id){ const bounds=stage.getBoundingClientRect(); const it=state.items.find(x=>x.id===id); if(!it) return; const p=isTouch(ev)?ev.touches[0]:ev; const sx=p.clientX, sy=p.clientY; function move(e){ const q=isTouch(e)?e.touches[0]:e; it.x=clamp(it.x+(q.clientX-sx),0,bounds.width-10); it.y=clamp(it.y+(q.clientY-sy),0,bounds.height-10); renderItemsOnly(); } function up(){window.removeEventListener('mousemove',move);window.removeEventListener('mouseup',up);window.removeEventListener('touchmove',move);window.removeEventListener('touchend',up);} window.addEventListener('mousemove',move); window.addEventListener('mouseup',up); window.addEventListener('touchmove',move,{passive:false}); window.addEventListener('touchend',up); ev.preventDefault(); state.selectedId=id; updateSelectedBlock(); }
+    function onWheel(e){ const s=selected(); if(!s) return; e.preventDefault(); const d=Math.sign(e.deltaY); if(e.shiftKey){ s.rot=clamp(s.rot-d*4,-180,180); $('#rangeRot').value=s.rot; $('#outRot').textContent=s.rot.toFixed(0)+'°'; } else { s.scale=clamp(s.scale-d*0.05,0.2,4); $('#rangeScale').value=s.scale; $('#outScale').textContent=s.scale.toFixed(2)+'×'; } renderItemsOnly(); }
+    function dupTo(where){ const s=selected(); if(!s) return; const targets = where==='roof'?ROOF:[...ROOF,...WALL]; targets.filter(p=>p!==s.panel).forEach(p=>state.items.push({...s,id:uid(),panel:p})); renderItemsOnly(); }
+    function handleLogo(file,mode){ if(!file) return; const r=new FileReader(); r.onload=()=>{ const base={type:'image',rot:0,scale:1,x:40,y:40,src:r.result}; const targets= mode==='roof'?ROOF: (mode==='all'? [...ROOF,...WALL]:[state.activePanel]); const ids=[]; targets.forEach(p=>{ const id=uid(); state.items.push({id,panel:p,...base}); ids.push(id); }); state.selectedId=ids[0]||null; renderItemsOnly(); }; r.readAsDataURL(file); }
+
+    // -------------------- Export --------------------
+    async function exportPNG(view){ const rect=stage.getBoundingClientRect(); const svg = new XMLSerializer().serializeToString(stage); const blob=new Blob([svg],{type:'image/svg+xml;charset=utf-8'}); const url=URL.createObjectURL(blob); const img=new Image(); img.onload=()=>{ const canvas=document.createElement('canvas'); canvas.width=rect.width*2; canvas.height=rect.height*2; const ctx=canvas.getContext('2d'); ctx.drawImage(img,0,0,canvas.width,canvas.height); URL.revokeObjectURL(url); const a=document.createElement('a'); a.href=canvas.toDataURL('image/png'); a.download=`tent-${state.style}-${state.size}-${view}.png`; a.click(); }; img.src=url; }
+
+    // -------------------- Helpers --------------------
+    function clamp(v,a,b){return Math.min(Math.max(v,a),b)}
+    function uid(){return Math.random().toString(36).slice(2,9)}
+    function isTouch(e){return e && (e.touches||e.changedTouches)}
+    function updateSelectedBlock(){ const s=selected(); $('#selectedBlock').style.display = s? 'block':'none'; if(!s) return; $('#rangeScale').value=s.scale; $('#rangeRot').value=s.rot; $('#outScale').textContent=s.scale.toFixed(2)+'×'; $('#outRot').textContent=s.rot.toFixed(0)+'°'; const to=$('#textOnly'); to.style.display=s.type==='text'?'block':'none'; if(s.type==='text'){ $('#textContent').value=s.text; $('#textColor').value=s.color; $('#textContent').oninput=(e)=>{s.text=e.target.value; renderItemsOnly();}; $('#textColor').oninput=(e)=>{s.color=e.target.value; renderItemsOnly();}; } }
+    function refreshPanelGrid(){ const panels=[...ROOF,...WALL]; const grid=$('#panelGrid'); grid.innerHTML=panels.map(p=>`<button class='panelBtn ${state.activePanel===p?'active':''}' data-p='${p}'>${p}</button>`).join(''); grid.onclick=(e)=>{const b=e.target.closest('button'); if(!b) return; state.activePanel=b.dataset.p; updateActiveName(); refreshPanelGrid(); render();}; }
+    function updateActiveName(){ $('#activePanelName').textContent=state.activePanel; }
+    function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+
+    // 简化版缩略图（SVG）
+    function thumbSVG(id){
+      const base = (w=120,h=60)=>`<svg width='100%' viewBox='0 0 ${w} ${h}' xmlns='http://www.w3.org/2000/svg'>
+        <rect x='2' y='h-18' width='w-4' height='16' fill='#e2e8f0' stroke='#94a3b8' />
+        <polygon points='10,26 110,26 60,6' fill='#2d66a4'/>
+        <rect x='10' y='26' width='100' height='28' fill='#f0b44c' stroke='#94a3b8' />`
+        .replaceAll('w',w).replaceAll('h',h);
+      const end = `</svg>`;
+      if(id==='backWall') return base()+`<rect x='58' y='26' width='44' height='28' fill='#2d66a4'/>`+end;
+      if(id==='backTwoSides') return base()+`<rect x='20' y='26' width='20' height='28' fill='#2d66a4'/><rect x='80' y='26' width='20' height='28' fill='#2d66a4'/><rect x='58' y='26' width='44' height='28' fill='#2d66a4'/>`+end;
+      if(id==='backTwoHalfSides') return base()+`<rect x='20' y='38' width='20' height='16' fill='#2d66a4'/><rect x='80' y='38' width='20' height='16' fill='#2d66a4'/><rect x='58' y='26' width='44' height='28' fill='#2d66a4'/>`+end;
+      if(id==='threeWallsPVC') return base()+`<rect x='20' y='26' width='20' height='28' fill='#2d66a4'/><rect x='80' y='26' width='20' height='28' fill='#2d66a4'/><rect x='50' y='30' width='12' height='16' rx='3' fill='#e5f4ff'/><rect x='66' y='30' width='12' height='16' rx='3' fill='#e5f4ff'/><rect x='82' y='30' width='12' height='16' rx='3' fill='#e5f4ff'/>`+end;
+      if(id==='threeWallsTwoWindows') return base()+`<rect x='20' y='26' width='20' height='28' fill='#2d66a4'/><rect x='80' y='26' width='20' height='28' fill='#2d66a4'/><rect x='42' y='33' width='14' height='12' rx='2' fill='#e5f4ff'/><rect x='64' y='33' width='14' height='12' rx='2' fill='#e5f4ff'/>`+end;
+      if(id==='fourWallsRollDoor') return base()+`<rect x='54' y='30' width='12' height='22' fill='#ffffff' stroke='#64748b'/><line x1='60' y1='30' x2='60' y2='52' stroke='#64748b'/>`+end;
+      return base()+end;
+    }
+  </script>
+</body>
+</html>

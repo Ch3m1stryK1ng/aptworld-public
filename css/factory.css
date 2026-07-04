@@ -1,0 +1,423 @@
+/* ========================================
+   Factory Page - Modern Redesign
+   ======================================== */
+
+:root {
+    --factory-primary: #0a3d62;
+    --factory-accent: #e4572e;
+    --factory-text-dark: #1a1a1a;
+    --factory-text-light: #666666;
+    --factory-bg-light: #f8f9fa;
+    --factory-bg-white: #ffffff;
+    --factory-border: #e5e5e5;
+    --factory-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --factory-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --factory-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.15);
+    --factory-radius: 12px;
+    --factory-radius-sm: 8px;
+    --factory-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   Workshop Navigation (Sticky Tabs)
+   ======================================== */
+
+.workshop-nav {
+    position: sticky;
+    top: 0;
+    background: var(--factory-bg-white);
+    border-bottom: 2px solid var(--factory-border);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.workshop-nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Changed from no-wrap to wrap */
+    gap: 0.8rem;
+    /* Increased gap slightly for wrapped items */
+    justify-content: flex-start;
+    /* Align items to start */
+}
+
+/* Scrollbar styles removed as we are wrapping now */
+
+.workshop-nav-btn {
+    padding: 0.5rem 1.2rem;
+    /* Reduced padding */
+    background: transparent;
+    border: 1px solid var(--factory-border);
+    /* Thinner border */
+    border-radius: 50px;
+    color: var(--factory-text-dark);
+    font-size: 0.9rem;
+    /* Reduced font size */
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--factory-transition);
+}
+
+.workshop-nav-btn:hover {
+    border-color: var(--factory-primary);
+    color: var(--factory-primary);
+    background: rgba(10, 61, 98, 0.05);
+}
+
+.workshop-nav-btn.active {
+    background: var(--factory-primary);
+    border-color: var(--factory-primary);
+    color: white;
+    box-shadow: var(--factory-shadow-sm);
+}
+
+/* ========================================
+   Workshop Section Cards
+   ======================================== */
+
+.workshop-section {
+    background: var(--factory-bg-white);
+    border-radius: var(--factory-radius);
+    padding: 1.5rem 2rem;
+    /* Reduced padding from 2.5rem */
+    margin-bottom: 2rem;
+    /* Reduced margin */
+    box-shadow: var(--factory-shadow-md);
+    transition: var(--factory-transition);
+    scroll-margin-top: 140px;
+    /* Increased for wrapped nav height */
+}
+
+.workshop-section:hover {
+    box-shadow: var(--factory-shadow-lg);
+    transform: translateY(-2px);
+}
+
+/* Workshop Header */
+.workshop-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+    /* Reduced margin */
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid var(--factory-accent);
+    /* Thinner border */
+}
+
+.workshop-header i {
+    font-size: 1.5rem;
+    /* Reduced icon size */
+    color: var(--factory-accent);
+}
+
+.workshop-header h3 {
+    font-size: 1.5rem;
+    /* Reduced font size from 2rem */
+    font-weight: 700;
+    color: var(--factory-primary);
+    margin: 0;
+    letter-spacing: -0.01em;
+}
+
+/* ========================================
+   Process Items (Image + Features)
+   ======================================== */
+
+.process-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: start;
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--factory-border);
+}
+
+.process-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* Process Image */
+.process-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--factory-radius-sm);
+    box-shadow: var(--factory-shadow-sm);
+}
+
+.process-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.process-image:hover img {
+    transform: scale(1.05);
+}
+
+/* Process Content */
+.process-content h4 {
+    font-size: 1.2rem;
+    /* Reduced from 1.5rem */
+    font-weight: 600;
+    color: var(--factory-primary);
+    margin: 0 0 0.8rem 0;
+}
+
+.process-features {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.process-features li {
+    display: grid;
+    /* Col 1: Icon (24px)
+       Col 2: Content (Title & List) */
+    grid-template-columns: 24px 1fr;
+    /* Row 1: Title
+       Row 2: List */
+    grid-template-rows: auto auto;
+    gap: 0.5rem 1rem;
+    align-items: start;
+    margin-bottom: 1rem;
+    /* Reduced from 1.5rem to make it less sparse */
+    font-size: 1rem;
+    line-height: 1.5;
+    /* Slightly tighter line height */
+    color: var(--factory-text-light);
+}
+
+/* Removed mobile media query for 576px as the main layout is already stacked now */
+
+.process-features li:before {
+    content: "✓";
+    /* flex-shrink: 0; removed */
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--factory-accent);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: bold;
+    margin-top: 4px;
+    /* Adjusted for grid alignment */
+}
+
+/* Feature Title Style */
+/* Feature Title Style */
+.feature-title {
+    font-weight: 700;
+    color: var(--factory-primary);
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    font-size: 1.1rem;
+}
+
+/* Nested Lists */
+/* Nested Lists */
+.process-features ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 0;
+    grid-column: 2;
+    /* Stack under title */
+    grid-row: 2;
+}
+
+/* For items WITHOUT nested list/title structure (simple items), 
+   we need fallback? No, grid auto-placement handles text nodes too.
+   But simple items (like Surface Treatment) don't have .feature-title span.
+   They will be Text Node in Col 2. Col 3 empty.
+   And "Pretreatment Zone: ..." is long. 
+   If minmax(140px, auto) expands, it's fine.
+*/
+
+.process-features ul li {
+    display: flex;
+    /* keep nested items flexible/simple */
+    font-size: 0.95rem;
+    color: var(--factory-text-light);
+    margin-bottom: 0.5rem;
+}
+
+.process-features ul li:before {
+    content: "";
+    /* Remove arrow character */
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    /* Rounded dot */
+    background: var(--factory-primary);
+    /* Solid color */
+    display: inline-block;
+    margin-right: 0.75rem;
+    margin-top: 8px;
+    /* Optical alignment */
+    opacity: 0.7;
+}
+
+/* Specific adjustment for simple list items (like Image 2 described) 
+   to reduce gap if they don't have a title, but CSS can't detect parent content easily.
+   However, reducing the main margin-bottom (above) helps globally. 
+   We can also tighten the UL margin. */
+.process-features ul {
+    margin-top: 0.25rem;
+    /* Closer to title */
+    gap: 0.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   Image Gallery (for multiple images)
+   ======================================== */
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.image-gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--factory-radius-sm);
+    box-shadow: var(--factory-shadow-sm);
+    aspect-ratio: 4/3;
+}
+
+.image-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.image-gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+/* ========================================
+   Responsive Design
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .process-item {
+        grid-template-columns: 1fr;
+        /* Stack earlier on smaller desktops */
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .workshop-section {
+        padding: 1.5rem;
+    }
+
+    /* Removed redundant grid-template-columns change as it is covered by 1200px query */
+
+    .workshop-header h3 {
+        font-size: 1.4rem;
+    }
+
+    .process-content h4 {
+        font-size: 1.15rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .workshop-nav {
+        padding: 0.75rem 0;
+    }
+
+    .workshop-nav-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .workshop-section {
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .workshop-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .workshop-header h3 {
+        font-size: 1.5rem;
+    }
+
+    .workshop-header i {
+        font-size: 1.5rem;
+    }
+
+    .process-item {
+        gap: 1.25rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .process-content h4 {
+        font-size: 1.2rem;
+    }
+
+    .process-features li {
+        font-size: 0.95rem;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}
+
+/* ========================================
+   Animation Classes
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+
+.text-center {
+    text-align: center;
+}
+
+.mb-0 {
+    margin-bottom: 0 !important;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}

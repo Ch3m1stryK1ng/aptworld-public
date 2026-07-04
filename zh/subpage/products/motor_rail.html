@@ -1,0 +1,923 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>电机导轨 (Motor Rail) | Apollo Power Transmission</title>
+    <link rel="icon" type="image/webp" href="../../../images/home/logo.webp" />
+
+    <link rel="stylesheet" type="text/css" href="../../../css/nav-bar.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/main.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/forms.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../../../css/footer.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/subpage.css" />
+    <link rel="stylesheet" type="text/css" href="../../../css/apt-product.css" />
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.default.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="footer-page-wrapper" id="footerpageWrapper">
+        <div class="subpage-wrapper">
+            <header class="site-header site-header--sub" id="header">
+                <!-- ===== Top Bar（复用你现有结构） ===== -->
+                <div class="top-bar">
+                    <div class="container flex-between">
+                        <div class="top-bar-left">一家拥有25+年经验的能够提供专业的动力传动解决方案的源头工厂</div>
+                        <div class="top-bar-right">
+                            <div class="topbar-email">
+                                <a href="mailto:sales@apt-world.com" class="top-bar-link" aria-label="Email us">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>sales@apt-world.com</span>
+                                </a>
+                            </div>
+                            <div class="topbar-phone">
+                                <a href="tel:+8613315124900" class="top-bar-link" aria-label="Call us">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <span>(+86) 133‑1512‑4900</span>
+                                </a>
+                                <a href="tel:+8618631921132" class="top-bar-link" aria-label="Call us"
+                                    style="margin-left: 0.5rem;">
+                                    <span> / (+86) 186-3192-1132</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== Navbar（复用你现有结构） ===== -->
+                <dmobile -menuiv class="navbar">
+                    <div class="nav-container">
+                        <div class="nav-left">
+                            <a href="../../index.html" class="logo">
+                                <img src="../../../images/home/logo.svg" alt="Apollo Power Transmission"
+                                    class="logo-main" />
+                                <img src="../../../images/home/logo1.svg" alt="" class="logo-sub" aria-hidden="true" />
+                            </a>
+                        </div>
+
+                        <nav class="nav-center" id="nav-menu">
+                            <ul class="nav-list">
+                                <li class="nav-item"><a href="../../index.html">首页</a></li>
+                                <li class="nav-item has-submenu">
+                                    <a href="../../about_us.html" class="list" onclick="return false;">
+                                        关于我们 <i class="fas fa-caret-left arrow-icon"></i></a>
+                                    <ul class="submenu">
+                                        <li><a href="../about_us/company_profile.html">公司简介</a></li>
+                                        <li><a href="../about_us/factory.html">工厂展示</a></li>
+                                        <li><a href="../about_us/people_dictionary.html">人员信息</a></li>
+                                        <li><a href="../about_us/certificates.html">荣誉资质</a></li>
+                                        <li><a href="../about_us/video_center.html">视频中心</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-submenu">
+                                    <a href="products.html" class="list" onclick="return false;">
+                                        产品中心 <i class="fas fa-caret-left arrow-icon"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="../products/pulley.html"><span>皮带轮</span></a></li>
+                                        <li><a href="../products/taper_bushing.html"><span>锥套</span></a></li>
+                                        <li><a href="../products/coupling.html"><span>联轴器</span></a></li>
+                                        <li><a href="../products/sprocket.html"><span>链轮</span></a></li>
+                                        <li><a href="../products/flange.html"><span>法兰</span></a></li>
+                                        <li><a href="../products/motor_rail.html"><span>电机导轨</span></a></li>
+                                        <li><a href="../products/other_products.html">其他产品</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item has-submenu">
+                                    <a href="../../service.html" class="list" onclick="return false;">
+                                        服务支持 <i class="fas fa-caret-left arrow-icon"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="../service/design.html">图纸设计</a></li>
+                                        <li><a href="../service/casting.html">铸造</a></li>
+                                        <li><a href="../service/machining.html">机加工</a></li>
+                                        <li><a href="../service/surface_treatment.html">表面处理</a></li>
+                                        <li><a href="../service/custom_service.html">定制服务</a></li>
+                                        <li><a href="../service/after_sales.html">售后服务</a></li>
+                                        <li><a href="../service/troubleshooting.html">故障分析</a></li>
+                                        <li><a href="../service/download.html">文件下载</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item has-submenu">
+                                    <a href="../../news.html" class="list" onclick="return false;">
+                                        新闻资讯 <i class="fas fa-caret-left arrow-icon"></i>
+                                    </a>
+                                    <ul class="submenu">
+                                        <li><a href="../news/corporate_news.html">企业新闻</a></li>
+                                        <li><a href="../news/product_story.html">产品故事</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a href="../contact_us/contact_us.html">联系我们</a></li>
+                            </ul>
+                        </nav>
+
+                        <div class="nav-right">
+                            <!-- 复用你的搜索和语言切换 -->
+                            <div class="search-container" role="search">
+                                <button type="button" class="search-toggle" aria-label="Open search"><i
+                                        class="fas fa-search icon-search"></i></button>
+                                <form action="search.html" class="search-form hidden" role="search" autocomplete="off">
+                                    <input id="search-input" class="search-input" name="q" type="text"
+                                        placeholder="Search Keywords..." />
+                                    <button type="submit" class="btn-submit"><span>SUBMIT</span> <i
+                                            class="fas fa-arrow-right"></i></button>
+                                    <ul class="suggestions-list" id="suggestions-list"></ul>
+                                </form>
+                            </div>
+                            <div class="lang-selector" id="lang-selector">
+                                <div class="lang-toggle-wrapper">
+                                    <button class="lang-toggle" id="lang-toggle" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        <img src="../../../images/home/flag-cn.svg" alt="中文" class="lang-flag" /> 中文
+                                    </button>
+                                    <span class="lang-arrow"></span>
+                                </div>
+                                <ul class="lang-dropdown" id="lang-dropdown" role="menu">
+                                    <li data-lang="en" class="lang-option selected" role="menuitem"><img
+                                            src="../../../images/home/flag-en.svg" alt="English" class="lang-flag" /> EN
+                                    </li>
+                                    <hr class="lang-divider">
+                                    <li data-lang="zh" class="lang-option" role="menuitem"><img
+                                            src="../../../images/home/flag-cn.svg" alt="中文" class="lang-flag" /> 中文</li>
+                                </ul>
+                            </div>
+
+                            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation"
+                                aria-expanded="false">
+                                <span class="bar" aria-hidden="true"></span>
+                                <span class="bar" aria-hidden="true"></span>
+                                <span class="bar" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Mobile -->
+                    <nav class="mobile-menu" id="mobile-menu">
+                        <ul>
+                            <li class="mobile-item"><a href="../../index.html">Home</a></li>
+                            <li class="mobile-item has-mobile-submenu">
+                                <a href="#" class="mobile-list" onclick="toggleMobileSubmenu(event, 0)">About Us <i
+                                        class="fas fa-caret-left arrow-icon"></i></a>
+                                <ul class="mobile-submenu">
+                                    <li><a href="../about_us/company_profile.html">Company Profile</a></li>
+                                    <li><a href="../about_us/factory.html">Factory</a></li>
+                                    <li><a href="../about_us/people_dictionary.html">People Dictionary</a></li>
+                                    <li><a href="../about_us/certificates.html">Certificates</a></li>
+                                    <li><a href="../about_us/video_center.html">Video Center</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile-item has-mobile-submenu">
+                                <a href="#" class="mobile-list" onclick="toggleMobileSubmenu(event, 1)">Products <i
+                                        class="fas fa-caret-left arrow-icon"></i></a>
+                                <ul class="mobile-submenu">
+                                    <li><a href="../products/pulley.html">Pulley</a></li>
+                                    <li><a href="../products/taper_bushing.html">Taper Bushing</a></li>
+                                    <li><a href="../products/coupling.html">Coupling</a></li>
+                                    <li><a href="../products/sprocket.html">Sprocket</a></li>
+                                    <li><a href="flange.html">Flange</a></li>
+                                    <li><a href="motor_rail.html">Motor Rail</a></li>
+                                    <li><a href="../products/other_products.html">Other Product</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile-item has-mobile-submenu">
+                                <a href="#" class="mobile-list" onclick="toggleMobileSubmenu(event, 2)">Service <i
+                                        class="fas fa-caret-left arrow-icon"></i></a>
+                                <ul class="mobile-submenu">
+                                    <li><a href="../service/design.html">Design</a></li>
+                                    <li><a href="../service/casting.html">Casting</a></li>
+                                    <li><a href="../service/machining.html">Machining</a></li>
+                                    <li><a href="../service/surface_treatment.html">Surface Treatment</a></li>
+                                    <li><a href="../service/custom_service.html">Custom Service</a></li>
+                                    <li><a href="../service/after_sales.html">After‑sales</a></li>
+                                    <li><a href="../service/troubleshooting.html">Troubleshooting</a></li>
+                                    <li><a href="../service/download.html">Download</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile-item has-mobile-submenu">
+                                <a href="#" class="mobile-list" onclick="toggleMobileSubmenu(event, 3)">News <i
+                                        class="fas fa-caret-left arrow-icon"></i></a>
+                                <ul class="mobile-submenu">
+                                    <li><a href="../news/corporate_news.html">Corporate News</a></li>
+                                    <li><a href="../news/product_story.html">Product Story</a></li>
+                                </ul>
+                            </li>
+                            <li class="mobile-item"><a href="../contact_us/contact_us.html">Contact</a></li>
+                        </ul>
+                    </nav>
+        </div>
+
+        <section class="subpage-hero subpage-hero-bg" role="banner" aria-label="About Us banner"
+            style="background-image: url(../../../images/home/pages/products.webp)">
+            <div class="hero-mask"></div>
+            <div class="hero-inner">
+                <h1>产品中心</h1>
+            </div>
+        </section>
+        </header>
+
+        <div id="menu-overlay"></div>
+        <!-- <div id="content-spacer" aria-hidden="true"></div> -->
+
+        <main class="page-main">
+            <div class="page-container">
+                <div class="breadcrumb">
+                    <span class="crumb"><i class="fa fa-house"></i></span>
+                    <a href="../../index.html">首页</a>
+                    <span class="sep">/</span>
+                    <a href="../products/pulley.html">产品中心</a>
+                    <span class="sep">/</span>
+                    <span class="current">电机导轨</span>
+                </div>
+                <hr class="divider" />
+
+                <!-- 移动端侧边栏遮罩层 -->
+                <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+                <div class="page-grid">
+                    <aside class="sidebar" id="categories-sidebar">
+                        <section class="panel">
+                            <div class="panel-header">
+                                <h3 class="panel-title"><i class="fa fa-layer-group"></i>产品分类</h3>
+                                <i class="fa fa-chevron-left dropdown-icon"></i>
+                            </div>
+                            <hr class="panel-divider" />
+                            <ul class="category-list">
+                                <li><a href="pulley.html">皮带轮</a></li>
+                                <li><a href="taper_bushing.html">锥套</a></li>
+                                <li><a href="coupling.html">联轴器</a></li>
+                                <li><a href="sprocket.html">链轮</a></li>
+                                <li><a href="flange.html">法兰</a></li>
+                                <li class="is-open">
+                                    <a href="#" data-cat="motor-rail" data-series="" class="active">电机导轨</a>
+                                </li>
+                                <li><a href="other_products.html">其他产品</a></li>
+                            </ul>
+                        </section>
+
+                        <div class="ad">
+                            <div style="font-weight:600">下载样册</div>
+                            <div class="muted" style="font-size:13px">电机导轨规格参数手册 (PDF).
+                            </div>
+                            <a class="cta" href="../service/download.html"><i class="fa fa-download"></i> 下载
+                                PDF</a>
+                        </div>
+                        <div class="ad">
+                            <div style="font-weight:600">定制加工</div>
+                            <div class="muted" style="font-size:13px">可按需提供孔径、键槽及 G2.5 动平衡服务。
+                            </div>
+                            <a class="cta" href="../service/custom_service.html"><i
+                                    class="fa fa-screwdriver-wrench"></i> 了解更多</a>
+                        </div>
+                        <div class="ad">
+                            <div style="font-weight:600">快速询价</div>
+                            <div class="muted" style="font-size:13px">上传 BOM 清单，24小时内获取报价。</div>
+                            <a class="cta" href="../contact_us/contact_us.html"><i class="fa fa-paper-plane"></i>
+                                联系销售</a>
+                        </div>
+
+                        <section class="panel contact-panel">
+                            <h3 class="panel-title">联系我们</h3>
+                            <hr class="panel-divider" />
+                            <ul class="contact-list">
+                                <li><strong>售后咨询:</strong> <a href="tel:+8613315124900">(+86) 133‑1512‑4900</a>
+                                    / <a href="tel:+8618631921132">(+86) 186-3192-1132</a></li>
+                                <li><strong>销售热线:</strong> <a href="tel:+8613315124900">(+86) 133‑1512‑4900</a> / <a
+                                        href="tel:+8618631921132">(+86) 186-3192-1132</a></li>
+                                <li><strong>销售部地址:</strong> <a>河北省石家庄市长安区睿和中心1104</a></li>
+                                <li><strong>电子邮箱:</strong> <a href="mailto:sales@apt-world.com">sales@apt-world.com</a>
+                                </li>
+                                <li><strong>工厂地址:</strong> <a>河北省宁晋县大曹庄管理区</a></li>
+                            </ul>
+                            <hr class="panel-divider" />
+                            <div class="social-row">
+                                <a href="https://www.instagram.com/apt.jasper?igsh=a3lpYXd6MXpvNzcz&utm_source=qr"
+                                    target="_blank" aria-label="Instagram"><img src="../../../images/home/instagram.svg"
+                                        alt=""></a>
+                                <a href="https://www.linkedin.com/in/xiangjiang-yang-b233a6172/?trk=public-profile-join-page"
+                                    target="_blank" aria-label="LinkedIn"><img src="../../../images/home/linkedin.svg"
+                                        alt=""></a>
+                                <a href="https://www.facebook.com/profile.php?id=100075473473693" target="_blank"
+                                    aria-label="Facebook"><img src="../../../images/home/facebook.svg" alt=""></a>
+                                <a href="https://x.com/Xiangjiang523" target="_blank" aria-label="Twitter"><img
+                                        src="../../../images/home/twitter-x.svg" alt=""></a>
+                                <a href="https://www.youtube.com/@APT.Jasper" target="_blank" aria-label="YouTube"><img
+                                        src="../../../images/home/youtube.svg" alt=""></a>
+                                <a href="https://www.tiktok.com/@aptxiangjiang?_t=ZT-8zKrJ1nxNHy&_r=1" target="_blank"
+                                    aria-label="Tiktok"><img src="../../../images/home/tiktok.svg" alt=""></a>
+                                <a href="https://www.wechat.com" target="_blank" aria-label="WeChat"><img
+                                        src="../../../images/home/wechat.svg" alt=""></a>
+                            </div>
+                        </section>
+                    </aside>
+
+                    <!-- 右侧 80%：主内容 -->
+                    <section class="content">
+                        <div class="main-content-header">
+                            <h2 class="content-title">电机导轨 (Motor Rail)</h2>
+                            <!-- 移动端 Categories 菜单按钮 -->
+                            <button class="mobile-categories-toggle" id="mobile-categories-toggle"
+                                aria-label="Toggle Categories">
+                                <i class="fa fa-filter"></i>
+                                <span>分类</span>
+                            </button>
+                        </div>
+
+                        <hr class="content-divider" />
+
+                        <div id="apt-products">
+                            <!-- Search + Cart -->
+                            <div class="apt-toolbar">
+                                <div class="apt-search" style="min-width:260px; display: flex; gap: 10px;">
+                                    <i class="fa fa-magnifying-glass"></i>
+                                    <div class="search-product">
+                                        <select id="search-list">
+                                            <option value="">全部产品</option>
+                                            <option value="euro">ISO/BS</option>
+                                            <option value="us">ANSI/RMA</option>
+                                        </select>
+                                    </div>
+                                    <input id="apt-q" type="text" placeholder="搜索型号、名称或关键字...">
+                                    <button id="apt-search-btn" class="search-btn">搜索</button>
+                                </div>
+                                <div class="spacer"></div>
+                                <div class="apt-cartbtn">
+                                    <button class="apt-iconbtn" id="apt-openCart" data-tooltip="询价篮">
+                                        <i class="fa fa-cart-shopping"></i>
+                                    </button>
+                                    <span class="apt-count" id="apt-cartCount" style="display:none">0</span>
+                                </div>
+                            </div>
+
+                            <!-- Results Bar -->
+                            <div class="apt-resultsbar">
+                                <h3 style="margin:0;font-size:18px">共找到 <span id="apt-count"
+                                        style="color: red;">0</span> 款产品</h3>
+
+                                <div style="display:flex;align-items:center;gap:8px">
+                                    <div class="apt-sort-container">
+                                        <select id="apt-sort" title="排序">
+                                            <option value="sku_desc">按型号 (降序)</option>
+                                            <option value="sku_asc">按型号 (升序)</option>
+                                            <option value="name_asc">名称: A→Z</option>
+                                            <option value="name_desc">名称: Z→A</option>
+                                            <option value="dia_asc">直径 (从小到大)</option>
+                                            <option value="dia_desc">直径 (从大到小)</option>
+                                            <option value="new">最新发布</option>
+                                            <option value="relevance">相关度</option>
+                                        </select>
+                                    </div>
+                                    <div class="apt-views">
+                                        <button class="apt-iconbtn" id="apt-viewGrid" data-tooltip="网格视图"><i
+                                                class="fa fa-table-cells-large"></i></button>
+                                        <button class="apt-iconbtn" id="apt-viewList" data-tooltip="列表视图"><i
+                                                class="fa fa-list"></i></button>
+                                    </div>
+                                    <button id="cmp-open" class="btn primary"
+                                        style="display:none; gap:6px; background: #5b5bd6; border-color:#5b5bd6">
+                                        <i class="fa fa-layer-group"></i> 对比 <span id="cmp-count">0</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <hr class="content-divider" />
+
+                            <!-- Dropdown filters -->
+                            <div class="apt-filter-row">
+                                <div class="apt-select">
+                                    <label>锥套尺寸</label>
+                                    <select id="f-bushSize" multiple>
+                                        <option value="">全部</option>
+                                        <option value="1008">1008</option>
+                                        <option value="1108">1108</option>
+                                        <option value="1210">1210</option>
+                                        <option value="1215">1215</option>
+                                        <option value="1310">1310</option>
+                                        <option value="1610">1610</option>
+                                        <option value="1615">1615</option>
+                                        <option value="2012">2012</option>
+                                        <option value="2517">2517</option>
+                                        <option value="3020">3020</option>
+                                        <option value="3030">3030</option>
+                                        <option value="3525">3525</option>
+                                        <option value="3535">3535</option>
+                                        <option value="4030">4030</option>
+                                        <option value="4040">4040</option>
+                                        <option value="4535">4535</option>
+                                        <option value="4545">4545</option>
+                                        <option value="5040">5040</option>
+                                        <option value="5050">5050</option>
+                                        <option value="6050">6050</option>
+                                        <option value="7060">7060</option>
+                                        <option value="8065">8065</option>
+                                    </select>
+                                </div>
+                                <div class="apt-select">
+                                    <label>类型</label>
+                                    <select id="f-type" multiple>
+                                        <option value="">全部</option>
+                                        <option value="1">Type 1</option>
+                                        <option value="2">Type 2</option>
+                                        <option value="3">Type 3</option>
+                                        <option value="4">Type 4</option>
+                                    </select>
+                                </div>
+                                <div class="apt-select">
+                                    <label>材质</label>
+                                    <select id="f-mat" multiple>
+                                        <option value="">全部</option>
+                                        <option value="EN-GJL 200 - DIN EN 1561">EN-GJL 200 (铸铁)</option>
+                                        <option value="Steel">钢</option>
+                                    </select>
+                                </div>
+                                <div class="apt-select">
+                                    <label>最大孔径范围 (mm)</label>
+                                    <select id="f-dbmax" multiple>
+                                        <option value="">全部</option>
+                                        <option value="0-30">0-30</option>
+                                        <option value="30-50">30-50</option>
+                                        <option value="50-80">50-80</option>
+                                        <option value="80-120">80-120</option>
+                                        <option value="120-200">120-200</option>
+                                    </select>
+                                </div>
+                                <div class="apt-select">
+                                    <label>表面处理</label>
+                                    <select id="f-coat" multiple>
+                                        <option value="">全部</option>
+                                        <option value="Phosphated">磷化</option>
+                                        <option value="Black Oxide">发黑</option>
+                                    </select>
+                                </div>
+                                <div class="apt-select">
+                                    <label>扭矩范围 (Nm)</label>
+                                    <select id="f-torque" multiple>
+                                        <option value="">全部</option>
+                                        <option value="0-500">0-500</option>
+                                        <option value="500-2000">500-2000</option>
+                                        <option value="2000-5000">2000-5000</option>
+                                        <option value="5000-15000">5000-15000</option>
+                                        <option value="15000-50000">15000-50000</option>
+                                    </select>
+                                </div>
+                                <button class="btn sm" id="apt-clear">清除筛选</button>
+                            </div>
+
+                            <!-- Grid -->
+                            <div id="apt-grid" class="apt-grid"></div>
+
+                            <!-- Detail (via ?sku=) -->
+                            <div id="apt-detail" class="card panel" style="margin-top:12px; display:none">
+                                <a href="taper_bushing.html" class="btn sm"><i class="fa-solid fa-arrow-left"></i>
+                                    返回列表</a>
+                                <div class="muted" id="apt-crumb" style="margin-top:6px;font-size:12px"></div>
+                                <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:12px">
+                                    <div>
+                                        <div class="thumb" id="apt-dImgBox">
+                                            <img id="apt-dImg" alt="" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <h1 id="apt-dName"></h1>
+                                        <div class="muted" id="apt-dSku"></div>
+                                        <div class="row" style="margin-top:10px" id="apt-dBadges"></div>
+                                        <div class="kv" style="margin-top:14px" id="apt-dKv"></div>
+                                        <div style="margin-top:16px">
+                                            <strong>产品特点</strong>
+                                            <ul id="apt-dFeat"></ul>
+                                        </div>
+                                        <div class="row" style="margin-top:20px; align-items:center">
+                                            <div class="qty">
+                                                <button onclick="APT.stepQty('#apt-dQty',-1)">−</button>
+                                                <input id="apt-dQty" type="number" min="1" value="1" />
+                                                <button onclick="APT.stepQty('#apt-dQty',1)">＋</button>
+                                            </div>
+                                            <button class="btn primary" id="apt-dAdd">加入询价车</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <nav class="pagination"></nav>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <div class="fab-container">
+            <button class="fab-trigger" id="fab-product" data-widget="widget-product" aria-label="Product Inquiry">
+                <svg class="icon-original" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v2" />
+                    <path d="M21 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                    <line x1="12" y1="22.08" x2="12" y2="12" />
+                </svg>
+                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <button class="fab-trigger" id="fab-general" data-widget="widget-general" aria-label="General Inquiry">
+                <svg class="icon-original" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg>
+                <svg class="icon-close" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div class="form-widget-templates" style="display: none;">
+            <div class="form-widget" id="widget-general">
+                <div class="form-widget-header">
+                    <h3>通用咨询</h3>
+                    <p>我们会尽快回复您。</p>
+                </div>
+                <div class="form-widget-body">
+                    <form id="form-general" action="https://api.apt-world.com/api/inquiry" method="POST"
+                        enctype="multipart/form-data" novalidate>
+                        <input type="hidden" name="_subject" value="新通用咨询 (来自官网)">
+                        <input type="hidden" name="_captcha" value="false">
+                        <div class="form-group">
+                            <label for="general-name">姓名 <span class="required">*</span></label>
+                            <input type="text" id="general-name" name="name" required placeholder="您的姓名">
+                            <div class="error-text">请输入您的姓名。</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="general-email">电子邮箱 <span class="required">*</span></label>
+                            <input type="email" id="general-email" name="email" required placeholder="name@example.com">
+                            <div class="error-text">请输入有效的电子邮箱。</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="general-whatsapp">WhatsApp (选填)</label>
+                            <input type="text" id="general-whatsapp" name="whatsapp" placeholder="您的 WhatsApp 号码">
+                        </div>
+                        <div class="form-group">
+                            <label for="general-message">留言内容 <span class="required">*</span></label>
+                            <textarea id="general-message" name="message" rows="4" required
+                                placeholder="请填写您的需求..."></textarea>
+                            <div class="error-text">请输入留言内容。</div>
+                        </div>
+                        <button type="submit" class="submit-btn">发送留言</button>
+                        <div class="form-result"></div>
+                    </form>
+                </div>
+            </div>
+            <div class="form-widget" id="widget-product">
+                <div class="form-widget-header">
+                    <h3>产品咨询</h3>
+                    <p>我们会尽快回复您。</p>
+                </div>
+                <div class="form-widget-body">
+                    <form id="form-product" action="https://api.apt-world.com/api/inquiry" method="POST"
+                        enctype="multipart/form-data" novalidate>
+                        <input type="hidden" name="_subject" value="新产品咨询 (来自官网)">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_next" value="about:blank">
+                        <div class="form-group">
+                            <label for="product-name">产品名称 <span class="required">*</span></label>
+                            <input type="text" id="product-name" name="product_name" required placeholder="产品名称/型号">
+                            <div class="error-text">请输入产品名称。</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-email">您的邮箱 <span class="required">*</span></label>
+                            <input type="email" id="product-email" name="email" required
+                                placeholder="例如: name@company.com">
+                            <div class="error-text">请输入有效的电子邮箱。</div>
+                        </div>
+                        <div class="form-group-row">
+                            <div class="form-group">
+                                <label for="specification">规格参数</label>
+                                <input type="text" id="specification" name="specification" placeholder="(选填) 例如: 尺寸、材质">
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity">数量</label>
+                                <input type="number" id="quantity" name="quantity" min="1" placeholder="例如: 1000">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-file-input">上传图纸/文件<span class="required">*</span></label>
+                            <div class="file-drop-area" id="dropArea">
+                                <div class="file-drop-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17 8 12 3 7 8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                </div>
+                                <p class="file-drop-prompt"><b>点击上传</b> 或 拖拽文件至此</p>
+                                <p class=" file-drop-keepping"><b>已有文件。可继续拖拽添加。</b></p>
+                                <input type="file" class="file-input-hidden" name="attachment" multiple hidden>
+                            </div>
+                            <div class="file-list"></div>
+                            <div class="error-text file-error" style="display:none;">请至少上传一个文件。
+                            </div>
+                            <!-- <div class="file-upload-display">No file selected.</div> -->
+                        </div>
+                        <button type="submit" class="submit-btn">提交咨询</button>
+                        <div class="form-result"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-header">
+                    <div class="footer-menu-toggle" id="footerMenuToggle">
+                        <div class="footer-burger-icon">
+                            <span class="bar" aria-hidden="true"></span>
+                            <span class="bar" aria-hidden="true"></span>
+                            <span class="bar" aria-hidden="true"></span>
+                        </div>
+                        <span class="footer-menu-label">菜单</span>
+                    </div>
+                    <nav id="footer-nav" class="footer-nav">
+                        <a href="../../index.html">首页</a>
+                        <a href="../about_us/company_profile.html">关于我们</a>
+                        <a href="../products/pulley.html">产品中心</a>
+                        <a href="../service/download.html">服务支持</a>
+                        <a href="../news/corporate_news.html">新闻资讯</a>
+                        <a href="../contact_us/contact_us.html">联系我们</a>
+                    </nav>
+                </div>
+
+                <div class="footer_info">
+                    <div class="footer-info-columns">
+                        <div class="footer-contact">
+                            <p>
+                                <strong><i class="fa fa-comment"></i>售后服务:</strong><a href="tel:+8613315124900">
+                                    (+86)-133-1512-4900
+                                </a> / <a href="tel:+8618631921132">
+                                    (+86)-186-3192-1132
+                                </a>
+                            </p>
+                            <p>
+                                <strong><i class="fa fa-phone"></i>销售咨询:</strong><a href="tel:+8613315124900">
+                                    (+86)-133-1512-4900
+                                </a> / <a href="tel:+8618631921132">
+                                    (+86)-186-3192-1132
+                                </a>
+                            </p>
+                            <p>
+                                <strong><i class="fa fa-envelope"></i>邮箱:</strong><a href="mailto:sales@apt-world.com">
+                                    sales@apt-world.com
+                                </a>
+                            </p>
+                            <p>
+                                <strong><i class="fa fa-briefcase"></i>销售办公室:</strong>
+                                河北省石家庄市长安区睿和中心1104
+                            </p>
+                            <p>
+                                <strong><i class="fa fa-map-marker"></i>工厂地址:</strong>
+                                河北省邢台市宁晋县大曹庄管理区
+                            </p>
+                        </div>
+
+                        <div class="qr-code">
+                            <div><img src="../../../images/home/公众号.webp" alt="微信公众号">
+                                <p>微信公众号</p>
+                            </div>
+                            <div><img src="../../../images/home/抖音.webp" alt="抖音">
+                                <p>抖音</p>
+                            </div>
+                            <div><img src="../../../images/home/视频号.webp" alt="视频号">
+                                <p>视频号</p>
+                            </div>
+                            <div><img src="../../../images/home/mybilibili.webp" alt="哔哩哔哩">
+                                <p>哔哩哔哩</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-social-icons">
+                        <a href="https://mp.weixin.qq.com/s/MZHwMoGxU5FuZImyO6CTvg" target="_blank"
+                            class="footer-icon-tooltip">
+                            <img src="../../../images/home/wechat.svg" alt="wechat" />
+                            <span class="footer-tooltip-text">微信公众号</span>
+                        </a>
+                        <a href="https://www.douyin.com/user/MS4wLjABAAAAqZH3zv5Cae5at-pLwWW0b82vYzaiVId5gGi1Zw3p9vnTPvnGMZZWK2i6W_vOv8pK"
+                            target="_blank" class="footer-icon-tooltip">
+                            <img src="../../../images/home/tiktok.svg" alt="tiktok" />
+                            <span class="footer-tooltip-text">抖音</span>
+                        </a>
+                        <a href="https://channels.weixin.qq.com/" target="_blank" class="footer-icon-tooltip">
+                            <img src="../../../images/home/shipinhao.svg" alt="shipinhao" />
+                            <span class="footer-tooltip-text">视频号</span>
+                        </a>
+                        <a href="https://www.xiaohongshu.com/user/profile/68b45c73000000001901cad5?xsec_token=YB42IC3hBqigx0GCRdGjGCf5xUshVm6_MaK68uRk-Ei6Q=&xsec_source=app_share&xhsshare=CopyLink&appuid=68b45c73000000001901cad5&apptime=1756651388&share_id=e3e33b08b9f146b4875fe18030712afa"
+                            target="_blank" class="footer-icon-tooltip">
+                            <img src="../../../images/home/xiaohongshu.svg" alt="redbook" />
+                            <span class="footer-tooltip-text">小红书</span>
+                        </a>
+                        <a href="https://space.bilibili.com/3546969614059823" target="_blank"
+                            class="footer-icon-tooltip">
+                            <img src="../../../images/home/bilibili.svg" alt="bilibili" />
+                            <span class="footer-tooltip-text">哔哩哔哩</span>
+                        </a>
+                        <a href="https://www.xiaohongshu.com/user/profile/68b45c73000000001901cad5?xsec_token=YB42IC3hBqigx0GCRdGjGCf5xUshVm6_MaK68uRk-Ei6Q=&xsec_source=app_share&xhsshare=CopyLink&appuid=68b45c73000000001901cad5&apptime=1756651388&share_id=e3e33b08b9f146b4875fe18030712afa"
+                            target="_blank" class="footer-icon-tooltip">
+                            <img src="../../../images/home/weibo.svg" alt="weibo" />
+                            <span class="footer-tooltip-text">微博</span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="footer-divider">
+                <div class="footer-copyright">
+                    <div class="left">COPYRIGHT © 2025 Hebei Apollo Power Transmission Co., Ltd.</div>
+                    <div class="right">冀ICP备2024098043号-2 河北阿波罗动力传动 & 河北正和机械 进出口贸易办公室</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
+
+    <div class="footer-side-menu" id="footerSideMenu">
+        <div class="sidebar-header">
+            <a class="logo-main">
+                <img src="../../../images/home/logo.svg" alt="Apollo Power Transmission Logo">
+
+            </a>
+            <a class="logo-sub">
+                <img src="../../../images/home/logo1.svg" alt="Apollo Power Transmission Logo-apt">
+            </a>
+        </div>
+        <nav>
+            <a href="../../index.html" class="footer-sidebar-item sidebar-menu-label">首页</a>
+
+            <div class="footer-sidebar-item footer-menu-item has-footer-submenu">
+                <span class="sidebar-menu-label">关于我们</span>
+                <span class="arrow fa fa-chevron-left"></span>
+            </div>
+            <div class="footer-submenu">
+                <a href="../about_us/company_profile.html" class="footer-sidebar-item">公司简介</a>
+                <a href="../about_us/factory.html" class="footer-sidebar-item">工厂展示</a>
+                <a href="../about_us/people_dictionary.html" class="footer-sidebar-item">人文词典</a>
+                <a href="../about_us/certificates.html" class="footer-sidebar-item">荣誉资质</a>
+                <a href="../about_us/video_center.html" class="footer-sidebar-item">视频中心</a>
+            </div>
+
+            <div class="footer-sidebar-item footer-menu-item has-footer-submenu">
+                <span class="sidebar-menu-label">产品中心</span>
+                <span class="arrow fa fa-chevron-left"></span>
+            </div>
+            <div class="footer-submenu">
+                <a href="../products/pulley.html" class="footer-sidebar-item">皮带轮</a>
+                <a href="../products/taper_bushing.html" class="footer-sidebar-item">锥套</a>
+                <a href="../products/coupling.html" class="footer-sidebar-item">联轴器</a>
+                <a href="../products/sprocket.html" class="footer-sidebar-item">链轮</a>
+                <a href="flange.html" class="footer-sidebar-item">法兰</a>
+                <a href="motor_rail.html" class="footer-sidebar-item">电机导轨</a>
+                <a href="../products/other_products.html" class="footer-sidebar-item">其他产品</a>
+            </div>
+
+            <div class="footer-sidebar-item footer-menu-item has-footer-submenu">
+                <span class="sidebar-menu-label">服务支持</span>
+                <span class="arrow fa fa-chevron-left"></span>
+            </div>
+            <div class="footer-submenu">
+                <a href="../service/design.html" class="footer-sidebar-item">图纸设计</a>
+                <a href="../service/casting.html" class="footer-sidebar-item">铸造</a>
+                <a href="../service/machining.html" class="footer-sidebar-item">机加工</a>
+                <a href="../service/surface_treatment.html" class="footer-sidebar-item">表面处理</a>
+                <a href="../service/custom_service.html" class="footer-sidebar-item">定制服务</a>
+                <a href="../service/after_sales.html" class="footer-sidebar-item">售后服务</a>
+                <a href="../service/troubleshooting.html" class="footer-sidebar-item">故障分析</a>
+                <a href="../service/download.html" class="footer-sidebar-item">文件下载</a>
+            </div>
+
+            <div class="footer-sidebar-item footer-menu-item has-footer-submenu">
+                <span class="sidebar-menu-label">新闻资讯</span>
+                <span class="arrow fa fa-chevron-left"></span>
+            </div>
+            <div class="footer-submenu">
+                <a href="../news/corporate_news.html" class="footer-sidebar-item">企业新闻</a>
+                <a href="../news/product_story.html" class="footer-sidebar-item">产品故事</a>
+            </div>
+
+            <a href="../contact_us/contact_us.html" class="footer-sidebar-item sidebar-menu-label">联系我们</a>
+        </nav>
+    </div>
+
+    <div id="footerOverlay" class="footer-overlay"></div>
+
+    <!-- Quote cart drawer -->
+    <aside id="apt-cart" aria-hidden="true">
+        <div class="cart-header">
+            <div style="font-weight: 600;font-size: 18px;">询价篮</div>
+            <div>
+                <button class="btn sm" id="apt-copy">复制型号清单</button>
+                <button class="btn sm" id="apt-clearCart">清空</button>
+                <button class="btn sm" id="apt-closeCart">关闭</button>
+            </div>
+        </div>
+        <div class="cart-list" id="apt-cartList"></div>
+        <div class="cart-footer">
+            <div class="muted" id="apt-cartSummary">0 件商品</div>
+            <a class="btn primary" id="apt-submitQuote">提交咨询</a>
+        </div>
+    </aside>
+
+    <!-- Quick view modal -->
+    <div id="apt-overlay">
+        <div id="apt-modal">
+            <div class="head">
+                <div id="apt-mvTitle" style="font-weight:600; font-size: 18px;"></div>
+                <button class="btn icon close-modal" aria-label="Close" onclick="APT.closeModal()">×</button>
+            </div>
+
+            <div class="content">
+                <div class="mv-grid">
+                    <!-- 左侧：主图 + 缩略图 + 规格图纸 -->
+                    <div class="mv-left">
+                        <div class="mv-main" id="apt-mvMain">
+                            <img id="apt-mvImg" alt="" />
+                        </div>
+                        <div class="mv-thumbs" id="apt-mvThumbs"></div>
+                        <div class="mv-zoom" id="apt-mvZoom"><img id="apt-mvZoomImg" alt="Zoom Preview"></div>
+
+                        <div class="mv-drawing" id="apt-mvDrawingBox">
+                            <div class="mv-drawing-head">规格 / 图纸</div>
+                            <div class="mv-drawing-body">
+                                <img id="apt-mvDrawing" alt="Specification / Drawing" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 右侧：信息 + 操作 -->
+                    <div class="mv-right">
+                        <div class="muted mv-title" id="apt-mvSku"></div>
+                        <div class="row" style="margin-top:8px">
+                            <span class="badge" id="apt-mvProfile"></span>
+                            <span class="badge" id="apt-mvGrooves"></span>
+                            <span class="badge" id="apt-mvDia"></span>
+                            <span class="badge" id="apt-mvBal"></span>
+                        </div>
+
+                        <div class="kv" style="margin-top:10px">
+                            <div class="kv-name">材质</div>
+                            <div id="apt-mvMat"></div>
+                            <div class="kv-name">表面处理</div>
+                            <div id="apt-mvCoat"></div>
+                            <div class="kv-name">锥套</div>
+                            <div id="apt-mvBush"></div>
+                            <div class="kv-name">孔径范围</div>
+                            <div id="apt-mvBore"></div>
+                            <div class="kv-name">重量</div>
+                            <div id="apt-mvWt"></div>
+                        </div>
+
+                        <div class="mv-features" style="margin-top:12px">
+                            <strong>应用 / 特点</strong>
+                            <ul id="apt-mvFeat" style="margin:6px 0 0 18px"></ul>
+                        </div>
+
+                        <div class="mv-actions" style="margin-top:12px">
+                            <div class="qty">
+                                <button class="qty-btn" onclick="APT.stepQty('#apt-mvQty',-1)"
+                                    aria-label="Decrease">−</button>
+                                <input id="apt-mvQty" type="number" min="1" value="1" />
+                                <button class="qty-btn" onclick="APT.stepQty('#apt-mvQty',1)"
+                                    aria-label="Increase">＋</button>
+                            </div>
+                            <a class="btn" id="apt-detailBtn">查看详情</a>
+                            <button class="btn ghost" id="apt-mvCompare">加入对比</button>
+                            <button class="btn primary" id="apt-mvAdd">加入询价车</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../../js/navbar.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/advert.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/subpage.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/forms-zh.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/footer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
+    <script src="../../../js/apt-product.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../../../js/motor_rail-zh.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>

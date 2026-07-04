@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive Contact Forms</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ================== CSS 样式 ================== */
+        :root {
+            --primary-color: #0d6efd;
+            --primary-hover: #0b5ed7;
+            --success-color: #198754;
+            --error-color: #dc3545;
+            --border-color: #dee2e6;
+            --text-color: #212529;
+            --widget-bg: #ffffff;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa;
+            /* 添加一个背景图案增加质感 */
+            background-image: radial-gradient(#e9ecef 1px, transparent 1px);
+            background-size: 15px 15px;
+        }
+
+        /* --- 浮动按钮容器 --- */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column-reverse;
+            /* 让第一个按钮在最下方 */
+            gap: 15px;
+        }
+
+        .fab-trigger {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: none;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .fab-trigger:hover {
+            background-color: var(--primary-hover);
+            transform: scale(1.1);
+        }
+
+        .fab-trigger.is-active {
+            transform: rotate(225deg);
+            background-color: #6c757d;
+        }
+
+        .fab-trigger svg {
+            width: 28px;
+            height: 28px;
+            transition: transform 0.2s ease;
+        }
+
+        /* --- 表单小部件容器 --- */
+        .form-widget {
+            position: fixed;
+            bottom: 100px;
+            left: 20px;
+            z-index: 999;
+            width: 350px;
+            background: var(--widget-bg);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+
+            /* 默认隐藏，并设置动画起点 */
+            opacity: 0;
+            transform: translateY(30px) scale(0.9);
+            pointer-events: none;
+            transform-origin: bottom left;
+            transition: all 0.3s ease-out;
+        }
+
+        .form-widget.is-open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        /* 表单内部样式 */
+        .form-widget-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px;
+        }
+
+        .form-widget-header h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .form-widget-body {
+            padding: 20px;
+            max-height: 400px;
+            /* 限制最大高度，超出则滚动 */
+            overflow-y: auto;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .form-group label .required {
+            color: var(--error-color);
+            margin-left: 2px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.2s;
+            box-sizing: border-box;
+        }
+
+        .form-group.is-invalid input,
+        .form-group.is-invalid textarea {
+            border-color: var(--error-color);
+            box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.2);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+        }
+
+        .error-text {
+            display: none;
+            color: var(--error-color);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .form-group.is-invalid .error-text {
+            display: block;
+        }
+
+        /* 文件上传 */
+        .file-upload-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 8px;
+            font-size: 12px;
+            color: #6c757d;
+        }
+
+        .file-upload-display.is-success {
+            color: var(--success-color);
+            font-weight: 500;
+        }
+
+        /* 提交按钮 */
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .submit-btn:disabled {
+            background-color: #6c757d;
+            cursor: wait;
+        }
+
+        /* 提交结果 */
+        .form-result {
+            padding: 10px;
+            margin-top: 15px;
+            border-radius: 6px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-result.success {
+            background-color: #d1e7dd;
+            color: #0f5132;
+            display: block;
+        }
+
+        .form-result.error {
+            background-color: #f8d7da;
+            color: #842029;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fab-container">
+        <button class="fab-trigger" id="fab-product" aria-label="Product Inquiry">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v2" />
+                <path d="M21 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+        </button>
+        <button class="fab-trigger" id="fab-general" aria-label="General Inquiry">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="form-widget" id="widget-general">
+        <div class="form-widget-header">
+            <h3>General Inquiry</h3>
+        </div>
+        <div class="form-widget-body">
+            <form id="form-general" novalidate>
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New General Inquiry from Website">
+
+                <div class="form-group">
+                    <label for="general-name">Name <span class="required">*</span></label>
+                    <input type="text" id="general-name" name="name" required>
+                    <div class="error-text">Please enter your name.</div>
+                </div>
+                <div class="form-group">
+                    <label for="general-email">Email <span class="required">*</span></label>
+                    <input type="email" id="general-email" name="email" required>
+                    <div class="error-text">Please enter a valid email.</div>
+                </div>
+                <div class="form-group">
+                    <label for="general-message">Message <span class="required">*</span></label>
+                    <textarea id="general-message" name="message" rows="4" required></textarea>
+                    <div class="error-text">Please enter your message.</div>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div class="form-result"></div>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-widget" id="widget-product">
+        <div class="form-widget-header">
+            <h3>Product Inquiry</h3>
+        </div>
+        <div class="form-widget-body">
+            <form id="form-product" novalidate>
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Product Inquiry from Website">
+
+                <div class="form-group">
+                    <label for="product-name">Product Name <span class="required">*</span></label>
+                    <input type="text" id="product-name" name="product_name" required>
+                    <div class="error-text">Please enter the product name.</div>
+                </div>
+                <div class="form-group">
+                    <label for="product-email">Your Email <span class="required">*</span></label>
+                    <input type="email" id="product-email" name="email" required>
+                    <div class="error-text">Please enter a valid email.</div>
+                </div>
+                <div class="form-group">
+                    <label for="product-file">Attachment</label>
+                    <input type="file" id="product-file" name="attachment" style="display:none;">
+                    <button type="button" onclick="document.getElementById('product-file').click();" class="submit-btn"
+                        style="background-color: #6c757d;">Choose File</button>
+                    <div class="file-upload-display">No file selected.</div>
+                    <div class="error-text"></div>
+                </div>
+                <div class="form-group">
+                    <label for="product-details">Details / Message (Optional)</label>
+                    <textarea id="product-details" name="details" rows="3"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+                <div class="form-result"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // ================== JavaScript 逻辑 ==================
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- UI交互逻辑 ---
+            const fabTriggers = {
+                general: document.getElementById('fab-general'),
+                product: document.getElementById('fab-product')
+            };
+
+            const formWidgets = {
+                general: document.getElementById('widget-general'),
+                product: document.getElementById('widget-product')
+            };
+
+            let activeWidget = null;
+
+            // 为每个触发按钮添加点击事件
+            Object.keys(fabTriggers).forEach(key => {
+                fabTriggers[key].addEventListener('click', () => {
+                    const clickedWidget = formWidgets[key];
+
+                    // 如果点击的是已经激活的按钮，则关闭它
+                    if (activeWidget === clickedWidget) {
+                        closeActiveWidget();
+                    } else {
+                        // 否则，关闭当前打开的，然后打开新的
+                        closeActiveWidget();
+                        openWidget(key);
+                    }
+                });
+            });
+
+            function openWidget(key) {
+                activeWidget = formWidgets[key];
+                fabTriggers[key].classList.add('is-active');
+                fabTriggers[key].querySelector('svg').style.transform = 'rotate(135deg)';
+                activeWidget.classList.add('is-open');
+            }
+
+            function closeActiveWidget() {
+                if (activeWidget) {
+                    const activeKey = Object.keys(formWidgets).find(key => formWidgets[key] === activeWidget);
+                    fabTriggers[activeKey].classList.remove('is-active');
+                    fabTriggers[activeKey].querySelector('svg').style.transform = 'rotate(0deg)';
+                    activeWidget.classList.remove('is-open');
+                    activeWidget = null;
+                }
+            }
+
+            // --- 表单处理逻辑 ---
+
+            // 初始化两个表单
+            setupForm(document.getElementById('form-general'));
+            setupForm(document.getElementById('form-product'));
+
+            // 为产品表单的文件上传添加特殊处理
+            const productFileInput = document.getElementById('product-file');
+            const fileDisplay = productFileInput.parentElement.querySelector('.file-upload-display');
+            productFileInput.addEventListener('change', () => {
+                if (productFileInput.files.length > 0) {
+                    fileDisplay.textContent = `File selected: ${productFileInput.files[0].name}`;
+                    fileDisplay.classList.add('is-success');
+                } else {
+                    fileDisplay.textContent = 'No file selected.';
+                    fileDisplay.classList.remove('is-success');
+                }
+            });
+
+
+            // --- 可复用的表单设置函数 ---
+            function setupForm(formElement) {
+                const resultDiv = formElement.querySelector('.form-result');
+                const submitButton = formElement.querySelector('.submit-btn');
+                const inputs = formElement.querySelectorAll('[required]');
+
+                formElement.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    // 1. 验证表单
+                    let isValid = true;
+                    inputs.forEach(input => {
+                        const group = input.closest('.form-group');
+                        if (!input.value.trim()) {
+                            group.classList.add('is-invalid');
+                            isValid = false;
+                        } else {
+                            group.classList.remove('is-invalid');
+                        }
+                    });
+
+                    if (!isValid) return;
+
+                    // 2. 准备提交
+                    const formData = new FormData(formElement);
+                    const originalButtonText = submitButton.textContent;
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    resultDiv.style.display = 'none';
+
+                    // 3. 发送数据
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                resultDiv.className = 'form-result success';
+                                resultDiv.textContent = 'Success! Your message has been sent.';
+                                formElement.reset();
+                                // 如果是产品表单，重置文件显示
+                                if (formElement.id === 'form-product') {
+                                    fileDisplay.textContent = 'No file selected.';
+                                    fileDisplay.classList.remove('is-success');
+                                }
+                                setTimeout(closeActiveWidget, 2000); // 2秒后自动关闭窗口
+                            } else {
+                                resultDiv.className = 'form-result error';
+                                resultDiv.textContent = data.message || 'An error occurred.';
+                            }
+                        })
+                        .catch(error => {
+                            console.error(error);
+                            resultDiv.className = 'form-result error';
+                            resultDiv.textContent = 'A network error occurred.';
+                        })
+                        .finally(() => {
+                            submitButton.disabled = false;
+                            submitButton.textContent = originalButtonText;
+                        });
+                });
+            }
+
+        });
+    </script>
+
+</body>
+
+</html>

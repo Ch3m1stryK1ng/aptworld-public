@@ -1,0 +1,522 @@
+/* ======================================================= */
+/* TEAMS.CSS - GOLDEN VERSION (FINAL & COMPLETE)           */
+/* ======================================================= */
+
+/* 1. 全局与字体设置 */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --team-bg: #10121A;
+    --team-glow-color: rgba(0, 221, 255, 0.7);
+    --team-primary-text: #F5F7FA;
+    --team-secondary-text: #A9B4C7;
+    --team-accent-color: #00DDFF;
+    --team-border-color: rgba(255, 255, 255, 0.1);
+    --team-transition-speed: 0.35s;
+    --team-card-radius: 12px;
+}
+
+/* 2. 区块整体布局 */
+.team-section {
+    position: relative;
+    padding: 30px 0;
+    font-family: 'Inter', sans-serif;
+    background-image: linear-gradient(rgba(26, 32, 44, 0.75), rgba(26, 32, 44, 0.75)), 
+                      url('../images/home/team-background.webp'); 
+    background-size: cover;
+    background-position: center;
+    color: var(--team-primary-text);
+    overflow-y: visible;
+    z-index: 1;
+}
+
+.team-container {
+    width: 90%;
+    margin: 0 auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* 3. 区域头部 */
+.team-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.team-header-title h2 {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: bold;
+    background: linear-gradient(90deg, #f7971e, #ffd200);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin: 0;
+}
+
+.team-navigation {
+    display: flex;
+    gap: 10px;
+}
+
+.team-nav-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--team-border-color);
+    color: var(--team-secondary-text);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all var(--team-transition-speed) ease;
+}
+
+.team-nav-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.team-nav-btn:hover {
+    background-color: var(--team-accent-color);
+    color: var(--team-bg);
+    border-color: var(--team-accent-color);
+}
+
+.team-nav-btn.swiper-button-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+/* 4. Swiper 容器设置 */
+.team-swiper-container {
+    /* position: relative;
+    padding-top: 220px;
+    margin-top: -220px;
+    overflow: visible !important;
+    z-index: 5; */
+    position: relative;
+    overflow: visible !important;
+}
+
+.team-swiper {
+    overflow: visible !important;
+    /* min-height: 500px; */
+}
+
+/* 5. 团队成员卡片 */
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+/* .swiper-slide:hover {
+    z-index: 50;
+} */
+
+.team-card-wrapper {
+    position: relative;
+    /* padding-bottom: 20px; */
+}
+
+.team-card {
+    display: block;
+    width: 260px;
+    height: 350px;
+    border-radius: var(--team-card-radius);
+    position: relative;
+    overflow: hidden;
+    /* background-size: cover;
+    background-position: center; */
+    transition: all var(--team-transition-speed) ease;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.team-card-photo {
+    width: 100%;
+    height: 100%;
+    /* 核心属性： cover 会填满容器并裁剪，contain 会完整显示但可能留白 */
+    object-fit: cover;
+    /* 智能定位：优先显示图片的顶部中心，确保人头不被裁掉 */
+    object-position: center top; 
+    transition: transform var(--team-transition-speed) ease;
+}
+
+/* .team-card-wrapper:hover .team-card-photo {
+    transform: scale(1.05); 
+} */
+
+.team-card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.1) 60%, transparent 100%);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    transition: all var(--team-transition-speed) ease;
+}
+
+.team-card-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--team-primary-text);
+    margin: 0;
+}
+
+.team-card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--team-accent-color);
+    margin-top: 5px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--team-transition-speed) ease;
+}
+
+/* 6. 桌面端悬停效果 */
+@media (hover: hover) and (min-width: 769px) {
+    .team-card-wrapper.tooltip-visible .team-card {
+        transform: translateY(-8px);
+        box-shadow: 0 0 25px var(--team-glow-color), 0 0 50px var(--team-glow-color);
+    }
+
+    .team-card-wrapper.tooltip-visible .team-card-overlay {
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    }
+
+    .team-card-wrapper.tooltip-visible .team-card-title {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .team-card-wrapper.tooltip-visible .card-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0) scale(1);
+        pointer-events: auto;
+    }
+}
+
+.card-tooltip {
+    position: absolute;
+    bottom: calc(100% + 30px);
+    left: 50%;
+    width: 300px;
+    z-index: 1000;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: all var(--team-transition-speed) cubic-bezier(0.25, 0.8, 0.25, 1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(20px) scale(0.95);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.card-tooltip-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px) brightness(0.7);
+    transform: scale(1.2);
+    z-index: -1;
+}
+
+.card-tooltip .card-content {
+    position: relative;
+    padding: 24px;
+}
+
+.card-tooltip .card-content .title-row {
+    line-height: 1.3;
+    margin-bottom: 4px;
+}
+
+.card-tooltip .card-content .title-row h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--team-primary-text);
+}
+
+.card-tooltip .card-content .position {
+    font-size: 0.9rem;
+    color: var(--team-accent-color);
+    font-weight: 500;
+}
+
+.card-tooltip .card-content .quote {
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: left;
+    color: var(--team-secondary-text);
+    margin: 12px 0;
+    border-left: 2px solid var(--team-accent-color);
+    padding-left: 12px;
+}
+
+.card-tooltip .card-content p {
+    margin: 12px 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-align: left;
+    color: var(--team-secondary-text);
+}
+
+.card-tooltip .card-content p a {
+    color: var(--team-accent-color);
+    font-weight: 500;
+    text-decoration: none;
+    transition: all var(--team-transition-speed) ease;
+}
+
+.card-tooltip .card-content p a:hover {
+    color: var(--team-primary-text);
+}
+
+.card-tooltip .card-content .socials {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    justify-content: flex-start;
+}
+
+.card-tooltip .card-content .socials a {
+    font-size: 1.5rem;
+    color: var(--team-secondary-text);
+    transition: all var(--team-transition-speed) ease;
+}
+
+.card-tooltip .card-content .socials a:hover {
+    color: var(--team-accent-color);
+    transform: scale(1.2);
+}
+
+/* 7. 底部控件 */
+.team-pagination-container {
+    margin-top: 50px;
+    /* 与上方滑块的间距 */
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    /* 确保它在滑块之上 */
+}
+
+/* 分页器圆点本身的样式 (继承之前的) */
+.team-pagination .swiper-pagination-bullet {
+    background: var(--team-border-color);
+    opacity: 0.7;
+}
+
+.team-pagination .swiper-pagination-bullet-active {
+    background: var(--team-accent-color);
+    opacity: 1;
+}
+
+/* “更多信息”按钮容器的样式 */
+.team-more-button-container {
+    margin-top: 20px;
+    /* 与上方分页器的间距 */
+    text-align: center;
+}
+
+.team-more-button {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--team-primary-text);
+    background: rgba(38, 43, 61, 0.5);
+    border: 1px solid var(--team-border-color);
+    border-radius: 12px;
+    text-decoration: none;
+    backdrop-filter: blur(10px);
+    transition: all var(--team-transition-speed) ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-more-button:hover {
+    background: var(--team-accent-color);
+    color: var(--team-bg);
+    border-color: var(--team-accent-color);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 221, 255, 0.3);
+}
+
+/* 8. 移动端模态框 */
+body>.team-modal-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 2000 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 15px !important;
+    background-color: rgba(16, 18, 26, .7) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s cubic-bezier(.25, .8, .25, 1) !important;
+}
+
+body>.team-modal-overlay.is-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+body>.team-modal-overlay .team-modal {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 380px !important;
+    border-radius: var(--team-card-radius) !important;
+    background: rgba(38, 43, 61, 0.7) !important;
+    border: 1px solid var(--team-border-color) !important;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .4) !important;
+    text-align: center !important;
+    transform: scale(.95) translateY(10px) !important;
+    transition: transform .4s cubic-bezier(.25, .8, .25, 1) !important;
+}
+
+body>.team-modal-overlay.is-visible .team-modal {
+    transform: scale(1) translateY(0) !important;
+}
+
+body>.team-modal-overlay .team-modal-close {
+    position: absolute !important;
+    top: 10px;
+    right: 15px;
+    background: 0 0 !important;
+    border: none !important;
+    font-size: 2.5rem !important;
+    color: var(--team-secondary-text) !important;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: all var(--team-transition-speed) ease;
+}
+
+body>.team-modal-overlay .team-modal-close:hover {
+    color: var(--team-primary-text) !important;
+    transform: rotate(90deg) !important;
+}
+
+body>.team-modal-overlay .team-modal-content {
+    padding: 40px 25px 30px !important;
+}
+
+body>.team-modal-overlay .modal-avatar-wrapper {
+    width: 180px !important;
+    height: 180px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    margin: 0 auto 20px !important;
+    border: 3px solid var(--team-accent-color) !important;
+    box-shadow: 0 0 15px var(--team-glow-color) !important;
+}
+
+body>.team-modal-overlay .modal-avatar-wrapper img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center;
+}
+
+body>.team-modal-overlay .team-modal-content h3 {
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    margin: 0 0 5px !important;
+    color: var(--team-primary-text) !important;
+    text-align: center !important;
+}
+
+body>.team-modal-overlay .team-modal-content .position {
+    display: block;
+    font-size: 1rem !important;
+    color: var(--team-accent-color) !important;
+    font-weight: 500 !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+}
+
+body>.team-modal-overlay .team-modal-content .quote {
+    font-style: italic !important;
+    font-size: 0.9rem !important;
+    color: var(--team-secondary-text) !important;
+    border-left: 2px solid var(--team-accent-color) !important;
+    padding-left: 12px !important;
+    margin: 20px 0 !important;
+    text-align: left !important;
+}
+
+body>.team-modal-overlay .team-modal-content .email {
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    color: var(--team-secondary-text) !important;
+    margin: 12px 0 !important;
+    text-align: left !important;
+}
+
+body>.team-modal-overlay .team-modal-content .email a,
+body>.team-modal-overlay .team-modal-content .email a:link,
+body>.team-modal-overlay .team-modal-content .email a:visited {
+    color: var(--team-accent-color) !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all var(--team-transition-speed) ease !important;
+}
+
+body>.team-modal-overlay .team-modal-content .email a:hover {
+    color: var(--team-primary-text) !important;
+}
+
+body>.team-modal-overlay .team-modal-content .socials {
+    display: flex !important;
+    gap: 24px !important;
+    margin-top: 20px !important;
+    justify-content: flex-start !important;
+}
+
+body>.team-modal-overlay .team-modal-content .socials a {
+    font-size: 1.8rem !important;
+    color: var(--team-secondary-text) !important;
+    transition: all var(--team-transition-speed) ease !important;
+}
+
+body>.team-modal-overlay .team-modal-content .socials a:hover {
+    color: var(--team-accent-color) !important;
+    transform: scale(1.2) !important;
+}
+
+/* 9. 响应式 */
+@media (max-width: 768px) {
+    .team-header {
+        flex-direction: column;
+    }
+
+    .team-navigation {
+        display: none;
+    }
+
+    .team-card {
+        width: 42vh;
+    }
+
+    .team-swiper {
+        min-height: auto;
+    }
+
+    .swiper-wrapper {
+        align-items: center;
+        padding-bottom: 0;
+    }
+}

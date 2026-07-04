@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Customization</title>
+    <style>
+        /* 简单的样式 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+        }
+        .product-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .product-preview {
+            width: 50%;
+        }
+        .customization-options {
+            width: 40%;
+        }
+        .color-options, .lid-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .color-option, .lid-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .color-option {
+            border: 1px solid #ccc;
+        }
+        .color-option.selected, .lid-option.selected {
+            border: 3px solid #007bff;
+        }
+        #product-image {
+            width: 100%;
+            max-width: 300px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-container">
+    <!-- 产品预览区域 -->
+    <div class="product-preview">
+        <img id="product-image" src="https://via.placeholder.com/300x500/FFB6C1/000000?text=Product" alt="Product Preview">
+    </div>
+
+    <!-- 自定义选项区域 -->
+    <div class="customization-options">
+        <h3>Design Preview</h3>
+        
+        <!-- 选择杯盖 -->
+        <div>
+            <h4>Lids</h4>
+            <div class="lid-options">
+                <div class="lid-option" style="background-color: #333;" onclick="updateLid('lid1')"></div>
+                <div class="lid-option" style="background-color: #666;" onclick="updateLid('lid2')"></div>
+                <div class="lid-option" style="background-color: #999;" onclick="updateLid('lid3')"></div>
+            </div>
+        </div>
+
+        <!-- 选择颜色 -->
+        <div>
+            <h4>Color</h4>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #e91e63;" onclick="updateColor('pink')"></div>
+                <div class="color-option" style="background-color: #009688;" onclick="updateColor('green')"></div>
+                <div class="color-option" style="background-color: #3f51b5;" onclick="updateColor('blue')"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 处理杯盖和颜色选择的JavaScript代码
+    let selectedColor = 'pink';
+    let selectedLid = 'lid1';
+
+    function updateColor(color) {
+        selectedColor = color;
+        document.querySelectorAll('.color-option').forEach(option => option.classList.remove('selected'));
+        event.target.classList.add('selected');
+        updateProductImage();
+    }
+
+    function updateLid(lid) {
+        selectedLid = lid;
+        document.querySelectorAll('.lid-option').forEach(option => option.classList.remove('selected'));
+        event.target.classList.add('selected');
+        updateProductImage();
+    }
+
+    function updateProductImage() {
+        const productImage = document.getElementById('product-image');
+        // 根据选择的杯盖和颜色更新图片路径
+        productImage.src = `https://via.placeholder.com/300x500/${selectedColor === 'pink' ? 'FFB6C1' : selectedColor === 'green' ? '009688' : '3f51b5'}/000000?text=${selectedLid}-${selectedColor}`;
+    }
+</script>
+
+</body>
+</html>

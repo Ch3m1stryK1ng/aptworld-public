@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Section Test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" type="text/css" href="./css/main.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="./css/teams.css">
+</head>
+
+<body>
+
+    <section class="team-section">
+        <div class="team-container">
+
+            <div class="team-header">
+                <div class="team-header-title">
+                    <h2>Our Team</h2>
+                </div>
+                <div class="team-navigation">
+                    <button class="team-nav-btn team-nav-prev" aria-label="Previous slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+                        </svg>
+                        <button class="team-nav-btn team-nav-next" aria-label="Next slide">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z"></path>
+                            </svg>
+                        </button>
+                </div>
+            </div>
+
+            <div class="team-swiper-container">
+                <div class="swiper team-swiper">
+                    <div class="swiper-wrapper">
+                    </div>
+                </div>
+            </div>
+
+            <div class="team-pagination-container">
+                <div class="swiper-pagination team-pagination"></div>
+            </div>
+
+            <div class="team-more-button-container">
+                <a href="#" class="team-more-button">More Staff Information</a>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="team-modal-overlay" id="teamModalOverlay">
+        <div class="team-modal" id="teamModal">
+            <button class="team-modal-close" id="teamModalClose">&times;</button>
+            <div class="team-modal-content">
+                <div class="modal-avatar-wrapper">
+                    <img src="" alt="" id="modalAvatar">
+                </div>
+                <h3 id="modalName"></h3>
+                <span class="position" id="modalPosition"></span>
+                <p class="quote" id="modalQuote"></p>
+                <p class="email">Email: <a href="" id="modalEmail"></a></p>
+                <div class="socials" id="modalSocials">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="./js/teamData.js"></script>
+
+    <script src="./js/teams.js"></script>
+
+</body>
+
+</html>

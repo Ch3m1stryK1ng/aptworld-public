@@ -1,0 +1,535 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Custom Power Transmission Parts | RFQ - Hebei Apollo Power Transmission</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+        }
+
+        /* Plain CSS (no Tailwind @apply) so it works standalone */
+        .container {
+            width: 100%;
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        .card {
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 1px 2px rgba(2, 6, 23, 0.04);
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            border-radius: 9999px;
+            padding: .25rem .75rem;
+            font-size: .75rem;
+            font-weight: 600;
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        .input {
+            width: 100%;
+            border-radius: .75rem;
+            border: 1px solid #cbd5e1;
+            background: #fff;
+            padding: .5rem .75rem;
+            font-size: .875rem;
+            color: #0f172a;
+        }
+
+        .input::placeholder {
+            color: #94a3b8;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: #94a3b8;
+            box-shadow: 0 0 0 3px rgba(15, 23, 42, .1);
+        }
+
+        details summary {
+            cursor: pointer;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="min-h-screen bg-slate-50 text-slate-900">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-slate-200">
+        <div class="container h-16 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="h-9 w-9 rounded-xl bg-slate-900 text-white grid place-content-center font-black">AP</div>
+                <div class="leading-tight">
+                    <p class="font-bold">Hebei Apollo Power Transmission</p>
+                    <p class="text-xs text-slate-500">Pulleys • Taper-Lock Bushes • Couplings • Sprockets</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-6 text-sm text-slate-600">
+                <a class="hover:text-slate-900" href="#rfq">Submit RFQ</a>
+                <a class="hover:text-slate-900" href="#steps">Process</a>
+                <a class="hover:text-slate-900" href="#cases">Case Studies</a>
+                <a class="hover:text-slate-900" href="#downloads">Downloads</a>
+                <a class="hover:text-slate-900" href="#faq">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-700"></div>
+        <div class="relative container py-14 md:py-20 text-white">
+            <div class="max-w-3xl">
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Custom Transmission Parts — 7-Day
+                    Prototype, 21-Day Production</h1>
+                <p class="mt-4 text-slate-300 md:text-lg">
+                    Drawings or samples accepted. Reverse engineering available. Inspection and acceptance per
+                    <strong>ISO 4183</strong> / <strong>DIN 6885</strong>. Small MOQ supported. Traceable delivery with
+                    full reports.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-2">
+                    <span class="pill">IT7 / H7 • DIN 6885</span>
+                    <span class="pill">24h Quotation</span>
+                    <span class="pill">NDA Supported</span>
+                    <span class="pill">Rust-proof Packaging / Pallet</span>
+                </div>
+                <div class="mt-8 flex gap-3">
+                    <a href="#rfq"
+                        class="inline-flex items-center gap-2 bg-white text-slate-900 px-5 py-3 rounded-xl font-semibold shadow hover:shadow-md">Submit
+                        RFQ</a>
+                    <a href="#downloads"
+                        class="inline-flex items-center gap-2 bg-transparent border border-white/30 px-5 py-3 rounded-xl font-semibold text-white hover:bg-white/10">Download
+                        Docs</a>
+                </div>
+            </div>
+        </div>
+        <svg class="block w-full" viewBox="0 0 1440 80" preserveAspectRatio="none">
+            <path d="M0,80 L1440,0 L1440,80 Z" fill="#f8fafc" />
+        </svg>
+    </div>
+
+    <!-- KPIs -->
+    <section class="container py-10" id="stats">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">Our Delivery Commitments</h2>
+            <p class="text-slate-600 mt-2">Clear SLAs with measurable metrics for engineering & procurement confidence
+            </p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">Prototype</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">≤ 7 Days</p>
+                <p class="text-slate-500 text-xs mt-1">Common materials & finishes</p>
+            </div>
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">Batch Production</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">≤ 21 Days</p>
+                <p class="text-slate-500 text-xs mt-1">Milestone tracking</p>
+            </div>
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">Dimensional Yield</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">&gt; 99.3%</p>
+                <p class="text-slate-500 text-xs mt-1">Critical dims, C=1.33</p>
+            </div>
+            <div class="card">
+                <p class="text-slate-500 text-xs uppercase">On-time Delivery</p>
+                <p class="text-2xl md:text-3xl font-extrabold mt-1">&gt; 98%</p>
+                <p class="text-slate-500 text-xs mt-1">Delay discount policy</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RFQ Form -->
+    <section class="container py-10" id="rfq">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">Request for Quotation (RFQ)</h2>
+            <p class="text-slate-600 mt-2">Upload drawings or fill in parameters. Our engineers will run a DFM review
+                and reply within 24 hours.</p>
+        </div>
+
+        <form id="rfqForm" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Contact -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">Contact</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <input class="input" name="company" placeholder="Company *" required />
+                    <input class="input" name="name" placeholder="Contact Person *" required />
+                    <input class="input" type="email" name="email" placeholder="Email *" required />
+                    <input class="input" name="phone" placeholder="Phone / WhatsApp" />
+                    <input class="input sm:col-span-2 lg:col-span-1" name="country" placeholder="Country / Region" />
+                    <input class="input sm:col-span-2 lg:col-span-2" name="port"
+                        placeholder="Destination Port (e.g., Ningbo / Shanghai)" value="Ningbo" />
+                </div>
+            </div>
+
+            <!-- Project -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">Project</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+                    <select class="input lg:col-span-2" name="productType">
+                        <option>Pulley</option>
+                        <option>Taper-Lock Bush</option>
+                        <option>Coupling</option>
+                        <option>Sprocket</option>
+                        <option>Other</option>
+                    </select>
+                    <input class="input" type="number" min="1" name="qty" placeholder="Quantity *" required />
+                    <select class="input" name="incoterm">
+                        <option>EXW</option>
+                        <option selected>FOB</option>
+                        <option>CIF</option>
+                    </select>
+                    <input class="input" type="date" name="due" />
+                    <input class="input" name="series" placeholder="Application / Industry (optional)" />
+                </div>
+            </div>
+
+            <!-- Technical -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">Technical Parameters (Pulley example)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-4">
+                    <select class="input" name="section">
+                        <option>SPZ</option>
+                        <option>SPA</option>
+                        <option>SPB</option>
+                        <option>SPC</option>
+                        <option>3V</option>
+                        <option>5V</option>
+                        <option>8V</option>
+                        <option>T5</option>
+                        <option>8M</option>
+                        <option>14M</option>
+                    </select>
+                    <input class="input" name="grooves" placeholder="Grooves / Z" />
+                    <input class="input" name="od" placeholder="Outside Diameter OD (mm)" />
+                    <input class="input" name="bore" placeholder="Bore (mm / inch)" />
+                    <select class="input" name="keywayStandard">
+                        <option>DIN 6885</option>
+                        <option>DIN 6885-A</option>
+                        <option>GB/T 1096</option>
+                        <option>BS 4235</option>
+                    </select>
+                    <select class="input" name="boreTolerance">
+                        <option>H7</option>
+                        <option>H8</option>
+                        <option>JS7</option>
+                    </select>
+                    <select class="input lg:col-span-2" name="material">
+                        <option>HT250</option>
+                        <option>45# Steel</option>
+                        <option>GGG40</option>
+                        <option>Aluminum 6061</option>
+                    </select>
+                    <select class="input" name="heat">
+                        <option>None</option>
+                        <option>Tempering</option>
+                        <option>Induction Hardening</option>
+                    </select>
+                    <select class="input" name="finish">
+                        <option>Phosphating</option>
+                        <option>Black Oxide</option>
+                        <option>Powder Coating</option>
+                        <option>Sandblasting</option>
+                    </select>
+                    <select class="input" name="balance">
+                        <option>G6.3</option>
+                        <option>G2.5</option>
+                        <option>Not Required</option>
+                    </select>
+
+                    <!-- Upload -->
+                    <div class="lg:col-span-3 card" style="border-style:dashed">
+                        <div class="flex items-center justify-between">
+                            <div class="text-slate-700 font-medium">Upload drawings/models (STEP, SLDPRT, PDF, JPG)
+                            </div>
+                            <label
+                                class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-slate-900 text-white text-sm cursor-pointer hover:bg-slate-800">
+                                Choose files
+                                <input id="fileInput" type="file" multiple class="hidden" />
+                            </label>
+                        </div>
+                        <ul id="fileList" class="mt-3 text-sm text-slate-600 grid gap-1 max-h-32 overflow-auto"></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality / Packaging / NDA / Notes -->
+            <div class="md:col-span-3">
+                <h3 class="font-semibold mb-3">Quality & Compliance</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="card">
+                        <p class="text-sm font-medium mb-2">Reports Required</p>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="Material Spectrometer" checked> <span class="text-sm">Material
+                                Spectrometer</span></label>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="Dynamic Balance" checked> <span class="text-sm">Dynamic Balance</span></label>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="Hardness"> <span class="text-sm">Hardness</span></label>
+                        <label class="flex items-center gap-2 py-1"><input type="checkbox" name="reports"
+                                value="CMM Inspection"> <span class="text-sm">CMM Inspection</span></label>
+                    </div>
+                    <div class="card">
+                        <p class="text-sm font-medium mb-2">Packaging & Anti-rust</p>
+                        <select class="input" name="packaging">
+                            <option>Rust-proof + Pallet</option>
+                            <option>VCI + Carton</option>
+                            <option>Export Wooden Case</option>
+                        </select>
+                        <label class="flex items-center gap-2 mt-3"><input type="checkbox" name="nda" checked> <span
+                                class="text-sm">Agree to NDA</span></label>
+                    </div>
+                    <div class="card">
+                        <p class="text-sm font-medium mb-2">Notes</p>
+                        <textarea class="input min-h-[120px]" name="notes"
+                            placeholder="Working condition, life, max RPM/temperature, etc."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-3 flex items-center justify-between gap-4">
+                <p class="text-xs text-slate-500">After submission, an RFQ ID will be generated. Our engineer will
+                    contact you within 24 hours (email first).</p>
+                <button
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800">Submit
+                    RFQ</button>
+            </div>
+        </form>
+
+        <!-- Submission result -->
+        <div id="result" class="hidden mt-6 rounded-2xl border bg-emerald-50 border-emerald-200 p-4">
+            <p class="text-emerald-900 font-semibold">RFQ Submitted!</p>
+            <p class="text-emerald-800 mt-1 text-sm">
+                We’ve received your request. Our engineer will confirm drawings & parameters within 24 hours.
+                You can also send additional files to <a class="underline"
+                    href="mailto:sales@apollopt.com.cn">sales@apollopt.com.cn</a>.
+            </p>
+            <details class="mt-3">
+                <summary class="text-sm text-emerald-900 underline">Show JSON Preview (for API integration)</summary>
+                <pre id="jsonPreview"
+                    class="text-xs mt-2 bg-white p-3 rounded-lg overflow-auto max-h-64 border border-emerald-200"></pre>
+            </details>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="container py-10" id="steps">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">Process</h2>
+            <p class="text-slate-600 mt-2">Standardized flow with milestone visibility keeps your project under control
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="card">
+                <h4 class="font-semibold">1. Submit RFQ</h4>
+                <p class="text-sm text-slate-600 mt-1">Upload drawings/parameters, NDA optional</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">2. DFM Review</h4>
+                <p class="text-sm text-slate-600 mt-1">Manufacturability review & costing with suggestions</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">3. Prototype & Validation</h4>
+                <p class="text-sm text-slate-600 mt-1">Prototype within 7 days with inspection reports</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">4. Production & Delivery</h4>
+                <p class="text-sm text-slate-600 mt-1">21-day production, EXW/FOB/CIF as agreed</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="container py-10" id="cases">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">Case Studies</h2>
+            <p class="text-slate-600 mt-2">Proving results, not boasting</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-semibold">Mining Conveyor Retrofit</h4><span
+                        class="text-emerald-700 text-xs font-bold bg-emerald-50 border border-emerald-200 rounded-full px-2 py-1">Vibration
+                        ↓32%</span>
+                </div>
+                <p class="text-sm text-slate-600 mt-1">SPB twin-groove pulley • G6.3 balancing</p>
+            </div>
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-semibold">Agricultural OEM</h4><span
+                        class="text-emerald-700 text-xs font-bold bg-emerald-50 border border-emerald-200 rounded-full px-2 py-1">Lead
+                        Time: 16 Days</span>
+                </div>
+                <p class="text-sm text-slate-600 mt-1">3V pulley • H7/DIN6885 • black oxide</p>
+            </div>
+            <div class="card">
+                <div class="flex items-center justify-between">
+                    <h4 class="font-semibold">HVAC Spares</h4><span
+                        class="text-emerald-700 text-xs font-bold bg-emerald-50 border border-emerald-200 rounded-full px-2 py-1">Life
+                        ↑28%</span>
+                </div>
+                <p class="text-sm text-slate-600 mt-1">HT250 cast iron • dynamic balance report</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Downloads -->
+    <section class="container py-10" id="downloads">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">Downloads</h2>
+            <p class="text-slate-600 mt-2">Watermarked examples for quick engineer handoff</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a href="#" class="card hover:border-slate-300 flex items-center justify-between"><span
+                    class="font-medium">Keyway Reference (DIN 6885 / GB/T 1096).pdf</span><span
+                    class="text-xs text-slate-400">Sample</span></a>
+            <a href="#" class="card hover:border-slate-300 flex items-center justify-between"><span
+                    class="font-medium">Pulley Quick Selection (ISO 4183).pdf</span><span
+                    class="text-xs text-slate-400">Sample</span></a>
+            <a href="#" class="card hover:border-slate-300 flex items-center justify-between"><span
+                    class="font-medium">RFQ Template (Excel).xlsx</span><span
+                    class="text-xs text-slate-400">Sample</span></a>
+        </div>
+    </section>
+
+    <!-- FAQ / Footer -->
+    <section class="container py-10" id="faq">
+        <div class="mb-6">
+            <h2 class="text-2xl md:text-3xl font-bold">FAQ</h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card">
+                <h4 class="font-semibold">Can you make parts without 3D/2D drawings?</h4>
+                <p class="text-sm text-slate-600 mt-1">Yes. We support reverse engineering from samples and provide
+                    manufacturable drawings for approval.</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">What is the MOQ?</h4>
+                <p class="text-sm text-slate-600 mt-1">Small batches supported, starting from 1 piece. Tiered pricing
+                    for larger quantities.</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">How do you guarantee lead time?</h4>
+                <p class="text-sm text-slate-600 mt-1">Milestones across material, casting, machining, finishing,
+                    inspection, and shipping. Delay discount policy available.</p>
+            </div>
+            <div class="card">
+                <h4 class="font-semibold">Do you support third-party inspection?</h4>
+                <p class="text-sm text-slate-600 mt-1">Yes, BV/SGS on-site inspection supported. We can also follow your
+                    inspection plan.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t bg-white">
+        <div class="container py-10 grid md:grid-cols-2 gap-6 items-center">
+            <div>
+                <h3 class="text-xl font-bold">Start Your Custom Project Now</h3>
+                <p class="text-slate-600 mt-2">Send drawings/samples and your target lead time. We’ll return a 24-hour
+                    DFM review and quote.</p>
+            </div>
+            <div class="flex gap-3 md:justify-end">
+                <a href="#rfq"
+                    class="inline-flex items-center gap-2 bg-slate-900 text-white px-5 py-3 rounded-xl font-semibold hover:bg-slate-800">Submit
+                    RFQ</a>
+                <a href="mailto:sales@apollopt.com.cn"
+                    class="inline-flex items-center gap-2 border border-slate-300 px-5 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50">Email</a>
+                <a href="https://wa.me/19720335158"
+                    class="inline-flex items-center gap-2 border border-slate-300 px-5 py-3 rounded-xl font-semibold text-slate-700 hover:bg-slate-50">WhatsApp</a>
+            </div>
+        </div>
+        <div class="text-center text-xs text-slate-500 pb-6">© <span id="year"></span> Hebei Apollo Power Transmission.
+            All rights reserved.</div>
+    </footer>
+
+    <script>
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // File list preview
+        const fileInput = document.getElementById('fileInput');
+        const fileList = document.getElementById('fileList');
+        let files = [];
+        fileInput.addEventListener('change', (e) => {
+            files = Array.from(e.target.files || []);
+            fileList.innerHTML = files.map(f =>
+                `<li class="flex items-center gap-2">📄 ${f.name} <span class="text-xs text-slate-400">(${Math.round(f.size / 1024)} KB)</span></li>`
+            ).join('');
+        });
+
+        // Submit → JSON preview
+        const form = document.getElementById('rfqForm');
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const fd = new FormData(form);
+            const reports = fd.getAll('reports');
+            const payload = {
+                company: fd.get('company') || '',
+                name: fd.get('name') || '',
+                email: fd.get('email') || '',
+                phone: fd.get('phone') || '',
+                country: fd.get('country') || '',
+                productType: fd.get('productType') || 'Pulley',
+                qty: fd.get('qty') || '',
+                incoterm: fd.get('incoterm') || 'FOB',
+                port: fd.get('port') || 'Ningbo',
+                due: fd.get('due') || '',
+                series: fd.get('series') || '',
+                section: fd.get('section') || 'SPZ',
+                grooves: fd.get('grooves') || '',
+                od: fd.get('od') || '',
+                bore: fd.get('bore') || '',
+                keywayStandard: fd.get('keywayStandard') || 'DIN 6885',
+                boreTolerance: fd.get('boreTolerance') || 'H7',
+                material: fd.get('material') || 'HT250',
+                heat: fd.get('heat') || 'None',
+                finish: fd.get('finish') || 'Phosphating',
+                balance: fd.get('balance') || 'G6.3',
+                reports,
+                packaging: fd.get('packaging') || 'Rust-proof + Pallet',
+                nda: fd.get('nda') ? true : false,
+                notes: fd.get('notes') || '',
+                files: files.map(f => ({ name: f.name, size: f.size }))
+            };
+            document.getElementById('result').classList.remove('hidden');
+            document.getElementById('jsonPreview').textContent = JSON.stringify(payload, null, 2);
+
+            // TODO: integrate with your backend
+            // fetch('/api/rfq', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+        });
+    </script>
+</body>
+
+</html>

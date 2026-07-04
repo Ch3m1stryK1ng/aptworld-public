@@ -1,0 +1,334 @@
+document.addEventListener('DOMContentLoaded', () => {
+  /* ========== 元素缓存 ========== */
+  const header = document.getElementById('header');
+  const navbar = document.querySelector('.navbar');
+  const navToggle = document.getElementById('nav-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const root = document.documentElement;
+  const searchForm = document.querySelector('.search-form');
+
+  function updateSearchOffset(mode) {
+    switch (mode) {
+      case 'video':
+        setVar('--search-extra-offset', '0px');
+        break;
+      case 'image':
+      case 'compact':
+      default:
+        setVar('--search-extra-offset', '32px');
+        break;
+    }
+  }
+  /* ========== 兜底/创建遮罩（若页面中没有 #menu-overlay） ========== */
+  const overlay = document.getElementById('menu-overlay') || (() => {
+    const d = document.createElement('div');
+    d.id = 'menu-overlay';
+    document.body.appendChild(d);
+    return d;
+  })();
+
+  /* ========== 工具函数 ========== */
+  const setVar = (k, v) => root.style.setProperty(k, v);
+  const isMobile = () => window.matchMedia('(max-width: 1278px)').matches;
+
+  function syncNavbarHeight() {
+    const h = navbar?.offsetHeight || 60;
+    setVar('--navbar-height', h + 'px');
+  }
+  syncNavbarHeight();
+  window.addEventListener('resize', syncNavbarHeight);
+
+  function updateSearchFormDarkClass(condition) {
+    if (!searchForm) return;
+    searchForm.classList.toggle('dark', condition);
+  }
+
+  /* ========== 移动菜单开关 ========== */
+  function openMenu() {
+    mobileMenu?.classList.add('active');
+    overlay?.classList.add('active');
+    header?.classList.add('menu-open');
+    document.body.classList.add('no-scroll');
+  }
+  function closeMenu() {
+    mobileMenu?.classList.remove('active');
+    overlay?.classList.remove('active');
+    header?.classList.remove('menu-open');
+    document.body.classList.remove('no-scroll');
+    mobileMenu?.querySelectorAll('.is-open').forEach(li => li.classList.remove('is-open'));
+  }
+  navToggle?.addEventListener('click', () => {
+    if (!isMobile()) return;
+    mobileMenu.classList.contains('active') ? closeMenu() : openMenu();
+    syncNavbarHeight();
+  });
+  overlay?.addEventListener('click', closeMenu);
+  document.addEventListener('keydown', e => (e.key === 'Escape') && closeMenu());
+
+  // 点击移动端子菜单项后自动收起
+  document.querySelectorAll('.mobile-submenu a').forEach(a => {
+    a.addEventListener('click', () => { if (isMobile()) closeMenu(); });
+  });
+
+  /* ========== 搜索框 ========== */
+  const searchToggle = document.querySelector('.search-toggle');
+  const searchInput = document.getElementById('search-input');
+  const suggestions = document.getElementById('suggestions-list');
+
+  function closeSearch() {
+    if (!searchForm) return;
+    searchForm.classList.add('hidden');
+    searchForm.classList.remove('fade-in');
+    if (suggestions) suggestions.style.display = 'none';
+    selIdx = -1;
+  }
+
+  let selIdx = -1;
+  const keywords = [
+    'Pulley', 'Taper Bush', 'Gearbox', 'Motor', 'Coupling', 'Bearing', 'Catalog', 'Support', 'Powertrain', 'Machinery',
+    '皮带轮', '锥套', '齿轮箱', '电机', '联轴器', '轴承', '目录', '支持', '传动系统', '机械'
+  ];
+
+  searchToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (!searchForm) return;
+
+    const showing = !searchForm.classList.contains('hidden');
+    searchForm.classList.toggle('hidden');
+    searchForm.classList.toggle('fade-in');
+
+    const compact = document.documentElement.classList.contains('is-compact');
+    updateSearchFormDarkClass(compact);
+
+    if (!showing) {
+      window.searchForceZero = true;
+      setVar('--search-extra-offset', '0px');
+      updateSearchFormDarkClass(document.documentElement.classList.contains('is-compact'));
+
+      requestAnimationFrame(() => {
+        searchForm.classList.remove('hidden');
+        searchForm.classList.add('fade-in');
+        searchInput?.focus();
+        renderHistorySuggestions();
+
+        // 可选：平滑滚动
+        if (window.innerWidth <= 768) {
+          searchForm.style.transform = 'none';
+          const rect = searchForm.getBoundingClientRect();
+          const offsetTop = window.scrollY + rect.top - 60;
+          window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+        }
+      });
+    } else {
+      searchForm.classList.add('hidden');
+      searchForm.classList.remove('fade-in');
+      window.searchForceZero = false;
+      const type = window.slides?.[window.currentSlideIndex]?.dataset?.type || 'image';
+      updateSearchOffset(type);
+    }
+  });
+
+  // 外点关闭 + ESC 关闭（只保留一份监听）
+  document.addEventListener('click', (e) => {
+    if (!searchForm) return;
+    if (!searchForm.contains(e.target) && !searchToggle?.contains(e.target)) {
+      closeSearch();
+    }
+  });
+  document.addEventListener('keydown', (e) => (e.key === 'Escape') && closeSearch());
+
+  // 输入联想 + 高亮
+  function updateActive() {
+    [...(suggestions?.children || [])].forEach((li, i) => li.classList.toggle('active', i === selIdx));
+  }
+  searchInput?.addEventListener('input', () => {
+    const v = searchInput.value.trim().toLowerCase();
+    if (!v) { renderHistorySuggestions(); return; }
+    const list = keywords.filter(k => k.toLowerCase().includes(v));
+    if (!list.length) { suggestions.style.display = 'none'; return; }
+    suggestions.innerHTML = list.map(k =>
+      `<li>${k.replace(new RegExp(v, 'gi'), m => `<span class="highlight">${m}</span>`)}</li>`
+    ).join('');
+    suggestions.style.display = 'block'; selIdx = -1; updateActive();
+  });
+  // 键盘导航 + Enter 提交
+  searchInput?.addEventListener('keydown', (e) => {
+    const items = [...(suggestions?.children || [])];
+    if (e.key === 'ArrowDown') { e.preventDefault(); selIdx = (selIdx + 1) % items.length; updateActive(); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); selIdx = (selIdx - 1 + items.length) % items.length; updateActive(); }
+    else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (selIdx >= 0 && items[selIdx]) searchInput.value = items[selIdx].textContent;
+      saveHistory(searchInput.value.trim());
+      suggestions.style.display = 'none';
+      searchForm?.submit();
+    }
+  });
+  suggestions?.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI') {
+      searchInput.value = e.target.textContent;
+      saveHistory(searchInput.value.trim());
+      suggestions.style.display = 'none';
+      searchForm?.submit();
+    }
+  });
+
+  // 历史缓存
+  function saveHistory(term) {
+    if (!term) return;
+    let history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+    history = [term, ...history.filter(h => h !== term)];
+    if (history.length > 10) history = history.slice(0, 10);
+    localStorage.setItem('searchHistory', JSON.stringify(history));
+  }
+  function renderHistorySuggestions() {
+    const history = JSON.parse(localStorage.getItem('searchHistory') || '[]');
+    if (!history.length) { suggestions.style.display = 'none'; return; }
+    suggestions.innerHTML = history.map(h => `<li>${h}</li>`).join('');
+    suggestions.style.display = 'block'; selIdx = -1; updateActive();
+  }
+
+  /* ========== 语言切换（GitHub Pages 兼容） ========== */
+  const langToggle = document.getElementById('lang-toggle');
+  const langDropdown = document.getElementById('lang-dropdown');
+  langToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    langDropdown?.classList.toggle('visible');
+  });
+  document.addEventListener('click', (e) => {
+    if (langDropdown?.classList.contains('visible')
+      && !langDropdown.contains(e.target)
+      && !langToggle?.contains(e.target)) {
+      langDropdown.classList.remove('visible');
+    }
+  });
+  document.addEventListener('keydown', (e) => (e.key === 'Escape') && langDropdown?.classList.remove('visible'));
+
+  (function setupLangSwitch() {
+    const options = document.querySelectorAll('.lang-option');
+    if (!options.length) return;
+
+    // Priority 1: Check HTML lang attribute (most reliable)
+    const htmlLang = document.documentElement.getAttribute('lang');
+    // Priority 2: Check URL path
+    const path = location.pathname;
+    let currIsZh = (htmlLang === 'zh' || htmlLang === 'zh-CN') || path.includes('/zh/');
+
+    const currentLang = currIsZh ? 'zh' : 'en';
+
+    function updateToggleDisplay(lang) {
+      const selected = document.querySelector(`.lang-option[data-lang="${lang}"]`);
+      if (selected && langToggle) langToggle.innerHTML = selected.innerHTML;
+    }
+    function highlightSelected(lang) {
+      options.forEach(opt => opt.classList.toggle('selected', opt.dataset.lang === lang));
+    }
+    updateToggleDisplay(currentLang);
+    highlightSelected(currentLang);
+
+    function buildTargetPath(targetLang) {
+      const currentPath = location.pathname;
+      // We re-check path inclusion here to be safe for navigation logic alignment
+      const isCurrentZh = currentPath.includes('/zh/');
+
+      if (targetLang === 'zh') {
+        if (isCurrentZh) return null; // Already ZH
+
+        // Strategy: Inject '/zh/' into the path
+        if (currentPath.includes('/subpage/')) {
+          // e.g. /subpage/about.html -> /zh/subpage/about.html
+          return currentPath.replace('/subpage/', '/zh/subpage/');
+        }
+
+        // Root cases: "/" or no filename
+        if (currentPath === '/' || currentPath.endsWith('/')) {
+          return currentPath.replace(/\/?$/, '/zh/index.html');
+        }
+
+        // Assume we are at root level (e.g. /index.html)
+        // Insert /zh/ before the last file segment
+        // e.g. .../index.html -> .../zh/index.html
+        return currentPath.replace(/\/([^/]+)$/, '/zh/$1');
+      } else {
+        // Target EN
+        if (!isCurrentZh) return null; // Already EN
+        // Remove /zh/
+        return currentPath.replace('/zh/', '/');
+      }
+    }
+
+    options.forEach(option => {
+      option.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetLang = option.getAttribute('data-lang');
+        const next = buildTargetPath(targetLang);
+        if (!next) return;
+        const suffix = location.search + location.hash;
+        location.assign(next + suffix);
+      });
+    });
+  })();
+
+  /* ========== 返回顶部按钮 ========== */
+  const backToTop = document.createElement('button');
+  backToTop.id = 'back-to-top';
+  backToTop.textContent = 'TOP';
+  backToTop.setAttribute('aria-label', 'Back to top');
+  document.body.appendChild(backToTop);
+
+  function updateBackToTop() {
+    if (window.scrollY > 300) {
+      if (!backToTop.classList.contains('show')) {
+        backToTop.classList.remove('hide');
+        backToTop.classList.add('show');
+        backToTop.style.display = 'flex';
+      }
+    } else {
+      if (backToTop.classList.contains('show')) {
+        backToTop.classList.remove('show');
+        backToTop.classList.add('hide');
+        setTimeout(() => { backToTop.style.display = 'none'; }, 400);
+      }
+    }
+  }
+  updateBackToTop();
+  window.addEventListener('scroll', updateBackToTop);
+  window.addEventListener('load', updateBackToTop);
+
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ========== 保留你的大屏悬停逻辑（不动） ========== */
+  document.querySelectorAll('.has-submenu > .list').forEach(link => {
+    link.addEventListener('click', function () {
+      const parent = this.closest('.nav-item');
+      parent?.classList.toggle('open');
+      syncNavbarHeight();
+    });
+  });
+
+});
+
+function toggleMobileSubmenu(event) {
+  if (window.innerWidth > 1278) return;
+
+  const trigger = event.currentTarget;
+  const href = trigger.getAttribute('href');
+  if (!href || href === '#') {
+    event.preventDefault();
+  }
+
+  const li = trigger.closest('.has-mobile-submenu');
+  if (!li) return;
+
+  const isOpen = li.classList.contains('is-open');
+
+  const siblings = li.parentElement.querySelectorAll('.has-mobile-submenu.is-open');
+  siblings.forEach(s => {
+    if (s !== li) s.classList.remove('is-open');
+  });
+
+  li.classList.toggle('is-open', !isOpen);
+}
+

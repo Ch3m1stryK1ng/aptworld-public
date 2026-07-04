@@ -1,0 +1,73 @@
+/* 图标容器：继承主题色，悬停微动 */
+.feature__icon {
+    font-size: clamp(28px, 3.6vw, 40px);
+    line-height: 1;
+    color: rgb(var(--particle-color));
+    margin-bottom: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: color .2s ease, transform .2s ease;
+}
+
+/* 统一悬停颜色（可自定义） */
+:root {
+    --icon-hover: #0e6abf;
+}
+
+/* 跟你的按钮色系一致 */
+.cc-cards .feature-item:hover .feature__icon {
+    color: var(--icon-hover);
+    transform: translateY(-2px) scale(1.04);
+}
+
+/* SVG 基础 */
+.feature__icon svg {
+    width: 1em;
+    height: 1em;
+    display: block;
+}
+
+/* 三种风格显示/隐藏 */
+.feature__icon .v-stroke,
+.feature__icon .v-solid,
+.feature__icon .v-duo {
+    display: none;
+}
+
+.feature__icon.icon--stroke .v-stroke {
+    display: inline;
+}
+
+.feature__icon.icon--solid .v-solid {
+    display: inline;
+}
+
+.feature__icon.icon--duotone .v-duo {
+    display: inline;
+}
+
+/* 线性描边样式 */
+.feature__icon .v-stroke * {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* 双色主/辅层：同色但辅层半透明 */
+.feature__icon .v-duo .duo-primary {
+    fill: currentColor;
+    opacity: 1;
+}
+
+.feature__icon .v-duo .duo-secondary {
+    fill: currentColor;
+    opacity: .35;
+}
+
+/* 实心版：填充用 currentColor */
+.feature__icon .v-solid * {
+    fill: currentColor;
+}

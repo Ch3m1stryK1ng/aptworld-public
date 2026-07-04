@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最终版双模联系表单</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ================== CSS 样式 (融合版) ================== */
+        :root {
+            --primary-color: #0d2b5c;
+            --accent-color: #3d8bfd;
+            --accent-hover: #03e8f8;
+            --text-light: #ffffff;
+            --text-light-sub: #cccccc;
+            --text-dark: #333;
+            --error-color: #e74c3c;
+            --border-light: rgba(255, 255, 255, 0.5);
+            --border-focus: #fff;
+            --shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef2f5;
+            /* 给页面一个基础背景色 */
+        }
+
+        /* --- 1. 仅在主页使用的静态容器样式 --- */
+        .static-contact-section {
+            padding: 80px 20px;
+            /* 您可以为这个区域设置一个大背景图 */
+            background: url('https://images.unsplash.com/photo-1554147090-e1221a04a025?q=80&w=2070') center/cover no-repeat;
+        }
+
+        .static-contact-section .form-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        .static-contact-section .form-box {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: var(--shadow);
+            padding: 35px;
+            border-radius: 16px;
+            flex: 1;
+        }
+
+        /* 您的玻璃拟态背景样式 */
+        .static-contact-section .general-form-box {
+            background: linear-gradient(rgba(13, 43, 92, 0.8), rgba(13, 43, 92, 0.85));
+        }
+
+        .static-contact-section .product-form-box {
+            background: linear-gradient(rgba(13, 43, 92, 0.7), rgba(13, 43, 92, 0.75));
+        }
+
+        .static-contact-section h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 0 0 25px;
+            color: var(--text-light);
+            border-bottom: 2px solid var(--border-light);
+            padding-bottom: 15px;
+        }
+
+        /* --- 2. 全局浮动组件 (FAB) 样式 --- */
+        .fab-container {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column-reverse;
+            gap: 15px;
+        }
+
+        .fab-trigger {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary-color);
+            border: 2px solid white;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+        }
+
+        .fab-trigger:hover {
+            transform: scale(1.1);
+        }
+
+        .fab-trigger svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        /* --- 3. 弹出的表单窗口 (Widget) 样式 --- */
+        .form-widget {
+            position: fixed;
+            bottom: 20px;
+            /* 与按钮底部对齐 */
+            left: 100px;
+            /* ！！！修改点：向右移动，不再与按钮重叠 */
+            z-index: 999;
+            width: 370px;
+            /* 应用您的玻璃拟态风格 */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            color: var(--text-light);
+            /* 动画效果 */
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transform-origin: bottom left;
+            /* ！！！修改点：动画从左下角展开 */
+            transition: all 0.3s ease-out;
+        }
+
+        .form-widget.is-open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        /* 弹出窗口的背景 */
+        #widget-general {
+            background: linear-gradient(rgba(13, 43, 92, 0.88), rgba(13, 43, 92, 0.9));
+        }
+
+        #widget-product {
+            background: linear-gradient(rgba(13, 43, 92, 0.85), rgba(13, 43, 92, 0.88));
+        }
+
+        .form-widget-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .form-widget-header h3 {
+            margin: 0;
+            font-size: 20px;
+        }
+
+        .form-widget-body {
+            padding: 20px;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        /* --- 4. 通用表单元素样式 (适用于静态和浮动) --- */
+        .form-group {
+            margin-bottom: 18px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .form-group label .required {
+            color: var(--accent-hover);
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-bottom: 1.5px solid var(--border-light);
+            background: transparent;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-light);
+            border-radius: 4px;
+            box-sizing: border-box;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--text-light-sub);
+        }
+
+        /* 聚焦效果：结合辉光和动态下划线 */
+        .form-group::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent-color) 0%, var(--accent-hover) 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .form-group:focus-within::after {
+            transform: scaleX(1);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(3, 232, 248, 0.3);
+        }
+
+        .error-text {
+            display: none;
+            color: var(--error-color);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .form-group.is-invalid .error-text {
+            display: block;
+        }
+
+        .form-group.is-invalid input,
+        .form-group.is-invalid textarea {
+            border-bottom-color: var(--error-color);
+        }
+
+        .file-upload-display {
+            margin-top: 10px;
+            font-size: 12px;
+            color: var(--text-light-sub);
+        }
+
+        .file-upload-display.is-success {
+            color: var(--accent-hover);
+            font-weight: 500;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 10px;
+            background: var(--accent-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
+            color: var(--text-dark);
+        }
+
+        .submit-btn:disabled {
+            background-color: #6c757d;
+            color: #e9ecef;
+            cursor: wait;
+        }
+
+        .form-result {
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+
+        .form-result.success {
+            background-color: rgba(25, 135, 84, 0.8);
+            color: white;
+            display: block;
+        }
+
+        .form-result.error {
+            background-color: rgba(220, 53, 69, 0.8);
+            color: white;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="static-contact-section">
+        <div class="form-container" id="static-contact-container">
+        </div>
+    </section>
+
+
+    <div class="fab-container">
+        <button class="fab-trigger" id="fab-product" data-widget="widget-product" aria-label="Product Inquiry">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v2" />
+                <path d="M21 14v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+        </button>
+        <button class="fab-trigger" id="fab-general" data-widget="widget-general" aria-label="General Inquiry">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
+        </button>
+    </div>
+
+    <div class="form-widget-templates" style="display: none;">
+        <div class="form-widget" id="widget-general">
+            <div class="form-widget-header">
+                <h3>General Inquiry</h3>
+            </div>
+            <div class="form-widget-body">
+                <form id="form-general" novalidate>
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    <input type="hidden" name="subject" value="新通用咨询 (来自官网)">
+                    <div class="form-group">
+                        <label for="general-name">Name <span class="required">*</span></label>
+                        <input type="text" id="general-name" name="name" required placeholder="Your Name">
+                        <div class="error-text">Please enter your name.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="general-email">Email <span class="required">*</span></label>
+                        <input type="email" id="general-email" name="email" required placeholder="name@example.com">
+                        <div class="error-text">Please enter a valid email.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="general-message">Message <span class="required">*</span></label>
+                        <textarea id="general-message" name="message" rows="4" required
+                            placeholder="How can we help?"></textarea>
+                        <div class="error-text">Please enter your message.</div>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                    <div class="form-result"></div>
+                </form>
+            </div>
+        </div>
+        <div class="form-widget" id="widget-product">
+            <div class="form-widget-header">
+                <h3>Product Inquiry</h3>
+            </div>
+            <div class="form-widget-body">
+                <form id="form-product" novalidate>
+                    <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                    <input type="hidden" name="subject" value="新产品咨询 (来自官网)">
+                    <div class="form-group">
+                        <label for="product-name">Product Name <span class="required">*</span></label>
+                        <input type="text" id="product-name" name="product_name" required>
+                        <div class="error-text">Please enter the product name.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-email">Your Email <span class="required">*</span></label>
+                        <input type="email" id="product-email" name="email" required>
+                        <div class="error-text">Please enter a valid email.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-file">Attachment</label>
+                        <input type="file" id="product-file" name="attachment" style="display:none;">
+                        <button type="button" onclick="document.getElementById('product-file').click();"
+                            class="submit-btn"
+                            style="background-color: transparent; border: 1px solid var(--border-light); margin-top: 0;">Choose
+                            File</button>
+                        <div class="file-upload-display">No file selected.</div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Inquiry</button>
+                    <div class="form-result"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // ================== JavaScript 逻辑 ==================
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // --- 1. 双模显示逻辑 ---
+            const staticContainer = document.getElementById('static-contact-container');
+            const widgetTemplates = document.querySelector('.form-widget-templates');
+
+            // 如果页面上有静态容器 (即在主页)
+            if (staticContainer && widgetTemplates) {
+                const generalFormTemplate = widgetTemplates.querySelector('#widget-general');
+                const productFormTemplate = widgetTemplates.querySelector('#widget-product');
+
+                // 克隆通用表单
+                const staticGeneralForm = generalFormTemplate.cloneNode(true);
+                staticGeneralForm.id = 'static-widget-general'; // 避免ID冲突
+                staticGeneralForm.classList.add('form-box', 'general-form-box');
+                staticGeneralForm.querySelector('form').id = 'static-form-general';
+                staticContainer.appendChild(staticGeneralForm);
+                setupForm(staticGeneralForm.querySelector('form'));
+
+                // 克隆产品表单
+                const staticProductForm = productFormTemplate.cloneNode(true);
+                staticProductForm.id = 'static-widget-product'; // 避免ID冲突
+                staticProductForm.classList.add('form-box', 'product-form-box');
+                staticProductForm.querySelector('form').id = 'static-form-product';
+                staticContainer.appendChild(staticProductForm);
+                setupForm(staticProductForm.querySelector('form'));
+            }
+
+            // --- 2. 浮动窗口交互逻辑 ---
+            document.body.appendChild(widgetTemplates); // 将模板移动到body末尾以便定位
+            widgetTemplates.style.display = 'block'; // 让其可见，但由CSS的opacity和transform控制
+
+            const fabTriggers = document.querySelectorAll('.fab-trigger');
+            let activeWidget = null;
+
+            fabTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const widgetId = trigger.dataset.widget;
+                    const clickedWidget = document.getElementById(widgetId);
+
+                    if (activeWidget === clickedWidget) {
+                        closeActiveWidget();
+                    } else {
+                        closeActiveWidget();
+                        openWidget(widgetId);
+                    }
+                });
+            });
+
+            function openWidget(widgetId) {
+                const trigger = document.querySelector(`.fab-trigger[data-widget="${widgetId}"]`);
+                activeWidget = document.getElementById(widgetId);
+                activeWidget.classList.add('is-open');
+                trigger.classList.add('is-active'); // 可以添加关闭图标的样式
+            }
+
+            function closeActiveWidget() {
+                if (activeWidget) {
+                    const widgetId = activeWidget.id;
+                    const trigger = document.querySelector(`.fab-trigger[data-widget="${widgetId}"]`);
+                    activeWidget.classList.remove('is-open');
+                    trigger.classList.remove('is-active');
+
+                    // 重置表单内的结果提示
+                    const resultDiv = activeWidget.querySelector('.form-result');
+                    if (resultDiv) {
+                        resultDiv.style.display = 'none';
+                    }
+                    activeWidget = null;
+                }
+            }
+
+            // --- 3. 表单提交与验证的核心函数 ---
+            // 为原始的浮动窗口表单绑定事件
+            setupForm(document.getElementById('form-general'));
+            setupForm(document.getElementById('form-product'));
+
+            function setupForm(formElement) {
+                const resultDiv = formElement.querySelector('.form-result');
+                const submitButton = formElement.querySelector('button[type="submit"]');
+                const requiredInputs = formElement.querySelectorAll('[required]');
+
+                // 文件上传的特殊处理
+                const fileInput = formElement.querySelector('input[type="file"]');
+                if (fileInput) {
+                    const fileDisplay = fileInput.parentElement.querySelector('.file-upload-display');
+                    fileInput.addEventListener('change', () => {
+                        if (fileInput.files.length > 0) {
+                            fileDisplay.textContent = `Selected: ${fileInput.files[0].name}`;
+                            fileDisplay.classList.add('is-success');
+                        } else {
+                            fileDisplay.textContent = 'No file selected.';
+                            fileDisplay.classList.remove('is-success');
+                        }
+                    });
+                }
+
+                // 实时验证，当用户输入时移除错误状态
+                requiredInputs.forEach(input => {
+                    input.addEventListener('input', () => {
+                        if (input.value.trim()) {
+                            input.closest('.form-group').classList.remove('is-invalid');
+                        }
+                    });
+                });
+
+                formElement.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    let isValid = true;
+                    requiredInputs.forEach(input => {
+                        const group = input.closest('.form-group');
+                        if (!input.value.trim()) {
+                            group.classList.add('is-invalid');
+                            isValid = false;
+                        }
+                    });
+
+                    if (!isValid) return;
+
+                    const formData = new FormData(formElement);
+                    const originalButtonText = submitButton.textContent;
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Submitting...';
+                    resultDiv.style.display = 'none';
+
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST', body: formData
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            resultDiv.className = data.success ? 'form-result success' : 'form-result error';
+                            resultDiv.textContent = data.message || (data.success ? 'Submission successful!' : 'An error occurred.');
+                            if (data.success) {
+                                formElement.reset();
+                                if (fileInput) { fileInput.dispatchEvent(new Event('change')); }
+                                setTimeout(closeActiveWidget, 2500);
+                            }
+                        })
+                        .catch(error => {
+                            console.error(error);
+                            resultDiv.className = 'form-result error';
+                            resultDiv.textContent = 'Network error. Please try again.';
+                        })
+                        .finally(() => {
+                            submitButton.disabled = false;
+                            submitButton.textContent = originalButtonText;
+                        });
+                });
+            }
+        });
+    </script>
+
+</body>
+
+</html>

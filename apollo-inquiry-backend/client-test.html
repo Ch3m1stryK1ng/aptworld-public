@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Client Test</title>
+</head>
+<body>
+  <h1>Manual Test Form</h1>
+  <form action="http://localhost:3000/api/inquiry" method="POST" enctype="multipart/form-data">
+    <div><label>Product Name <input name="product_name" required></label></div>
+    <div><label>Your Email <input type="email" name="email" required></label></div>
+    <div><label>Specification <input name="specification"></label></div>
+    <div><label>Quantity <input type="number" name="quantity" min="1"></label></div>
+    <div><label>Name <input name="name"></label></div>
+    <div><label>WhatsApp <input name="whatsapp"></label></div>
+    <div><label>Message <textarea name="message" rows="4"></textarea></label></div>
+    <div><label>Attachments <input type="file" name="attachment" multiple></label></div>
+    <button type="submit">Submit</button>
+  </form>
+  <p>Check the console where the server is running for errors if email doesn't arrive.</p>
+</body>
+</html>
