@@ -30,29 +30,44 @@
 /* Base styles for the section - Matching Team Section */
 .product-footer-inner {
     margin-top: 30px;
+    width: 100%;
+    max-width: none;
+    padding: 0;
+    box-sizing: border-box;
     /* Added spacing above title */
 }
 
+.product-footer-inner>h3,
+.product-footer-bar {
+    width: min(100%, 1880px);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(20px, 4vw, 72px);
+    padding-right: clamp(20px, 4vw, 72px);
+    box-sizing: border-box;
+}
+
 .apps-grid {
+    --apps-section-pad: clamp(20px, 4vw, 72px);
+    --apps-card-gap: clamp(16px, 1.4vw, 28px);
     position: relative;
-    padding: 5px 0 10px;
-    /* Reduced bottom padding from 80px */
+    padding: clamp(8px, 1vw, 16px) 0 clamp(18px, 2vw, 28px);
     width: 100%;
     margin: 0 auto;
 }
 
-/* Header & Navigation - Matching .team-header */
+/* Header & Navigation */
 .section-header {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-bottom: 20px;
-    /* Increased spacing for buttons */
-    max-width: 1440px;
-    /* Standard max width */
+    margin-bottom: clamp(16px, 2vw, 28px);
+    width: min(100%, 1880px);
+    max-width: none;
     margin-left: auto;
     margin-right: auto;
-    padding: 0 20px;
+    padding: 0 var(--apps-section-pad);
+    box-sizing: border-box;
     position: relative;
 }
 
@@ -60,12 +75,13 @@
     display: none;
 }
 
-/* Slider Container - Matching team layout width */
+/* Slider Container */
 .apps-slider-container {
-    max-width: 1680px;
+    width: min(100%, 1880px);
+    max-width: none;
     margin: 0 auto;
-    padding: 0;
-    /* Removed side padding to align with text */
+    padding: 0 var(--apps-section-pad);
+    box-sizing: border-box;
     overflow: hidden;
 }
 
@@ -99,11 +115,11 @@
 /* Grid Scroll */
 .apps-grid .grid {
     display: flex;
-    gap: 24px;
+    gap: var(--apps-card-gap);
     overflow-x: auto;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
-    padding-bottom: 40px;
+    padding-bottom: clamp(28px, 3vw, 44px);
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
@@ -116,8 +132,8 @@
 /* ---- App Card - Unchanged ---- */
 
 .app-card {
-    min-width: 300px;
-    flex: 0 0 300px;
+    min-width: 0;
+    flex: 0 0 clamp(300px, calc((100% - var(--apps-card-gap) - var(--apps-card-gap) - var(--apps-card-gap)) / 4), 420px);
     scroll-snap-align: start;
 
     background: var(--bg-card);
@@ -130,10 +146,15 @@
     position: relative;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 1399px) {
     .app-card {
-        min-width: 340px;
-        flex: 0 0 340px;
+        flex-basis: clamp(300px, calc((100% - var(--apps-card-gap) - var(--apps-card-gap)) / 3), 390px);
+    }
+}
+
+@media (max-width: 1099px) {
+    .app-card {
+        flex-basis: clamp(280px, calc((100% - var(--apps-card-gap)) / 2), 360px);
     }
 }
 
@@ -447,17 +468,25 @@
 /* Mobile Responsive */
 @media (max-width: 991px) {
 
-    /* Force 100% Card Width + Snap */
+    .apps-grid {
+        --apps-section-pad: clamp(16px, 5vw, 32px);
+        --apps-card-gap: 16px;
+    }
+
+    .section-header,
+    .apps-slider-container {
+        padding-left: var(--apps-section-pad);
+        padding-right: var(--apps-section-pad);
+    }
+
     .apps-grid .grid {
         scroll-snap-type: x mandatory;
-        gap: 16px;
-        padding: 0 20px 30px;
+        gap: var(--apps-card-gap);
+        padding: 0 0 30px;
     }
 
     .app-card {
-        min-width: 100%;
-        flex: 0 0 100%;
-        scroll-snap-align: center;
+        flex: 0 0 clamp(280px, calc((100% - var(--apps-card-gap)) / 2), 360px);
     }
 
     /* Bottom Banner Redesign */
@@ -535,5 +564,12 @@
     .fb-left .btn-demo i {
         background: white;
         color: var(--brand);
+    }
+}
+
+@media (max-width: 767px) {
+    .app-card {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
     }
 }

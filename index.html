@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="./css/swiper.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/product-card.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="./css/about-custom.css" />
+    <link rel="stylesheet" type="text/css" href="./css/about-custom.css?v=custom-layout-20260704" />
     <link rel="stylesheet" type="text/css" href="./css/facts.css" />
     <link rel="stylesheet" type="text/css" href="./css/advantage.css" />
     <link rel="stylesheet" type="text/css" href="./css/teams.css" />
@@ -1422,12 +1422,19 @@
             const nextBtn = document.querySelector('.nav-btn.next');
 
             if (slider && prevBtn && nextBtn) {
+                const getScrollAmount = () => {
+                    const card = slider.querySelector('.app-card');
+                    if (!card) return Math.max(slider.clientWidth * 0.8, 320);
+                    const gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
+                    return card.getBoundingClientRect().width + gap;
+                };
+
                 prevBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: -340, behavior: 'smooth' });
+                    slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
                 });
 
                 nextBtn.addEventListener('click', () => {
-                    slider.scrollBy({ left: 340, behavior: 'smooth' });
+                    slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
                 });
             }
         });

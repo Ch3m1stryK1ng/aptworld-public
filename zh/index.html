@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
     <link rel="stylesheet" type="text/css" href="../css/product-card.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" type="text/css" href="../css/about-custom.css" />
+    <link rel="stylesheet" type="text/css" href="../css/about-custom.css?v=custom-layout-20260704" />
     <link rel="stylesheet" type="text/css" href="../css/facts.css" />
     <link rel="stylesheet" type="text/css" href="../css/advantage.css" />
     <link rel="stylesheet" type="text/css" href="../css/teams.css" />
@@ -1013,16 +1013,6 @@
                                     <img src="../images/home/xiaohongshu.svg" alt="redbook" />
                                     <span class="footer-tooltip-text">小红书</span>
                                 </a>
-                                <a href="https://space.bilibili.com/3546969614059823" target="_blank"
-                                    class="footer-icon-tooltip">
-                                    <img src="../images/home/bilibili.svg" alt="bilibili" />
-                                    <span class="footer-tooltip-text">哔哩哔哩</span>
-                                </a>
-                                <a href="https://www.xiaohongshu.com/user/profile/68b45c73000000001901cad5?xsec_token=YB42IC3hBqigx0GCRdGjGCf5xUshVm6_MaK68uRk-Ei6Q=&xsec_source=app_share&xhsshare=CopyLink&appuid=68b45c73000000001901cad5&apptime=1756651388&share_id=e3e33b08b9f146b4875fe18030712afa"
-                                    target="_blank" class="footer-icon-tooltip">
-                                    <img src="../images/home/weibo.svg" alt="weibo" />
-                                    <span class="footer-tooltip-text">微博</span>
-                                </a>
                             </div>
                         </div>
 
@@ -1146,6 +1136,30 @@
     <script src="../js/forms-zh.js" type="text/javascript" charset="utf-8"></script>
     <script src="../js/footer.js" type="text/javascript" charset="utf-8"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slider = document.getElementById('appsSlider');
+            const prevBtn = document.querySelector('.nav-btn.prev');
+            const nextBtn = document.querySelector('.nav-btn.next');
+
+            if (slider && prevBtn && nextBtn) {
+                const getScrollAmount = () => {
+                    const card = slider.querySelector('.app-card');
+                    if (!card) return Math.max(slider.clientWidth * 0.8, 320);
+                    const gap = parseFloat(window.getComputedStyle(slider).gap) || 0;
+                    return card.getBoundingClientRect().width + gap;
+                };
+
+                prevBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                });
+
+                nextBtn.addEventListener('click', () => {
+                    slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
 
 </body>
 
